@@ -1,0 +1,502 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0012",
+  "identity": {
+    "canonical_name": "Assad A. Oberai",
+    "preferred_display_name": "Assad A. Oberai",
+    "publishing_names": [
+      "Assad Oberai"
+    ],
+    "usc_email": "aoberai@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "Medium",
+    "appointments": [
+      {
+        "title": null,
+        "unit": "Viterbi Aerospace and Mechanical Engineering",
+        "appointment_type": "Primary",
+        "source_refs": [
+          "src-notion-assad_oberai-1",
+          "src-notion-assad_oberai-2",
+          "src-official-assad_oberai-20260807"
+        ],
+        "review_status": "Confirmed from official USC profile on 2026-08-07"
+      }
+    ],
+    "source_refs": [
+      "src-notion-assad_oberai-1",
+      "src-notion-assad_oberai-2",
+      "src-pilot-roster-20260806",
+      "src-official-assad_oberai-20260807"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Oberai/Assad",
+      "source_refs": [
+        "src-notion-assad_oberai-1",
+        "src-notion-assad_oberai-2",
+        "src-official-assad_oberai-20260807"
+      ],
+      "review_status": "Verified from reviewer-supplied or directly linked USC source"
+    },
+    {
+      "link_type": "lab",
+      "url": "https://sites.usc.edu/oberai/",
+      "source_refs": [
+        "src-research-assad_oberai-20260807"
+      ],
+      "review_status": "Verified from official faculty page"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?hl=en&user=Rgud4a0AAAAJ",
+      "source_refs": [
+        "src-scholar-assad_oberai-20260807"
+      ],
+      "review_status": "Identity matched and snapshot captured 2026-08-07"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://scholar.google.com/citations?hl=en&user=Rgud4a0AAAAJ&view_op=list_works&sortby=pubdate",
+      "source_refs": [
+        "src-scholar-assad_oberai-20260807"
+      ],
+      "review_status": "Current provider view captured 2026-08-07"
+    }
+  ],
+  "research": {
+    "summary": "Current work designs and applies data- and physics-based models for engineering, science, and biomedicine, with emphasis on scientific machine learning, inverse problems, conditional generative models, diffusion and flow-matching methods, data assimilation, reduced-order modeling, and multiscale mechanics. Recent applications include renal tumor classification, medical-image harmonization, rare-event cell phenotyping, fluorescence imaging, and probabilistic wildfire reconstruction and forecasting.",
+    "domains": [
+      "Computational mechanics",
+      "Data-driven biomedical modeling",
+      "Inverse problems",
+      "Physics-informed machine learning",
+      "Scientific machine learning",
+      "Generative algorithms",
+      "Biomedical imaging and diagnosis"
+    ],
+    "methods": [
+      "Finite-element analysis",
+      "Variational multiscale methods",
+      "Uncertainty quantification",
+      "Reduced-order and surrogate modeling",
+      "Conditional generative modeling",
+      "Diffusion and flow matching",
+      "Data assimilation",
+      "Physics-constrained learning",
+      "Reduced-order and multiscale modeling"
+    ],
+    "applications": [
+      "Mechanical systems",
+      "Soft-tissue mechanics",
+      "Tumor biomechanics and elastography",
+      "Multiscale material modeling",
+      "Cancer and renal tumor diagnosis",
+      "Medical imaging",
+      "Wildfire reconstruction and forecasting",
+      "Aerospace and mechanical systems",
+      "Multiphysics systems"
+    ],
+    "source_refs": [
+      "src-notion-assad_oberai-1",
+      "src-official-assad_oberai-20260807",
+      "src-research-assad_oberai-20260807",
+      "src-scholar-assad_oberai-20260807"
+    ],
+    "review_status": "Proposed - reviewer-supplied and directly linked faculty-specific sources reviewed 2026-08-07"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2026-RECENT-01",
+        "title": "An optimal Petrov–Galerkin framework for operator networks",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&sortby=pubdate&citation_for_view=Rgud4a0AAAAJ:kw52XkFRtyQC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2026-RECENT-02",
+        "title": "Comparative effectiveness and cost-effectiveness of an artificial intelligence workflow for small renal mass diagnosis on computed tomography",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&sortby=pubdate&citation_for_view=Rgud4a0AAAAJ:OBSaB-F7qqsC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2026-RECENT-03",
+        "title": "Probabilistic multi-site MR image harmonization via feature preserving conditional generative adversarial networks",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&sortby=pubdate&citation_for_view=Rgud4a0AAAAJ:DBa1UEJaJKAC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2026-RECENT-04",
+        "title": "Probabilistic Forecasting of Localized Wildfire Spread Based on Conditional Flow Matching",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&sortby=pubdate&citation_for_view=Rgud4a0AAAAJ:KaMxkj08jr0C",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2026-RECENT-05",
+        "title": "Conditional flow matching for physics-constrained inverse problems with finite training data",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&sortby=pubdate&citation_for_view=Rgud4a0AAAAJ:HGTzPopzzJcC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2001-CITED-01",
+        "title": "Large eddy simulation of turbulent channel flows by the variational multiscale method",
+        "venue": null,
+        "publication_year": 2001,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&citation_for_view=Rgud4a0AAAAJ:u-x6o8ySG0sC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 601,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2001-CITED-02",
+        "title": "The multiscale formulation of large eddy simulation: Decay of homogeneous isotropic turbulence",
+        "venue": null,
+        "publication_year": 2001,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&citation_for_view=Rgud4a0AAAAJ:u5HHmVD_uO8C",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 552,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0012-2003-CITED-03",
+        "title": "Solution of inverse problems in elasticity imaging using the adjoint method",
+        "venue": null,
+        "publication_year": 2003,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Rgud4a0AAAAJ&citation_for_view=Rgud4a0AAAAJ:d1gkVwhDpl0C",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 475,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-assad_oberai-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0012-2026-RECENT-01",
+        "PUB-VIT-FAC-0012-2026-RECENT-02",
+        "PUB-VIT-FAC-0012-2026-RECENT-03",
+        "PUB-VIT-FAC-0012-2026-RECENT-04",
+        "PUB-VIT-FAC-0012-2026-RECENT-05"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0012-2001-CITED-01",
+        "PUB-VIT-FAC-0012-2001-CITED-02",
+        "PUB-VIT-FAC-0012-2003-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent and most-cited views were refreshed from the linked faculty Google Scholar profile on 2026-08-07. Citation-record URLs are preserved now; DOI/publisher-link reconciliation remains a production task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:25-0202-A0001",
+        "institutional_award_number": "25-0202-A0001",
+        "institutional_award_line": "25-0202-A0001-1",
+        "title": "MURI: Probabilistic Multiscale Inference of Interface Models under Extreme Conditions",
+        "faculty_name_as_reported": "Assad Oberai",
+        "faculty_unit_as_reported": "CA101508 Viterbi Aerospace and Mechanical Engineering",
+        "sponsor": "Army Research Office",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF2520183",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Cooperative Agreement",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-09-15",
+        "end_date": "2030-09-14",
+        "obligated_total_usd": 1500000,
+        "expected_total_usd": 9000000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1491-A0001",
+        "institutional_award_number": "24-1491-A0001",
+        "institutional_award_line": "24-1491-A0001-2",
+        "title": "Conditional generative algorithms for data assimilation",
+        "faculty_name_as_reported": "Assad Oberai",
+        "faculty_unit_as_reported": "CA101508 Viterbi Aerospace and Mechanical Engineering",
+        "sponsor": "Army Research Office",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF2410401",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-30",
+        "end_date": "2027-10-22",
+        "obligated_total_usd": 356967,
+        "expected_total_usd": 525000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-9795-A0001",
+        "institutional_award_number": "23-9795-A0001",
+        "institutional_award_line": "23-9795-A0001-2",
+        "title": "Technology Development to Integrate Innovative Observation Capabilities into Coupled Wildfire Models for Improved Active Fire Forecasting",
+        "faculty_name_as_reported": "Assad Oberai",
+        "faculty_unit_as_reported": "CA101508 Viterbi Aerospace and Mechanical Engineering",
+        "sponsor": "Colorado State University",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "G-02914-03",
+        "prime_sponsor_award_number": "80NSSC23K1344",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-09-01",
+        "end_date": "2026-08-31",
+        "obligated_total_usd": 362618,
+        "expected_total_usd": 362618,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 3,
+      "detailed_expected_total_usd": 9887618,
+      "legacy_record_count": 3,
+      "legacy_total_award_amount_usd": 9887618,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-assad_oberai-1",
+      "source_type": "notion_export",
+      "title": "Assad Oberai Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Assad A Oberai 37425febe2d681dfa787d4bbdde03c3e.md",
+      "web_url": "https://www.notion.so/35825febe2d681158d77e819d48f638d",
+      "source_version": null,
+      "fingerprint_sha256": "09A689BEF8026BEAB55496AB9251C0C0398907E5E8307B3D2E2B349EEE64CE68",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local export present; human review required",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": "DUP-NOTION-OBERAI-01",
+      "selected_for_package": true,
+      "notes": "Fuller duplicate selected as the primary migration profile."
+    },
+    {
+      "source_id": "src-notion-assad_oberai-2",
+      "source_type": "notion_export",
+      "title": "Assad Oberai Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Assad Oberai 35925febe2d681809a94c61c8de016cb.md",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "FC6F86C2B3F398A7B0B72A4F451B9611AD6BBB5DA2CEF2B81779A9F890DE514B",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local export present; human review required",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": "DUP-NOTION-OBERAI-01",
+      "selected_for_package": false,
+      "notes": "Sparse duplicate retained as supplemental evidence only."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0012_assad_oberai_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "15D18DC309C1888C0A01CA1962A4C4316FCEFF2A936660917B43F28BE8BB5BC9",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-official-assad_oberai-20260807",
+      "source_type": "official_faculty_profile",
+      "title": "Assad A. Oberai USC faculty profile",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Oberai/Assad",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "notes": "This page was supplied by the reviewer or reached directly from a supplied faculty-specific source."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0012_assad_oberai_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "15D18DC309C1888C0A01CA1962A4C4316FCEFF2A936660917B43F28BE8BB5BC9",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-research-assad_oberai-20260807",
+      "source_type": "faculty_research_website",
+      "title": "Assad A. Oberai faculty/lab research website",
+      "web_url": "https://sites.usc.edu/oberai/",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "notes": "Reviewed pages: https://sites.usc.edu/oberai/; https://sites.usc.edu/oberai/publications/"
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0012_assad_oberai_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "15D18DC309C1888C0A01CA1962A4C4316FCEFF2A936660917B43F28BE8BB5BC9",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-scholar-assad_oberai-20260807",
+      "source_type": "publication_provider_profile",
+      "title": "Assad A. Oberai Google Scholar profile",
+      "web_url": "https://scholar.google.com/citations?hl=en&user=Rgud4a0AAAAJ",
+      "authority_level": "Publication discovery and point-in-time citation snapshot",
+      "qa_status": "Faculty identity matched; recent and most-cited views captured",
+      "notes": "Use for discovery and dated citation views; reconcile public article links to DOI or publisher URLs before production display."
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Duplicate Notion profiles plus authoritative award detail; no CV",
+    "missing_sources": [
+      "Current faculty CV",
+      "Official USC patent/invention reconciliation",
+      "Article-level DOI or publisher-link reconciliation for newly discovered works"
+    ],
+    "conflicts": [
+      "The fuller Notion page omits the email found in the sparse duplicate; the combined identity remains pending review."
+    ],
+    "duplicate_sources": [
+      "Two Notion profiles exist; the fuller Assad A. Oberai page was selected as primary."
+    ],
+    "warnings": [
+      "Research terms are profile-derived migration evidence rather than publication-backed canonical claims.",
+      "Citation counts are point-in-time provider snapshots and must be refreshed before future ranking."
+    ],
+    "source_reference_count": 7
+  },
+  "refresh": {
+    "package_version": "0.3",
+    "created_at": "2026-08-12T19:18:10.435Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0012_assad_a_oberai_draft_v0.2.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-07",
+      "reviewed_by": "Blair Lake",
+      "reviewer_response": "https://viterbi.usc.edu/directory/faculty/Oberai/Assad",
+      "decision": "Approve with corrections",
+      "processing_outcome": "Reviewer-supplied URL and directly linked faculty-specific sources processed into package v0.2 before broader external search."
+    },
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

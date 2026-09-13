@@ -1,0 +1,506 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0014",
+  "identity": {
+    "canonical_name": "Kelly Twomey Sanders",
+    "preferred_display_name": "Kelly T. Sanders",
+    "publishing_names": [
+      "Kelly Sanders",
+      "K. T. Sanders"
+    ],
+    "usc_email": "ktsanders@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Professor and Dr. Teh Fu Yen Early Career Chair",
+        "unit": "Sonny Astani Department of Civil and Environmental Engineering",
+        "appointment_type": "Primary",
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626",
+          "src-official-kelly_sanders-20260807"
+        ],
+        "review_status": "Confirmed from official USC profile on 2026-08-07"
+      },
+      {
+        "title": "Courtesy Appointment",
+        "unit": "Spatial Sciences",
+        "appointment_type": "Courtesy",
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626",
+          "src-official-kelly_sanders-20260807"
+        ],
+        "review_status": "Confirmed from official USC profile on 2026-08-07"
+      }
+    ],
+    "source_refs": [
+      "src-cv-kelly_sanders-sanderskelly_cv_0626",
+      "src-pilot-roster-20260806",
+      "src-official-kelly_sanders-20260807"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Sanders/Kelly",
+      "source_refs": [
+        "src-official-kelly_sanders-20260807"
+      ],
+      "review_status": "Verified from reviewer-supplied or directly linked USC source"
+    },
+    {
+      "link_type": "lab",
+      "url": "https://s3research.usc.edu/",
+      "source_refs": [
+        "src-research-kelly_sanders-20260807"
+      ],
+      "review_status": "Verified from official faculty page"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?hl=en&user=p49s818AAAAJ",
+      "source_refs": [
+        "src-scholar-kelly_sanders-20260807"
+      ],
+      "review_status": "Identity matched and snapshot captured 2026-08-07"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://scholar.google.com/citations?hl=en&user=p49s818AAAAJ&view_op=list_works&sortby=pubdate",
+      "source_refs": [
+        "src-scholar-kelly_sanders-20260807"
+      ],
+      "review_status": "Current provider view captured 2026-08-07"
+    }
+  ],
+  "research": {
+    "summary": "Current work analyzes large-scale energy, water, climate, and urban resource systems to inform technically, politically, and socially consequential decisions. Recent priorities include grid resilience and winter load growth, localized heat from data centers and other anthropogenic sources, air-conditioning access and health outcomes, residential smart-meter analysis, urban heat inequity, household outage disparities, renewable-energy and electrification pathways, and AI-supported solar mapping.",
+    "domains": [
+      "Energy-water nexus",
+      "Electricity systems and demand",
+      "Urban heat and climate adaptation",
+      "Climate-health and environmental equity",
+      "Energy-water systems",
+      "Grid resilience and flexibility",
+      "Climate adaptation and mitigation",
+      "Urban heat and environmental equity",
+      "Sustainable infrastructure"
+    ],
+    "methods": [
+      "Smart-meter data analysis",
+      "Systems analysis",
+      "Machine learning",
+      "Geospatial and policy analysis",
+      "Smart-meter and geospatial analysis",
+      "Environmental and health-impact assessment",
+      "Policy-relevant modeling"
+    ],
+    "applications": [
+      "Grid management",
+      "Building electricity demand",
+      "Urban climate mitigation",
+      "Public health and resilience",
+      "Electric grids",
+      "Urban heat mitigation",
+      "Air-conditioning access and health",
+      "Renewable energy and electrification",
+      "Water and energy resource management"
+    ],
+    "source_refs": [
+      "src-cv-kelly_sanders-sanderskelly_cv_0626",
+      "src-official-kelly_sanders-20260807",
+      "src-research-kelly_sanders-20260807",
+      "src-scholar-kelly_sanders-20260807"
+    ],
+    "review_status": "Proposed - reviewer-supplied and directly linked faculty-specific sources reviewed 2026-08-07"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-SANDERS-2026-01",
+        "title": "Modeling the distribution, impacts, and mitigation of anthropogenic heat in Los Angeles",
+        "venue": "Journal of Geophysical Research: Atmospheres",
+        "publication_year": 2026,
+        "doi": "10.1029/2026JD046326",
+        "publication_link": "https://doi.org/10.1029/2026JD046326",
+        "selection_basis": [
+          "recent_cv_view",
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626",
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-SANDERS-2026-02",
+        "title": "Smart meter-derived air conditioning penetration rate modifies the association between ambient temperature and emergency department visits",
+        "venue": "Epidemiology",
+        "publication_year": 2026,
+        "doi": "10.1097/EDE.0000000000002006",
+        "publication_link": "https://doi.org/10.1097/EDE.0000000000002006",
+        "selection_basis": [
+          "recent_cv_view",
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626",
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-SANDERS-2026-03",
+        "title": "A systematic review of literature utilizing residential smart meter data",
+        "venue": "Renewable and Sustainable Energy Reviews",
+        "publication_year": 2026,
+        "doi": "10.1016/j.rser.2025.116130",
+        "publication_link": "https://doi.org/10.1016/j.rser.2025.116130",
+        "selection_basis": [
+          "recent_cv_view",
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626",
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-SANDERS-2025-01",
+        "title": "Unraveling the role of historic redlining and present-day inequities on intra-urban heat disparity",
+        "venue": "Nature Communications",
+        "publication_year": 2025,
+        "doi": "10.1038/s41467-025-59912-x",
+        "publication_link": "https://doi.org/10.1038/s41467-025-59912-x",
+        "selection_basis": [
+          "recent_cv_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-SANDERS-2025-02",
+        "title": "Revealing spatial and temporal patterns of residential cooling in Southern California through combined estimates of AC ownership and use",
+        "venue": "Applied Energy",
+        "publication_year": 2025,
+        "doi": "10.1016/j.apenergy.2024.124583",
+        "publication_link": "https://doi.org/10.1016/j.apenergy.2024.124583",
+        "selection_basis": [
+          "recent_cv_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-cv-kelly_sanders-sanderskelly_cv_0626"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0014-2026-RECENT-01",
+        "title": "Addressing winter load growth: Reliability implications and a call to action for grid resilience",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=p49s818AAAAJ&sortby=pubdate&citation_for_view=p49s818AAAAJ:wbdj-CoPYUoC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0014-2026-RECENT-02",
+        "title": "Spatially concentrated heat emissions from data centers lead to localized urban warming and heat exposure",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=p49s818AAAAJ&sortby=pubdate&citation_for_view=p49s818AAAAJ:J-pR_7NvFogC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0014-2012-CITED-01",
+        "title": "Evaluating the energy consumed for water use in the United States",
+        "venue": null,
+        "publication_year": 2012,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=p49s818AAAAJ&citation_for_view=p49s818AAAAJ:Tyk-4Ss8FVUC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 315,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0014-2015-CITED-02",
+        "title": "Critical review: Uncharted waters? The future of the electricity-water nexus",
+        "venue": null,
+        "publication_year": 2015,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=p49s818AAAAJ&citation_for_view=p49s818AAAAJ:8k81kl-MbHgC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 156,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0014-2017-CITED-03",
+        "title": "Virtual scarce water embodied in inter-provincial electricity transmission in China",
+        "venue": null,
+        "publication_year": 2017,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=p49s818AAAAJ&citation_for_view=p49s818AAAAJ:4TOpqqG69KYC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 155,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-kelly_sanders-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0014-2026-RECENT-01",
+        "PUB-VIT-FAC-0014-2026-RECENT-02",
+        "PUB-SANDERS-2026-01",
+        "PUB-SANDERS-2026-02",
+        "PUB-SANDERS-2026-03"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0014-2012-CITED-01",
+        "PUB-VIT-FAC-0014-2015-CITED-02",
+        "PUB-VIT-FAC-0014-2017-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent and most-cited views were refreshed from the linked faculty Google Scholar profile on 2026-08-07. Citation-record URLs are preserved now; DOI/publisher-link reconciliation remains a production task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:23-2714-A0001",
+        "institutional_award_number": "23-2714-A0001",
+        "institutional_award_line": "23-2714-A0001-3",
+        "title": "Neighborhood-Scale Extreme Humid Heat Health Impacts",
+        "faculty_name_as_reported": "Kelly Sanders",
+        "faculty_unit_as_reported": "CA101516 Sonny Astani Department of Viterbi Civil and Environmental Engineering",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1681914",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-07-07",
+        "end_date": "2025-06-30",
+        "obligated_total_usd": 169776,
+        "expected_total_usd": 169776,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 1,
+      "detailed_expected_total_usd": 169776,
+      "legacy_record_count": 1,
+      "legacy_total_award_amount_usd": 169776,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [
+    {
+      "honor": "American Academy of Environmental Engineers and Scientists 40 Under 40",
+      "year": 2024,
+      "source_refs": [
+        "src-cv-kelly_sanders-sanderskelly_cv_0626"
+      ],
+      "review_status": "Proposed"
+    },
+    {
+      "honor": "National Science Foundation CAREER Award",
+      "year": 2019,
+      "source_refs": [
+        "src-cv-kelly_sanders-sanderskelly_cv_0626"
+      ],
+      "review_status": "Proposed"
+    },
+    {
+      "honor": "MIT Technology Review 35 Innovators Under 35",
+      "year": 2016,
+      "source_refs": [
+        "src-cv-kelly_sanders-sanderskelly_cv_0626"
+      ],
+      "review_status": "Proposed"
+    }
+  ],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-cv-kelly_sanders-sanderskelly_cv_0626",
+      "source_type": "faculty_cv",
+      "title": "Kelly Sanders CV",
+      "repository_path": "inputs/Faculty Profiles Library/Pilot CVs/SandersKelly_CV_0626.pdf",
+      "web_url": "https://docs.google.com/document/d/1ZB85vYsG0IqjA9qyte8UhN_Jk1SQ4reYOVo20TZ3H3s/edit?usp=sharing",
+      "source_version": "2026-06",
+      "fingerprint_sha256": "0B37451429CA39FD5514B693E30894B178E75175299EA0A001067B2DE342F2AA",
+      "authority_level": "Faculty-authored evidence",
+      "qa_status": "Text extracted and visual layout reviewed",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Selected CV representation for the pilot package."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0014_kelly_sanders_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "5B5770E66DF8E92E10F7099BED8A435E834DC0B22B6E58D967564BD46F24B76C",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-official-kelly_sanders-20260807",
+      "source_type": "official_faculty_profile",
+      "title": "Kelly Twomey Sanders USC faculty profile",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Sanders/Kelly",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "notes": "This page was supplied by the reviewer or reached directly from a supplied faculty-specific source."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0014_kelly_sanders_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "5B5770E66DF8E92E10F7099BED8A435E834DC0B22B6E58D967564BD46F24B76C",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-research-kelly_sanders-20260807",
+      "source_type": "faculty_research_website",
+      "title": "Kelly Twomey Sanders faculty/lab research website",
+      "web_url": "https://s3research.usc.edu/",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "notes": "Reviewed pages: https://s3research.usc.edu/; https://s3research.usc.edu/research/; https://s3research.usc.edu/publications-and-media/peer-reviewed-journal-articles/"
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0014_kelly_sanders_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "5B5770E66DF8E92E10F7099BED8A435E834DC0B22B6E58D967564BD46F24B76C",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-scholar-kelly_sanders-20260807",
+      "source_type": "publication_provider_profile",
+      "title": "Kelly Twomey Sanders Google Scholar profile",
+      "web_url": "https://scholar.google.com/citations?hl=en&user=p49s818AAAAJ",
+      "authority_level": "Publication discovery and point-in-time citation snapshot",
+      "qa_status": "Faculty identity matched; recent and most-cited views captured",
+      "notes": "Use for discovery and dated citation views; reconcile public article links to DOI or publisher URLs before production display."
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "CV-only profile plus authoritative award detail",
+    "missing_sources": [
+      "Official USC patent/invention reconciliation",
+      "Article-level DOI or publisher-link reconciliation for newly discovered works"
+    ],
+    "conflicts": [],
+    "duplicate_sources": [],
+    "warnings": [
+      "The CV footer displays 2025 on later pages even though the title page is dated June 2026; treat the filename/title page as the source version pending confirmation.",
+      "Citation counts are point-in-time provider snapshots and must be refreshed before future ranking."
+    ],
+    "source_reference_count": 6
+  },
+  "refresh": {
+    "package_version": "0.3",
+    "created_at": "2026-08-12T19:18:10.451Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0014_kelly_t_sanders_draft_v0.2.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-07",
+      "reviewed_by": "Blair Lake",
+      "reviewer_response": "https://viterbi.usc.edu/directory/faculty/Sanders/Kelly",
+      "decision": "Approve with corrections",
+      "processing_outcome": "Reviewer-supplied URL and directly linked faculty-specific sources processed into package v0.2 before broader external search."
+    },
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

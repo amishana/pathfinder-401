@@ -1,0 +1,570 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0009",
+  "identity": {
+    "canonical_name": "David A. Barnhart",
+    "preferred_display_name": "David Barnhart",
+    "publishing_names": [
+      "David Barnhart",
+      "D. Barnhart"
+    ],
+    "usc_email": "barnhart@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Research Professor of Astronautics",
+        "unit": "Viterbi Astronautical Engineering / Viterbi Information Sciences Institute",
+        "appointment_type": "Primary or joint appointment summary",
+        "source_refs": [
+          "src-notion-david_barnhart-1",
+          "src-pilot-roster-20260806",
+          "src-official-david_barnhart-20260812"
+        ],
+        "review_status": "Proposed from official USC profile reviewed 2026-08-12"
+      }
+    ],
+    "source_refs": [
+      "src-notion-david_barnhart-1",
+      "src-pilot-roster-20260806",
+      "src-official-david_barnhart-20260812"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Barnhart/David",
+      "source_refs": [
+        "src-official-david_barnhart-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "faculty_or_lab_research",
+      "url": "https://www.isi.edu/centers-serc/",
+      "source_refs": [
+        "src-research-david_barnhart-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://www.isi.edu/centers-serc/publications/",
+      "source_refs": [
+        "src-publications-david_barnhart-20260812"
+      ],
+      "review_status": "Reviewed 2026-08-12"
+    }
+  ],
+  "research": {
+    "summary": "Research and systems work centers on space engineering, rendezvous and proximity operations, in-space servicing, assembly and manufacturing, robotic spacecraft, orbital debris, and small-satellite architectures.",
+    "domains": [
+      "Space systems engineering",
+      "Rendezvous and proximity operations",
+      "In-space servicing, assembly, and manufacturing",
+      "Space robotics",
+      "Small satellites"
+    ],
+    "methods": [
+      "Spacecraft systems engineering",
+      "Robotic experimentation",
+      "Mission architecture",
+      "Hardware-in-the-loop testing",
+      "Microgravity validation"
+    ],
+    "applications": [
+      "Satellite servicing",
+      "In-space assembly",
+      "Orbital debris remediation",
+      "Autonomous docking",
+      "Small-satellite missions"
+    ],
+    "source_refs": [
+      "src-notion-david_barnhart-1",
+      "src-official-david_barnhart-20260812",
+      "src-research-david_barnhart-20260812"
+    ],
+    "review_status": "Proposed from local and faculty-specific sources reviewed 2026-08-12"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2025-RECENT-01",
+        "title": "Initial Parametric Design of a Torsion Pendulum to Demonstrate Attitude Control using MEMS/DMD radiation pressure",
+        "venue": "AIAA",
+        "publication_year": 2025,
+        "doi": "10.2514/6.2025-95824",
+        "publication_link": "https://doi.org/10.2514/6.2025-95824",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-david_barnhart-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2025-RECENT-02",
+        "title": "Highly Compliant Crawling on Unstructured Terrain: A Bio-Inspired Robotic Platform for Microgravity Environments",
+        "venue": "ICRA Workshop",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-david_barnhart-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2025-RECENT-03",
+        "title": "Enabling safe rendezvous and proximity operations for in-space docking between two actively maneuvering satellites",
+        "venue": "AAS/AIAA",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-david_barnhart-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2024-RECENT-04",
+        "title": "Robotic in-space servicing, assembly and manufacturing",
+        "venue": "Frontiers in Robotics and AI",
+        "publication_year": 2024,
+        "doi": "10.3389/frobt.2024.1421697",
+        "publication_link": "https://doi.org/10.3389/frobt.2024.1421697",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-david_barnhart-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2024-RECENT-05",
+        "title": "Enabling Safe Efficient Rendezvous: Cooperative and Communicative RPO",
+        "venue": "International Astronautical Congress",
+        "publication_year": 2024,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-david_barnhart-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2013-CITED-01",
+        "title": "Phoenix program status",
+        "venue": null,
+        "publication_year": 2013,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 65,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-david_barnhart-1"
+        ],
+        "review_status": "Proposed from migration evidence; Refresh Required; invalid DOI-like citation count removed"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2013-CITED-02",
+        "title": "DARPA Phoenix PODs: FedEx to GEO",
+        "venue": null,
+        "publication_year": 2013,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 62,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-david_barnhart-1"
+        ],
+        "review_status": "Proposed from migration evidence; Refresh Required; invalid DOI-like citation count removed"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0009-2000-CITED-03",
+        "title": "Performance of the stationary plasma thruster SPT-100",
+        "venue": null,
+        "publication_year": 2000,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 61,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-david_barnhart-1"
+        ],
+        "review_status": "Proposed from migration evidence; Refresh Required; invalid DOI-like citation count removed"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0009-2025-RECENT-01",
+        "PUB-VIT-FAC-0009-2025-RECENT-02",
+        "PUB-VIT-FAC-0009-2025-RECENT-03",
+        "PUB-VIT-FAC-0009-2024-RECENT-04",
+        "PUB-VIT-FAC-0009-2024-RECENT-05"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0009-2013-CITED-01",
+        "PUB-VIT-FAC-0009-2013-CITED-02",
+        "PUB-VIT-FAC-0009-2000-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent publications were selected from the faculty-specific website or CV as of 2026-08-12; missing article links and most-cited views remain explicit gaps."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:25-1142-A0001",
+        "institutional_award_number": "25-1142-A0001",
+        "institutional_award_line": "25-1142-A0001",
+        "title": "Segmented Space Telescope Proposal",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101509 Viterbi Astronautical Engineering",
+        "sponsor": "The CHiwi Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "25-1142-A0001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Applied",
+        "status": "In Closeout",
+        "start_date": "2025-01-01",
+        "end_date": "2025-12-31",
+        "obligated_total_usd": 64000,
+        "expected_total_usd": 64000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-0884-A0001",
+        "institutional_award_number": "24-0884-A0001",
+        "institutional_award_line": "24-0884-A0001-6",
+        "title": "Space Strategic Technical Institute for in Space Operations",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "Texas A&M University",
+        "prime_sponsor": "Air Force Research Laboratory",
+        "sponsor_award_number": "M2403338",
+        "prime_sponsor_award_number": "FA9453-24-2-0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "Active",
+        "start_date": "2024-04-08",
+        "end_date": "2029-04-08",
+        "obligated_total_usd": 2470660,
+        "expected_total_usd": 5805830,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-0690-A0001",
+        "institutional_award_number": "24-0690-A0001",
+        "institutional_award_line": "24-0690-A0001",
+        "title": "Rendezvous and Prox Ops Reconstruction Tool",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "Quidient, LLC",
+        "prime_sponsor": "U.S. Department of Defense",
+        "sponsor_award_number": "24-0690-A0001",
+        "prime_sponsor_award_number": "FA8649-23-P-0568",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "In Closeout",
+        "start_date": "2023-09-25",
+        "end_date": "2024-04-24",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2723-A0002",
+        "institutional_award_number": "23-2723-A0002",
+        "institutional_award_line": "23-2723-A0002-2",
+        "title": "Unprepared Surface Capture with Multiple Arm Architecture Analysis: Extending REACCH - Phase II",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "Kall Morris, Incorporated",
+        "prime_sponsor": "Air Force Research Laboratory",
+        "sponsor_award_number": "23-2723-A0002",
+        "prime_sponsor_award_number": "FA864923P1223",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "Closed",
+        "start_date": "2023-07-21",
+        "end_date": "2025-02-28",
+        "obligated_total_usd": 450000,
+        "expected_total_usd": 450000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-3005-A0001",
+        "institutional_award_number": "23-3005-A0001",
+        "institutional_award_line": "23-3005-A0001-1",
+        "title": "Modeling and Simulation for Flexible structures for Space Debris Removal",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "L.Garde, Inc.",
+        "prime_sponsor": "Air Force",
+        "sponsor_award_number": "16677-1",
+        "prime_sponsor_award_number": "FA945322CA064",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "Closed",
+        "start_date": "2022-09-08",
+        "end_date": "2023-02-03",
+        "obligated_total_usd": 75000,
+        "expected_total_usd": 75000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2841-A0001",
+        "institutional_award_number": "23-2841-A0001",
+        "institutional_award_line": "23-2841-A0001-4",
+        "title": "Transformational 3D+ Scene Reconstruction Platform for Advanced OSAM Proximity Operations",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "Quidient, LLC",
+        "prime_sponsor": "Air Force",
+        "sponsor_award_number": "015526-00001",
+        "prime_sponsor_award_number": "FA8750-22-C-0152",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "Closed",
+        "start_date": "2022-08-19",
+        "end_date": "2023-04-30",
+        "obligated_total_usd": 75000,
+        "expected_total_usd": 75000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2723-A0001",
+        "institutional_award_number": "23-2723-A0001",
+        "institutional_award_line": "23-2723-A0001-2",
+        "title": "Unprepared Surface Capture with Multiple Arm Architecture Analysis: Extending REACCH",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "Kall Morris, Incorporated",
+        "prime_sponsor": "Air Force Research Laboratory",
+        "sponsor_award_number": "015387-00001",
+        "prime_sponsor_award_number": "FA9453-22-C-A056",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "Closed",
+        "start_date": "2022-07-05",
+        "end_date": "2023-01-31",
+        "obligated_total_usd": 75000,
+        "expected_total_usd": 75000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-1826-A0001",
+        "institutional_award_number": "23-1826-A0001",
+        "institutional_award_line": "23-1826-A0001-2",
+        "title": "Development of Alternative Signature Solid Rocket Propellant in support to Solid Propellant Infrared Reduction At Launch (SPIRAL)",
+        "faculty_name_as_reported": "David Barnhart",
+        "faculty_unit_as_reported": "CA101544 Viterbi Information Sciences Institute",
+        "sponsor": "Exquadrum, Inc.",
+        "prime_sponsor": "Missile Defense Agency",
+        "sponsor_award_number": "01-100-S-001",
+        "prime_sponsor_award_number": "HQ0860-21-C-7051",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Applied",
+        "status": "Closed",
+        "start_date": "2021-07-01",
+        "end_date": "2021-09-15",
+        "obligated_total_usd": 37500,
+        "expected_total_usd": 37500,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 8,
+      "detailed_expected_total_usd": 6682330,
+      "legacy_record_count": 8,
+      "legacy_total_award_amount_usd": 6682330,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-david_barnhart-1",
+      "source_type": "notion_export",
+      "title": "David Barnhart Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/David Barnhart 36725febe2d68156ab86c052a61bdc95.md",
+      "web_url": "https://www.notion.so/36725febe2d68156ab86c052a61bdc95",
+      "source_version": null,
+      "fingerprint_sha256": "B3623720014D5A59899E1F7E3C77BEA24905998CFC81526AA52A412FA28138D2",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local source reviewed for pilot package",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Newly received local Notion export inventoried on 2026-08-07."
+    },
+    {
+      "source_id": "src-official-david_barnhart-20260812",
+      "source_type": "official_faculty_profile",
+      "title": "David Barnhart USC faculty profile",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0009_david_barnhart_2026-08-12.json",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Barnhart/David",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "3B9B2D5EAA5E0558032012621454C23CFE358BDBA853DF0C377C3B6D3F8B565B",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed before broader external search."
+    },
+    {
+      "source_id": "src-research-david_barnhart-20260812",
+      "source_type": "faculty_research_website",
+      "title": "David Barnhart faculty or lab research website",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0009_david_barnhart_2026-08-12.json",
+      "web_url": "https://www.isi.edu/centers-serc/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "3B9B2D5EAA5E0558032012621454C23CFE358BDBA853DF0C377C3B6D3F8B565B",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed faculty-specific pages: https://www.isi.edu/centers-serc/"
+    },
+    {
+      "source_id": "src-publications-david_barnhart-20260812",
+      "source_type": "faculty_publication_list",
+      "title": "David Barnhart faculty-specific publication list",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0009_david_barnhart_2026-08-12.json",
+      "web_url": "https://www.isi.edu/centers-serc/publications/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "3B9B2D5EAA5E0558032012621454C23CFE358BDBA853DF0C377C3B6D3F8B565B",
+      "authority_level": "Faculty-specific publication discovery source",
+      "qa_status": "Recent records captured for human review",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Use faculty-specific source for discovery; reconcile article-level DOI or publisher links before production display."
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion only",
+    "missing_sources": [
+      "Current faculty CV",
+      "Dated refresh of legacy most-cited records from an identity-verified publication provider",
+      "Article-level links for publications without DOIs",
+      "Official USC patent/invention reconciliation"
+    ],
+    "conflicts": [],
+    "duplicate_sources": [],
+    "warnings": [
+      "Most-cited counts are undated migration evidence and must be refreshed before ranking."
+    ],
+    "source_reference_count": 6
+  },
+  "refresh": {
+    "package_version": "0.2",
+    "created_at": "2026-08-12T19:18:10.414Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0009_david_a_barnhart_draft_v0.1.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

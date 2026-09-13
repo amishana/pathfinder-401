@@ -1,0 +1,593 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0004",
+  "identity": {
+    "canonical_name": "Maryam M. Shanechi",
+    "preferred_display_name": "Maryam Shanechi",
+    "publishing_names": [
+      "Maryam M. Shanechi",
+      "M. Shanechi"
+    ],
+    "usc_email": "shanechi@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Alexander A. Sawchuk Chair and Professor of Electrical and Computer Engineering, Biomedical Engineering, and Computer Science",
+        "unit": "Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "appointment_type": "Primary or joint appointment summary",
+        "source_refs": [
+          "src-notion-maryam_shanechi-1",
+          "src-pilot-roster-20260806",
+          "src-official-maryam_shanechi-20260812"
+        ],
+        "review_status": "Proposed from official USC profile reviewed 2026-08-12"
+      }
+    ],
+    "source_refs": [
+      "src-notion-maryam_shanechi-1",
+      "src-pilot-roster-20260806",
+      "src-official-maryam_shanechi-20260812"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Shanechi/Maryam",
+      "source_refs": [
+        "src-official-maryam_shanechi-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "faculty_or_lab_research",
+      "url": "https://nseip.usc.edu/",
+      "source_refs": [
+        "src-research-maryam_shanechi-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://nseip.usc.edu/publications/",
+      "source_refs": [
+        "src-publications-maryam_shanechi-20260812"
+      ],
+      "review_status": "Reviewed 2026-08-12"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?user=csGAeKgAAAAJ&hl=en",
+      "source_refs": [
+        "src-scholar-maryam_shanechi-20260812"
+      ],
+      "review_status": "Identity verified and cited view captured 2026-08-12"
+    }
+  ],
+  "research": {
+    "summary": "Research combines artificial intelligence, machine learning, control, and dynamical-systems modeling to understand neural activity and design closed-loop neurotechnologies for motor and mental-health applications.",
+    "domains": [
+      "Neural engineering",
+      "Machine learning",
+      "Dynamical systems",
+      "Brain-computer interfaces",
+      "Closed-loop neurotechnology"
+    ],
+    "methods": [
+      "State-space modeling",
+      "Multiscale neural-data modeling",
+      "Control theory",
+      "Representation learning",
+      "Real-time inference"
+    ],
+    "applications": [
+      "Motor brain-computer interfaces",
+      "Mood and depression monitoring",
+      "Adaptive neurostimulation",
+      "Multimodal neural decoding"
+    ],
+    "source_refs": [
+      "src-notion-maryam_shanechi-1",
+      "src-official-maryam_shanechi-20260812",
+      "src-research-maryam_shanechi-20260812"
+    ],
+    "review_status": "Proposed from local and faculty-specific sources reviewed 2026-08-12"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2026-RECENT-01",
+        "title": "Unsupervised learning of multiscale switching dynamical system models from multimodal neural data",
+        "venue": "Journal of Neural Engineering",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-maryam_shanechi-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2025-RECENT-02",
+        "title": "Dynamical modeling of nonlinear latent factors in multiscale neural activity with real-time inference",
+        "venue": "NeurIPS",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-maryam_shanechi-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2025-RECENT-03",
+        "title": "Cross-modal representational knowledge distillation for enhanced spike-informed LFP modeling",
+        "venue": "NeurIPS",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-maryam_shanechi-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2025-RECENT-04",
+        "title": "BaRISTA: Brain scale informed spatiotemporal representation of human intracranial neural activity",
+        "venue": "NeurIPS",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-maryam_shanechi-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2025-RECENT-05",
+        "title": "Prioritized learning of cross-population neural dynamics",
+        "venue": "Journal of Neural Engineering",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-maryam_shanechi-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2014-CITED-01",
+        "title": "Closed-loop decoder adaptation shapes neural plasticity for skillful neuroprosthetic control",
+        "authors": "AL Orsborn, HG Moorman, SA Overduin, MM Shanechi, DF Dimitrov, et al.",
+        "venue": "Neuron 82 (6), 1380-1393",
+        "publication_year": 2014,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=csGAeKgAAAAJ&citation_for_view=csGAeKgAAAAJ%3ASe3iqnhoufwC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 371,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-maryam_shanechi-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2019-CITED-02",
+        "title": "Brain-machine interfaces from motor to mood",
+        "authors": "MM Shanechi",
+        "venue": "Nature Neuroscience 22 (10), 1554-1564",
+        "publication_year": 2019,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=csGAeKgAAAAJ&citation_for_view=csGAeKgAAAAJ%3AJ_g5lzvAfSwC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 331,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-maryam_shanechi-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0004-2018-CITED-03",
+        "title": "Mood variations decoded from multi-site intracranial human brain activity",
+        "authors": "OG Sani, Y Yang, MB Lee, HE Dawes, EF Chang, MM Shanechi",
+        "venue": "Nature Biotechnology 36 (10), 954-961",
+        "publication_year": 2018,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=csGAeKgAAAAJ&citation_for_view=csGAeKgAAAAJ%3Aj3f4tGmQtD8C",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 262,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-maryam_shanechi-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0004-2026-RECENT-01",
+        "PUB-VIT-FAC-0004-2025-RECENT-02",
+        "PUB-VIT-FAC-0004-2025-RECENT-03",
+        "PUB-VIT-FAC-0004-2025-RECENT-04",
+        "PUB-VIT-FAC-0004-2025-RECENT-05"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0004-2014-CITED-01",
+        "PUB-VIT-FAC-0004-2019-CITED-02",
+        "PUB-VIT-FAC-0004-2018-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent publications are retained from faculty-specific sources. The top three most-cited records were captured from the identity-matched Google Scholar profile on 2026-08-12. DOI/publisher-link reconciliation remains a production enrichment task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:26-0441-A0001",
+        "institutional_award_number": "26-0441-A0001",
+        "institutional_award_line": "26-0441-A0001",
+        "title": "RCP AI core foundational system for neuromodulation in cerebellar disorders",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Once Upon a Time Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "26-0441-A0001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-09-30",
+        "end_date": "2030-09-29",
+        "obligated_total_usd": 2422270,
+        "expected_total_usd": 2422270,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-9961-A0001",
+        "institutional_award_number": "23-9961-A0001",
+        "institutional_award_line": "23-9961-A0001",
+        "title": "Novel neural network models of multiscale brain network dynamics and behavior with real-time inference and control capability",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Institute on Drug Abuse",
+        "prime_sponsor": null,
+        "sponsor_award_number": "1RF1DA056402-01A1",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-30",
+        "end_date": "2027-09-29",
+        "obligated_total_usd": 1080885,
+        "expected_total_usd": 1080885,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-10311-A000",
+        "institutional_award_number": "23-10311-A000",
+        "institutional_award_line": "23-10311-A0001-0",
+        "title": "Novel multimodal neural, physiological, and behavioral sensing and machine learning for mental states",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Institute of Mental Health",
+        "prime_sponsor": null,
+        "sponsor_award_number": "1R61MH135407-01",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Clinical Trial",
+        "status": "Active",
+        "start_date": "2024-02-01",
+        "end_date": "2027-11-30",
+        "obligated_total_usd": 1029146,
+        "expected_total_usd": 3971910,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1736-A0001",
+        "institutional_award_number": "24-1736-A0001",
+        "institutional_award_line": "24-1736-A0001-1",
+        "title": "Dynamical modeling of the neural and behavioral effects of deep brain stimulation in OCD",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "New Venture Fund",
+        "prime_sponsor": null,
+        "sponsor_award_number": "NVF-FFOR-University of Southern California-Subgrant- 023367-2024-02-01",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-02-01",
+        "end_date": "2027-01-31",
+        "obligated_total_usd": 660000,
+        "expected_total_usd": 660000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-7382-A0001",
+        "institutional_award_number": "23-7382-A0001",
+        "institutional_award_line": "23-7382-A0001-2",
+        "title": "Responsive Neurostimulation for Treatment Resistant Depression",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "University of California San Francisco-UCSF",
+        "prime_sponsor": "National Institute of Neurological Disorders and Stroke",
+        "sponsor_award_number": "14701sc",
+        "prime_sponsor_award_number": "1UH3NS123310-01A1 REVISED",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-06-15",
+        "end_date": "2028-05-31",
+        "obligated_total_usd": 205455,
+        "expected_total_usd": 567695,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-3255-A0001",
+        "institutional_award_number": "23-3255-A0001",
+        "institutional_award_line": "23-3255-A0001-1",
+        "title": "Deep learning of brain network biomarkers for neuropsychiatric disorders",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "One Mind",
+        "prime_sponsor": null,
+        "sponsor_award_number": "015999-00001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2022-12-15",
+        "end_date": "2026-12-31",
+        "obligated_total_usd": 300000,
+        "expected_total_usd": 300000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2034-A0001",
+        "institutional_award_number": "23-2034-A0001",
+        "institutional_award_line": "23-2034-A0001-4",
+        "title": "CRCNS Research Proposal: Modeling neural dynamics of naturalistic movements across contexts",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "IIS-2113271",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2021-10-01",
+        "end_date": "2026-09-30",
+        "obligated_total_usd": 1000000,
+        "expected_total_usd": 1000000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-1594-A0001",
+        "institutional_award_number": "23-1594-A0001",
+        "institutional_award_line": "23-1594-A0001-8",
+        "title": "Model-based neural control of brain stimulation for neuropsychiatric disorders",
+        "faculty_name_as_reported": "Maryam Shanechi",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Institute of Mental Health",
+        "prime_sponsor": null,
+        "sponsor_award_number": "5R01MH123770-05",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Clinical Trial",
+        "status": "Active",
+        "start_date": "2021-04-01",
+        "end_date": "2027-03-31",
+        "obligated_total_usd": 2952288,
+        "expected_total_usd": 2952288,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 8,
+      "detailed_expected_total_usd": 12955048,
+      "legacy_record_count": 8,
+      "legacy_total_award_amount_usd": 12955048,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-maryam_shanechi-1",
+      "source_type": "notion_export",
+      "title": "Maryam Shanechi Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Maryam Shanechi 35925febe2d6810c9574cc317d2b56fb.md",
+      "web_url": "https://www.notion.so/35825febe2d68169b5a3eb14427f0b64",
+      "source_version": null,
+      "fingerprint_sha256": "86E1447E8BB8C397FB5C9D3A11C6EFC2B8A153B34FC34660C1A1235CAD0720EF",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local source reviewed for pilot package",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Migration evidence; upstream faculty links are preserved."
+    },
+    {
+      "source_id": "src-official-maryam_shanechi-20260812",
+      "source_type": "official_faculty_profile",
+      "title": "Maryam Shanechi USC faculty profile",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0004_maryam_shanechi_2026-08-12.json",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Shanechi/Maryam",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "A2A1C55D02EB687590F85BC19CA1E9CF70E4426B11CAFBAC6C50983E86A41D5D",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed before broader external search."
+    },
+    {
+      "source_id": "src-research-maryam_shanechi-20260812",
+      "source_type": "faculty_research_website",
+      "title": "Maryam Shanechi faculty or lab research website",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0004_maryam_shanechi_2026-08-12.json",
+      "web_url": "https://nseip.usc.edu/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "A2A1C55D02EB687590F85BC19CA1E9CF70E4426B11CAFBAC6C50983E86A41D5D",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed faculty-specific pages: https://nseip.usc.edu/"
+    },
+    {
+      "source_id": "src-publications-maryam_shanechi-20260812",
+      "source_type": "faculty_publication_list",
+      "title": "Maryam Shanechi faculty-specific publication list",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0004_maryam_shanechi_2026-08-12.json",
+      "web_url": "https://nseip.usc.edu/publications/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "A2A1C55D02EB687590F85BC19CA1E9CF70E4426B11CAFBAC6C50983E86A41D5D",
+      "authority_level": "Faculty-specific publication discovery source",
+      "qa_status": "Recent records captured for human review",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Use faculty-specific source for discovery; reconcile article-level DOI or publisher links before production display."
+    },
+    {
+      "source_id": "src-scholar-maryam_shanechi-20260812",
+      "source_type": "publication_provider_snapshot",
+      "title": "Maryam Shanechi Google Scholar identity link",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0004_maryam_shanechi_2026-08-12.json",
+      "web_url": "https://scholar.google.com/citations?user=csGAeKgAAAAJ&hl=en",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "A2A1C55D02EB687590F85BC19CA1E9CF70E4426B11CAFBAC6C50983E86A41D5D",
+      "authority_level": "Publication-provider identity link for future refresh",
+      "qa_status": "Identity verified; top three cited records captured",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Profile name: Maryam M. Shanechi. Affiliation evidence: Departments of Electrical & Computer Engineering, Computer Science, Biomedical Engineering, USC"
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion only",
+    "missing_sources": [
+      "Current faculty CV",
+      "Article-level DOI or publisher-link reconciliation",
+      "Official USC patent/invention reconciliation"
+    ],
+    "conflicts": [
+      "The Notion migration record labels grants and publications incomplete; direct faculty sources and the award workbook were used to improve the draft."
+    ],
+    "duplicate_sources": [],
+    "warnings": [],
+    "source_reference_count": 7
+  },
+  "refresh": {
+    "package_version": "0.2",
+    "created_at": "2026-08-12T19:18:10.380Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0004_maryam_m_shanechi_draft_v0.1.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

@@ -1,0 +1,778 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0005",
+  "identity": {
+    "canonical_name": "Viktor K. Prasanna",
+    "preferred_display_name": "Viktor K. Prasanna",
+    "publishing_names": [
+      "Viktor Prasanna",
+      "V. K. Prasanna"
+    ],
+    "usc_email": "prasanna@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Charles Lee Powell Chair in Engineering and Professor of Electrical and Computer Engineering and Computer Science",
+        "unit": "Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "appointment_type": "Primary or joint appointment summary",
+        "source_refs": [
+          "src-notion-viktor_prasanna-1",
+          "src-pilot-roster-20260806",
+          "src-official-viktor_prasanna-20260812"
+        ],
+        "review_status": "Proposed from official USC profile reviewed 2026-08-12"
+      }
+    ],
+    "source_refs": [
+      "src-notion-viktor_prasanna-1",
+      "src-pilot-roster-20260806",
+      "src-official-viktor_prasanna-20260812"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Prasanna/Viktor",
+      "source_refs": [
+        "src-official-viktor_prasanna-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "faculty_or_lab_research",
+      "url": "https://sites.usc.edu/prasanna/",
+      "source_refs": [
+        "src-research-viktor_prasanna-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://sites.usc.edu/prasanna/publications/",
+      "source_refs": [
+        "src-publications-viktor_prasanna-20260812"
+      ],
+      "review_status": "Reviewed 2026-08-12"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?user=4FQXSP8AAAAJ&hl=en",
+      "source_refs": [
+        "src-scholar-viktor_prasanna-20260812"
+      ],
+      "review_status": "Identity verified and cited view captured 2026-08-12"
+    }
+  ],
+  "research": {
+    "summary": "Research spans high-performance and reconfigurable computing, FPGA accelerators, parallel and distributed systems, cloud and edge computing, machine learning, and data-intensive applications including smart energy systems.",
+    "domains": [
+      "High-performance computing",
+      "Reconfigurable computing",
+      "FPGA systems",
+      "Parallel and distributed computing",
+      "Edge and cloud computing"
+    ],
+    "methods": [
+      "Hardware-software co-design",
+      "Accelerator architecture",
+      "Graph algorithms",
+      "Machine learning systems",
+      "Performance and energy optimization"
+    ],
+    "applications": [
+      "Large language model inference",
+      "Graph analytics",
+      "Cryptography",
+      "Smart energy systems",
+      "Edge artificial intelligence"
+    ],
+    "source_refs": [
+      "src-notion-viktor_prasanna-1",
+      "src-official-viktor_prasanna-20260812",
+      "src-research-viktor_prasanna-20260812"
+    ],
+    "review_status": "Proposed from local and faculty-specific sources reviewed 2026-08-12"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2026-RECENT-01",
+        "title": "HERA: A Bandwidth-efficient Accelerator for Fully Homomorphic Encryption on HBM-enabled FPGA",
+        "venue": "ACM/SIGDA International Symposium on Field-Programmable Gate Arrays",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-viktor_prasanna-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2026-RECENT-02",
+        "title": "RECIPE-TKG: From Sparse History to Structured Reasoning for LLM-based Temporal Knowledge Graph Completion",
+        "venue": "EACL",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-viktor_prasanna-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2026-RECENT-03",
+        "title": "NysX: An Accurate and Energy-Efficient FPGA Accelerator for Hyperdimensional Graph Classification at the Edge",
+        "venue": "ACM/SIGDA International Symposium on Field-Programmable Gate Arrays",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-viktor_prasanna-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2025-RECENT-04",
+        "title": "ELLIE: Energy-Efficient LLM Inference at the Edge Via Prefill-Decode Splitting",
+        "venue": "ASAP",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-viktor_prasanna-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2025-RECENT-05",
+        "title": "Mixture of Scope Experts at Test: Generalizing Deeper GNNs with Shallow Variants",
+        "venue": "NeurIPS",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-viktor_prasanna-20260812"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2019-CITED-01",
+        "title": "GraphSAINT: Graph sampling based inductive learning method",
+        "authors": "H Zeng, H Zhou, A Srivastava, R Kannan, V Prasanna",
+        "venue": "arXiv preprint arXiv:1907.04931",
+        "publication_year": 2019,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4FQXSP8AAAAJ&citation_for_view=4FQXSP8AAAAJ%3AzfsRRabFVBUC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 1932,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-viktor_prasanna-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-2001-CITED-02",
+        "title": "Fast regular expression matching using FPGAs",
+        "authors": "R Sidhu, VK Prasanna",
+        "venue": "9th Annual IEEE Symposium on Field-Programmable Custom Computing Machines",
+        "publication_year": 2001,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4FQXSP8AAAAJ&citation_for_view=4FQXSP8AAAAJ%3AufrVoPGSRksC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 879,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-viktor_prasanna-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0005-1993-CITED-03",
+        "title": "Heterogeneous computing: Challenges and opportunities",
+        "authors": "AA Khokhar, VK Prasanna, ME Shaaban, CL Wang",
+        "venue": "Computer 26 (6), 18-27",
+        "publication_year": 1993,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4FQXSP8AAAAJ&citation_for_view=4FQXSP8AAAAJ%3ALkGwnXOMwfcC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 500,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-viktor_prasanna-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0005-2026-RECENT-01",
+        "PUB-VIT-FAC-0005-2026-RECENT-02",
+        "PUB-VIT-FAC-0005-2026-RECENT-03",
+        "PUB-VIT-FAC-0005-2025-RECENT-04",
+        "PUB-VIT-FAC-0005-2025-RECENT-05"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0005-2019-CITED-01",
+        "PUB-VIT-FAC-0005-2001-CITED-02",
+        "PUB-VIT-FAC-0005-1993-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent publications are retained from faculty-specific sources. The top three most-cited records were captured from the identity-matched Google Scholar profile on 2026-08-12. DOI/publisher-link reconciliation remains a production enrichment task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:25-2153-A0001",
+        "institutional_award_number": "25-2153-A0001",
+        "institutional_award_line": "25-2153-A0001",
+        "title": "Game theoretic modeling for warfare strategy",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Office",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF-26-2-A045",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Cooperative Agreement",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2026-03-23",
+        "end_date": "2029-03-22",
+        "obligated_total_usd": 120000,
+        "expected_total_usd": 497856,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-1016-A0001",
+        "institutional_award_number": "25-1016-A0001",
+        "institutional_award_line": "25-1016-A0001",
+        "title": "OAC Core: Accurate and Scalable Temporal Graph ML on Distributed Heterogeneous Systems",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "OAC-2505107",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-05-01",
+        "end_date": "2028-04-30",
+        "obligated_total_usd": 599999,
+        "expected_total_usd": 599999,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1365-A0001",
+        "institutional_award_number": "24-1365-A0001",
+        "institutional_award_line": "24-1365-A0001",
+        "title": "Collaborative Research: Elements: Portable Library for Reinforcement Learning on Heterogeneous Cloud Cyberinfrastructure",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "OAC-2411446",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-15",
+        "end_date": "2027-08-31",
+        "obligated_total_usd": 505616,
+        "expected_total_usd": 505616,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2476-A0001",
+        "institutional_award_number": "24-2476-A0001",
+        "institutional_award_line": "24-2476-A0001-2",
+        "title": "End-to-End Temporal Graph Machine Learning System for Real-Time Decision Support on Streaming Data",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Laboratory",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF2420194",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-08-30",
+        "end_date": "2027-08-29",
+        "obligated_total_usd": 1143798,
+        "expected_total_usd": 2783318,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-1189-A0001",
+        "institutional_award_number": "25-1189-A0001",
+        "institutional_award_line": "25-1189-A0001",
+        "title": "IDEAS Phase I Industry Membership Manager (Research, Development, and Implementation of Robust Multi-modal ML Models for Object Recognition at the Edge)",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Arizona State University",
+        "prime_sponsor": "National Science Foundation",
+        "sponsor_award_number": "ASUB00001781",
+        "prime_sponsor_award_number": "2231620",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-08-01",
+        "end_date": "2028-02-29",
+        "obligated_total_usd": 75000,
+        "expected_total_usd": 75000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-3112-A0001",
+        "institutional_award_number": "24-3112-A0001",
+        "institutional_award_line": "24-3112-A0001-1",
+        "title": "Reinforcement Learning Acceleration on Heterogeneous Platforms",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Intel Corporation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "24-3112-A0001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-07-01",
+        "end_date": "2035-06-30",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-11464-A000",
+        "institutional_award_number": "23-11464-A000",
+        "institutional_award_line": "23-11464-A0001-0",
+        "title": "Hardware Software Co-design for Graph Machine Learning on Heterogeneous Architectures",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Semiconductor Research Corporation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "2024-AH-3207",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Contract",
+        "activity_type": "Research-Development",
+        "status": "Active",
+        "start_date": "2024-01-01",
+        "end_date": "2026-12-31",
+        "obligated_total_usd": 105000,
+        "expected_total_usd": 315000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-9850-A0001",
+        "institutional_award_number": "23-9850-A0001",
+        "institutional_award_line": "23-9850-A0001",
+        "title": "Elements: Portable Library for Homomorphic Encrypted Machine Learning on FPGA Accelerated Cloud Cyberinfrastructure",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "OAC-2311870",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-10-01",
+        "end_date": "2026-09-30",
+        "obligated_total_usd": 599992,
+        "expected_total_usd": 599992,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-10342-A000",
+        "institutional_award_number": "23-10342-A000",
+        "institutional_award_line": "23-10342-A0001-0",
+        "title": "Advanced AI/ML Multi-Modal Techniques and Acceleration for Next Generation Robust Object Recognition Systems",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Laboratory",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF-23-2-0186",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Cooperative Agreement",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2023-09-11",
+        "end_date": "2025-09-10",
+        "obligated_total_usd": 1363000,
+        "expected_total_usd": 2982587,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-8501-A0001",
+        "institutional_award_number": "23-8501-A0001",
+        "institutional_award_line": "23-8501-A0001-1",
+        "title": "Enabling Low Latency AI/ML Workloads via Wafer Scale Acceleration",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Office",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF-23-1-0237",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Equipment",
+        "status": "Closed",
+        "start_date": "2023-07-01",
+        "end_date": "2024-06-30",
+        "obligated_total_usd": 1000000,
+        "expected_total_usd": 1000000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-8653-A0001",
+        "institutional_award_number": "23-8653-A0001",
+        "institutional_award_line": "23-8653-A0001-4",
+        "title": "IUCRC Phase I University of Southern California: Center for Intelligent Distributed Embedded Applications and Systems (IDEAS)",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CNS-2231662",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-04-01",
+        "end_date": "2028-03-31",
+        "obligated_total_usd": 507825,
+        "expected_total_usd": 609381,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-11144-A000",
+        "institutional_award_number": "23-11144-A000",
+        "institutional_award_line": "23-11144-A0001-0",
+        "title": "SPX: Collaborative Research: FASTLEAP: FPGA based compact Deep Learning Platform",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Purdue University",
+        "prime_sponsor": "National Science Foundation",
+        "sponsor_award_number": "10002252-002",
+        "prime_sponsor_award_number": "2333009-CCF",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2023-01-01",
+        "end_date": "2023-11-30",
+        "obligated_total_usd": 362162,
+        "expected_total_usd": 362162,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-3041-A0001",
+        "institutional_award_number": "23-3041-A0001",
+        "institutional_award_line": "23-3041-A0001-1",
+        "title": "Machine Learning on Graphs for user interest Modeling and Personalized Recommendation",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Meta Platforms, Inc.",
+        "prime_sponsor": null,
+        "sponsor_award_number": "INB2675366",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Contract",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-10-20",
+        "end_date": "2023-12-31",
+        "obligated_total_usd": 87442,
+        "expected_total_usd": 87442,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2880-A0001",
+        "institutional_award_number": "23-2880-A0001",
+        "institutional_award_line": "23-2880-A0001-3",
+        "title": "Streaming Graph Machine Learning for Real-time Decision Support at the Edge",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Laboratory",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF2220159",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2022-08-30",
+        "end_date": "2026-08-29",
+        "obligated_total_usd": 1385916,
+        "expected_total_usd": 1385916,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2637-A0001",
+        "institutional_award_number": "23-2637-A0001",
+        "institutional_award_line": "23-2637-A0001-1",
+        "title": "OAC Core: Scalable Graph ML on Distributed Heterogeneous Systems",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "OAC-2209563",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Applied",
+        "status": "In Closeout",
+        "start_date": "2022-08-15",
+        "end_date": "2025-07-31",
+        "obligated_total_usd": 619727,
+        "expected_total_usd": 619727,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-1721-A0001",
+        "institutional_award_number": "23-1721-A0001",
+        "institutional_award_line": "23-1721-A0001-2",
+        "title": "SaTC: CORE: Small: Accelerating Privacy Preserving Deep Learning for Real-time Secure Applications",
+        "faculty_name_as_reported": "Viktor Prasanna",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CNS-2104264",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Closed",
+        "start_date": "2021-07-01",
+        "end_date": "2025-06-30",
+        "obligated_total_usd": 499548,
+        "expected_total_usd": 499548,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 16,
+      "detailed_expected_total_usd": 13023544,
+      "legacy_record_count": 16,
+      "legacy_total_award_amount_usd": 13023544,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-viktor_prasanna-1",
+      "source_type": "notion_export",
+      "title": "Viktor K. Prasanna Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Viktor Prasanna 35925febe2d68125898ecf0a12fcb299.md",
+      "web_url": "https://www.notion.so/35825febe2d68163a9a6f37dffc3fd97",
+      "source_version": null,
+      "fingerprint_sha256": "1AF6DEBE3ABFF019AE26E869227EBB535F6180F6A5227D32BE461EBDE7C1EE07",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local source reviewed for pilot package",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Migration evidence; upstream faculty links are preserved."
+    },
+    {
+      "source_id": "src-official-viktor_prasanna-20260812",
+      "source_type": "official_faculty_profile",
+      "title": "Viktor K. Prasanna USC faculty profile",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0005_viktor_k_prasanna_2026-08-12.json",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Prasanna/Viktor",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "28152E7A0AC821A141EE7F7BFCD9E9DA898922A27DDE51B80442D5BE5F0D057C",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed before broader external search."
+    },
+    {
+      "source_id": "src-research-viktor_prasanna-20260812",
+      "source_type": "faculty_research_website",
+      "title": "Viktor K. Prasanna faculty or lab research website",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0005_viktor_k_prasanna_2026-08-12.json",
+      "web_url": "https://sites.usc.edu/prasanna/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "28152E7A0AC821A141EE7F7BFCD9E9DA898922A27DDE51B80442D5BE5F0D057C",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed faculty-specific pages: https://sites.usc.edu/prasanna/"
+    },
+    {
+      "source_id": "src-publications-viktor_prasanna-20260812",
+      "source_type": "faculty_publication_list",
+      "title": "Viktor K. Prasanna faculty-specific publication list",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0005_viktor_k_prasanna_2026-08-12.json",
+      "web_url": "https://sites.usc.edu/prasanna/publications/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "28152E7A0AC821A141EE7F7BFCD9E9DA898922A27DDE51B80442D5BE5F0D057C",
+      "authority_level": "Faculty-specific publication discovery source",
+      "qa_status": "Recent records captured for human review",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Use faculty-specific source for discovery; reconcile article-level DOI or publisher links before production display."
+    },
+    {
+      "source_id": "src-scholar-viktor_prasanna-20260812",
+      "source_type": "publication_provider_snapshot",
+      "title": "Viktor K. Prasanna Google Scholar identity link",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0005_viktor_k_prasanna_2026-08-12.json",
+      "web_url": "https://scholar.google.com/citations?user=4FQXSP8AAAAJ&hl=en",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "28152E7A0AC821A141EE7F7BFCD9E9DA898922A27DDE51B80442D5BE5F0D057C",
+      "authority_level": "Publication-provider identity link for future refresh",
+      "qa_status": "Identity verified; top three cited records captured",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Profile name: Viktor K. Prasanna. Affiliation evidence: University of Southern California"
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion only",
+    "missing_sources": [
+      "Current faculty CV",
+      "Article-level DOI or publisher-link reconciliation",
+      "Official USC patent/invention reconciliation"
+    ],
+    "conflicts": [
+      "Grant identifiers missing from parts of the migration evidence; the institutional award workbook is retained as the award baseline."
+    ],
+    "duplicate_sources": [],
+    "warnings": [],
+    "source_reference_count": 7
+  },
+  "refresh": {
+    "package_version": "0.2",
+    "created_at": "2026-08-12T19:18:10.387Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0005_viktor_k_prasanna_draft_v0.1.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

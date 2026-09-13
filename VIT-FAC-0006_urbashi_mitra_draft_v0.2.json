@@ -1,0 +1,511 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0006",
+  "identity": {
+    "canonical_name": "Urbashi Mitra",
+    "preferred_display_name": "Urbashi Mitra",
+    "publishing_names": [
+      "U. Mitra"
+    ],
+    "usc_email": "ubli@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Gordon S. Marshall Chair in Engineering and Professor of Electrical and Computer Engineering and Computer Science",
+        "unit": "Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "appointment_type": "Primary or joint appointment summary",
+        "source_refs": [
+          "src-notion-urbashi_mitra-1",
+          "src-pilot-roster-20260806",
+          "src-official-urbashi_mitra-20260812"
+        ],
+        "review_status": "Proposed from official USC profile reviewed 2026-08-12"
+      }
+    ],
+    "source_refs": [
+      "src-notion-urbashi_mitra-1",
+      "src-pilot-roster-20260806",
+      "src-official-urbashi_mitra-20260812"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Mitra/Urbashi",
+      "source_refs": [
+        "src-official-urbashi_mitra-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "faculty_or_lab_research",
+      "url": "https://ee.usc.edu/~ubli/ubli.html",
+      "source_refs": [
+        "src-research-urbashi_mitra-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://ee.usc.edu/~ubli/ubli.html",
+      "source_refs": [
+        "src-publications-urbashi_mitra-20260812"
+      ],
+      "review_status": "Reviewed 2026-08-12"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?user=SUAT64AAAAJ&hl=en",
+      "source_refs": [
+        "src-scholar-urbashi_mitra-20260812"
+      ],
+      "review_status": "Identity link retained; metrics refresh pending"
+    }
+  ],
+  "research": {
+    "summary": "Research addresses joint communication, sensing, and control in networked systems, with work on wireless and underwater communications, distributed sensing, microbial communication networks, and statistical inference using sparse and low-rank structure.",
+    "domains": [
+      "Wireless communications",
+      "Underwater communications",
+      "Joint communication, sensing, and control",
+      "Sensor networks",
+      "Biological and microbial communications"
+    ],
+    "methods": [
+      "Statistical signal processing",
+      "Sparse and low-rank modeling",
+      "Distributed inference",
+      "Network optimization",
+      "Information theory"
+    ],
+    "applications": [
+      "Underwater robotic sensing",
+      "Networked autonomous systems",
+      "Wireless sensing",
+      "Environmental monitoring",
+      "Biological communication systems"
+    ],
+    "source_refs": [
+      "src-notion-urbashi_mitra-1",
+      "src-official-urbashi_mitra-20260812",
+      "src-research-urbashi_mitra-20260812"
+    ],
+    "review_status": "Proposed from local and faculty-specific sources reviewed 2026-08-12"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-VIT-FAC-0006-2010-CITED-01",
+        "title": "Residential demand response using reinforcement learning",
+        "venue": null,
+        "publication_year": 2010,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 394,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-urbashi_mitra-1",
+          "src-scholar-urbashi_mitra-20260812"
+        ],
+        "review_status": "Proposed from migration evidence; Refresh Required; invalid DOI-like citation count removed"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0006-2003-CITED-02",
+        "title": "Boundary estimation in sensor networks: Theory and methods",
+        "venue": null,
+        "publication_year": 2003,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 256,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-urbashi_mitra-1",
+          "src-scholar-urbashi_mitra-20260812"
+        ],
+        "review_status": "Proposed from migration evidence; Refresh Required; invalid DOI-like citation count removed"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0006-2012-CITED-03",
+        "title": "Underwater data collection using robotic sensor networks",
+        "venue": null,
+        "publication_year": 2012,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 255,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-urbashi_mitra-1",
+          "src-scholar-urbashi_mitra-20260812"
+        ],
+        "review_status": "Proposed from migration evidence; Refresh Required; invalid DOI-like citation count removed"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0006-2010-CITED-01",
+        "PUB-VIT-FAC-0006-2003-CITED-02",
+        "PUB-VIT-FAC-0006-2012-CITED-03"
+      ]
+    },
+    "coverage_note": "No reliable current recent-publication set was captured; do not interpret older migration records as active research evidence."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:24-1185-A0001",
+        "institutional_award_number": "24-1185-A0001",
+        "institutional_award_line": "24-1185-A0001-1",
+        "title": "PIPP Phase II: Theme 1: Center for Insights into the Pre-emergence Phase of Pandemics (NSF CPI)",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "University of California Davis",
+        "prime_sponsor": "National Science Foundation",
+        "sponsor_award_number": "A25-0139-S009",
+        "prime_sponsor_award_number": "DBI-2412522",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-01",
+        "end_date": "2031-08-31",
+        "obligated_total_usd": 418725,
+        "expected_total_usd": 2049995,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1579-A0001",
+        "institutional_award_number": "24-1579-A0001",
+        "institutional_award_line": "24-1579-A0001",
+        "title": "Student Travel Grant for the 2024 IEEE International Symposium on Information Theory (ISIT 2024)",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Office",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF2410122",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Conference",
+        "status": "In Closeout",
+        "start_date": "2024-05-01",
+        "end_date": "2025-04-30",
+        "obligated_total_usd": 10000,
+        "expected_total_usd": 10000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1101-A0001",
+        "institutional_award_number": "24-1101-A0001",
+        "institutional_award_line": "24-1101-A0001-1",
+        "title": "Decentralized Methods for Ensembling of Distinct Markovian Environments for Distributed Learning and Policy Optimization",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Army Research Office",
+        "prime_sponsor": null,
+        "sponsor_award_number": "W911NF2410094",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2024-03-01",
+        "end_date": "2025-08-30",
+        "obligated_total_usd": 60000,
+        "expected_total_usd": 60000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1285-A0001",
+        "institutional_award_number": "24-1285-A0001",
+        "institutional_award_line": "24-1285-A0001-2",
+        "title": "Travel: NSF Student Travel Grant for the 2024 IEEE International Symposium on Information Theory (ISIT 2024)",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CCF-2406983",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Conference",
+        "status": "Closed",
+        "start_date": "2024-01-01",
+        "end_date": "2025-12-31",
+        "obligated_total_usd": 20000,
+        "expected_total_usd": 20000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-9842-A0001",
+        "institutional_award_number": "23-9842-A0001",
+        "institutional_award_line": "23-9842-A0001",
+        "title": "CIF: Small: Learning, Optimization & Analysis for Biologically Inspired Community Networks",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CCF-23111653",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-10-01",
+        "end_date": "2026-09-30",
+        "obligated_total_usd": 599999,
+        "expected_total_usd": 599999,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-3055-A0001",
+        "institutional_award_number": "23-3055-A0001",
+        "institutional_award_line": "23-3055-A0001-2",
+        "title": "PIPP Phase 1: Transdisciplinary Innovation in Predictive Science for Emerging Infectious Disease and Spillover",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "University of California Davis",
+        "prime_sponsor": "National Science Foundation",
+        "sponsor_award_number": "A22-2666-S003",
+        "prime_sponsor_award_number": "CCF-2200221",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-08-01",
+        "end_date": "2024-07-31",
+        "obligated_total_usd": 150000,
+        "expected_total_usd": 150000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2386-A0001",
+        "institutional_award_number": "23-2386-A0001",
+        "institutional_award_line": "23-2386-A0001-5",
+        "title": "Active, Assured and Private Learning for Autonomous Networks",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Office of Naval Research",
+        "prime_sponsor": null,
+        "sponsor_award_number": "N00014-22-1-2363",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-07-01",
+        "end_date": "2025-06-30",
+        "obligated_total_usd": 1549731,
+        "expected_total_usd": 1549731,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2731-A0001",
+        "institutional_award_number": "23-2731-A0001",
+        "institutional_award_line": "23-2731-A0001-3",
+        "title": "RINGS: LARA: Layering for Active Resiliency and Awareness in Next-generation Wireless Networks",
+        "faculty_name_as_reported": "Urbashi Mitra",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "University of California San Diego",
+        "prime_sponsor": "National Science Foundation",
+        "sponsor_award_number": "705319",
+        "prime_sponsor_award_number": "CNS-2148313",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-05-01",
+        "end_date": "2025-12-31",
+        "obligated_total_usd": 333000,
+        "expected_total_usd": 333000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 8,
+      "detailed_expected_total_usd": 4772725,
+      "legacy_record_count": 8,
+      "legacy_total_award_amount_usd": 4772725,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-urbashi_mitra-1",
+      "source_type": "notion_export",
+      "title": "Urbashi Mitra Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Urbashi Mitra 35925febe2d68135bd8deb8696efc495.md",
+      "web_url": "https://www.notion.so/35925febe2d68135bd8deb8696efc495",
+      "source_version": null,
+      "fingerprint_sha256": "A518A9E2ECF7D281DE18C2B6C82FB2343AB15906E07A6FA9A8E2FD6250C846BD",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local source reviewed for pilot package",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Migration evidence; upstream faculty links are preserved."
+    },
+    {
+      "source_id": "src-official-urbashi_mitra-20260812",
+      "source_type": "official_faculty_profile",
+      "title": "Urbashi Mitra USC faculty profile",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0006_urbashi_mitra_2026-08-12.json",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Mitra/Urbashi",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "DDAEC8B7AF740830D319036A2A19F0665B47E142E7B1AD6C115D1B8601A0B815",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed before broader external search."
+    },
+    {
+      "source_id": "src-research-urbashi_mitra-20260812",
+      "source_type": "faculty_research_website",
+      "title": "Urbashi Mitra faculty or lab research website",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0006_urbashi_mitra_2026-08-12.json",
+      "web_url": "https://ee.usc.edu/~ubli/ubli.html",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "DDAEC8B7AF740830D319036A2A19F0665B47E142E7B1AD6C115D1B8601A0B815",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed faculty-specific pages: https://ee.usc.edu/~ubli/ubli.html"
+    },
+    {
+      "source_id": "src-publications-urbashi_mitra-20260812",
+      "source_type": "faculty_publication_list",
+      "title": "Urbashi Mitra faculty-specific publication list",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0006_urbashi_mitra_2026-08-12.json",
+      "web_url": "https://ee.usc.edu/~ubli/ubli.html",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "DDAEC8B7AF740830D319036A2A19F0665B47E142E7B1AD6C115D1B8601A0B815",
+      "authority_level": "Faculty-specific publication discovery source",
+      "qa_status": "Reviewed; reliable current recent-publication set not captured",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Use faculty-specific source for discovery; reconcile article-level DOI or publisher links before production display."
+    },
+    {
+      "source_id": "src-scholar-urbashi_mitra-20260812",
+      "source_type": "publication_provider_identity_link",
+      "title": "Urbashi Mitra Google Scholar identity link",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0006_urbashi_mitra_2026-08-12.json",
+      "web_url": "https://scholar.google.com/citations?user=SUAT64AAAAJ&hl=en",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "DDAEC8B7AF740830D319036A2A19F0665B47E142E7B1AD6C115D1B8601A0B815",
+      "authority_level": "Publication-provider identity link for future refresh",
+      "qa_status": "Identity link retained; citation views not captured unless explicitly stated",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Do not use citation counts for ranking without a dated provider snapshot."
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion only",
+    "missing_sources": [
+      "Current faculty CV",
+      "Current recent-publication view from a faculty or approved publication-provider source",
+      "Article-level DOI or publisher-link reconciliation",
+      "Official USC patent/invention reconciliation"
+    ],
+    "conflicts": [
+      "The migration record's section labeled recent publications contains older works, so those records were not used as evidence of current research."
+    ],
+    "duplicate_sources": [],
+    "warnings": [
+      "Most-cited counts are undated migration evidence and must be refreshed before ranking.",
+      "No reliable current recent-publication set was captured; active-research ranking must rely on other dated evidence until refreshed."
+    ],
+    "source_reference_count": 7
+  },
+  "refresh": {
+    "package_version": "0.2",
+    "created_at": "2026-08-12T19:18:10.393Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0006_urbashi_mitra_draft_v0.1.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

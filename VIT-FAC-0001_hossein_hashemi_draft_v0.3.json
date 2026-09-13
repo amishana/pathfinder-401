@@ -1,0 +1,739 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0001",
+  "identity": {
+    "canonical_name": "Hossein Hashemi",
+    "preferred_display_name": "Hossein Hashemi",
+    "publishing_names": [],
+    "usc_email": "hosseinh@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Ming Hsieh Faculty Fellow in Electrical and Computer Engineering and Professor of Electrical and Computer Engineering",
+        "unit": "Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "appointment_type": "Primary",
+        "source_refs": [
+          "src-notion-hossein_hashemi-1",
+          "src-official-hossein_hashemi-20260807"
+        ],
+        "review_status": "Confirmed from official USC profile on 2026-08-07"
+      }
+    ],
+    "source_refs": [
+      "src-notion-hossein_hashemi-1",
+      "src-pilot-roster-20260806",
+      "src-official-hossein_hashemi-20260807"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Hashemi/Hossein",
+      "source_refs": [
+        "src-notion-hossein_hashemi-1",
+        "src-official-hossein_hashemi-20260807"
+      ],
+      "review_status": "Verified from reviewer-supplied or directly linked USC source"
+    },
+    {
+      "link_type": "lab",
+      "url": "https://hhlab.usc.edu/",
+      "source_refs": [
+        "src-notion-hossein_hashemi-1",
+        "src-research-hossein_hashemi-20260807"
+      ],
+      "review_status": "Verified from official faculty page"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?hl=en&user=5lgiZoMAAAAJ",
+      "source_refs": [
+        "src-notion-hossein_hashemi-1",
+        "src-scholar-hossein_hashemi-20260807"
+      ],
+      "review_status": "Identity matched and snapshot captured 2026-08-07"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://scholar.google.com/citations?hl=en&user=5lgiZoMAAAAJ&view_op=list_works&sortby=pubdate",
+      "source_refs": [
+        "src-scholar-hossein_hashemi-20260807"
+      ],
+      "review_status": "Current provider view captured 2026-08-07"
+    }
+  ],
+  "research": {
+    "summary": "Current work spans RF and millimeter-wave integrated circuits and systems, reconfigurable radios, phased arrays and beamforming, photonic integrated systems and optical phased arrays, low-power circuits, biomedical implants, internet-of-things devices, and wireless energy harvesting. The 2025-2026 publication record also shows active work in algorithmic and inverse design of nonintuitive RF/mm-wave networks, FMCW LiDAR, and ingestible sensing electronics.",
+    "domains": [
+      "RF/mm-wave integrated circuits",
+      "Photonic integrated systems",
+      "Neural-interface electronics",
+      "Algorithmic and inverse RF design",
+      "Biomedical and ingestible electronics"
+    ],
+    "methods": [
+      "Integrated-circuit design",
+      "Phased-array architecture",
+      "Optical/RF co-integration",
+      "Neural interface system design",
+      "Phased-array and beamforming architecture",
+      "Inverse design and optimization"
+    ],
+    "applications": [
+      "Wireless communications",
+      "LiDAR",
+      "Radar",
+      "Implantable biomedical devices",
+      "LiDAR and imaging",
+      "Radar and sensing",
+      "Biomedical implants and ingestible sensing",
+      "Internet of things"
+    ],
+    "source_refs": [
+      "src-notion-hossein_hashemi-1",
+      "src-official-hossein_hashemi-20260807",
+      "src-research-hossein_hashemi-20260807",
+      "src-scholar-hossein_hashemi-20260807"
+    ],
+    "review_status": "Proposed - reviewer-supplied and directly linked faculty-specific sources reviewed 2026-08-07"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-HASHEMI-2002-01",
+        "title": "Concurrent multiband low-noise amplifiers — theory, design, and applications",
+        "venue": "IEEE Transactions on Microwave Theory and Techniques",
+        "publication_year": 2002,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&citation_for_view=5lgiZoMAAAAJ:u5HHmVD_uO8C",
+        "selection_basis": [
+          "most_cited_legacy_view",
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 607,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-notion-hossein_hashemi-1",
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-HASHEMI-2017-01",
+        "title": "A monolithically integrated large-scale optical phased array in silicon-on-insulator CMOS",
+        "venue": "IEEE Journal of Solid-State Circuits",
+        "publication_year": 2017,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&citation_for_view=5lgiZoMAAAAJ:ZfRJV9d4-WMC",
+        "selection_basis": [
+          "most_cited_legacy_view",
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 402,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-notion-hossein_hashemi-1",
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-HASHEMI-2008-01",
+        "title": "mm-Wave silicon technology: 60 GHz and beyond",
+        "venue": "Springer",
+        "publication_year": 2008,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 359,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-hossein_hashemi-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-HASHEMI-2021-01",
+        "title": "A review of semiconductor-based monolithic optical phased array architectures",
+        "venue": "IEEE Open Journal of the Solid-State Circuits Society",
+        "publication_year": 2021,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-hossein_hashemi-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-HASHEMI-2021-02",
+        "title": "A bidirectional neural interface SoC with adaptive IIR stimulation artifact cancelers",
+        "venue": "IEEE Journal of Solid-State Circuits",
+        "publication_year": 2021,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-hossein_hashemi-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-HASHEMI-2021-03",
+        "title": "mm-wave mixer-first receiver with selective passive wideband low-pass filtering",
+        "venue": "IEEE Journal of Solid-State Circuits",
+        "publication_year": 2021,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-hossein_hashemi-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0001-2026-RECENT-01",
+        "title": "Mim Capacitor-Assisted Inverse Design of Nonintuitive Amplifiers",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&sortby=pubdate&citation_for_view=5lgiZoMAAAAJ:HeT0ZceujKMC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0001-2026-RECENT-02",
+        "title": "Multifunctional Optical Logic Gates Based on Ring Modulators and Photoconductive Diodes",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&sortby=pubdate&citation_for_view=5lgiZoMAAAAJ:yMeIxYmEMEAC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0001-2026-RECENT-03",
+        "title": "Single-chip End-to-End Ingestible Electronics for Gut Neurotransmitter Sensing",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&sortby=pubdate&citation_for_view=5lgiZoMAAAAJ:KbBQZpvPDL4C",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0001-2026-RECENT-04",
+        "title": "A nonintuitively frequency-staggered wideband mm-wave low-noise amplifier",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&sortby=pubdate&citation_for_view=5lgiZoMAAAAJ:fFSKOagxvKUC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0001-2026-RECENT-05",
+        "title": "Solid-state Swept Source Lidar: single-sweep-per-frame 3D FMCW lidar with OPA-plus-dispersion beam steering",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&sortby=pubdate&citation_for_view=5lgiZoMAAAAJ:OcBU2YAGkTUC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0001-2008-CITED-03",
+        "title": "mm-Wave silicon technology: 60GHz and beyond",
+        "venue": null,
+        "publication_year": 2008,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5lgiZoMAAAAJ&citation_for_view=5lgiZoMAAAAJ:qjMakFHDy7sC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 361,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-hossein_hashemi-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0001-2026-RECENT-01",
+        "PUB-VIT-FAC-0001-2026-RECENT-02",
+        "PUB-VIT-FAC-0001-2026-RECENT-03",
+        "PUB-VIT-FAC-0001-2026-RECENT-04",
+        "PUB-VIT-FAC-0001-2026-RECENT-05"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-HASHEMI-2002-01",
+        "PUB-HASHEMI-2017-01",
+        "PUB-VIT-FAC-0001-2008-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent and most-cited views were refreshed from the linked faculty Google Scholar profile on 2026-08-07. Citation-record URLs are preserved now; DOI/publisher-link reconciliation remains a production task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:25-0243-A0001",
+        "institutional_award_number": "25-0243-A0001",
+        "institutional_award_line": "25-0243-A0001-1",
+        "title": "IMAGINE: Inverse Methods And Generative AI for Algorithmic and Non-intuitive Design Explorations in RFICs",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Princeton University",
+        "prime_sponsor": "Natcast",
+        "sponsor_award_number": "SUB0000887",
+        "prime_sponsor_award_number": "NAT-RD-24-0001",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2025-06-09",
+        "end_date": "2025-08-25",
+        "obligated_total_usd": 1250000,
+        "expected_total_usd": 1250000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-1215-A0002",
+        "institutional_award_number": "25-1215-A0002",
+        "institutional_award_line": "25-1215-A0002-1",
+        "title": "Photonic Integrated Circuit (PIC) based telescope’s front-end for future space applications",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1720897",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Closed",
+        "start_date": "2025-04-28",
+        "end_date": "2025-09-28",
+        "obligated_total_usd": 0,
+        "expected_total_usd": 50000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-1215-A0003",
+        "institutional_award_number": "25-1215-A0003",
+        "institutional_award_line": "25-1215-A0003-2",
+        "title": "Photonic Integrated Circuit (PIC) based telescope’s front-end for future space applications",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1723583",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2025-04-28",
+        "end_date": "2026-03-29",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-1215-A0001",
+        "institutional_award_number": "25-1215-A0001",
+        "institutional_award_line": "25-1215-A0001",
+        "title": "Photonic Integrated Circuit (PIC) based telescope’s front-end for future space applications",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1716389",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2024-11-06",
+        "end_date": "2025-03-30",
+        "obligated_total_usd": 55000,
+        "expected_total_usd": 55000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2605-A0001",
+        "institutional_award_number": "24-2605-A0001",
+        "institutional_award_line": "24-2605-A0001",
+        "title": "Advanced N-Path Filter",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Northrop Grumman Corporation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "PO 5300110953",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Contract",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2024-08-13",
+        "end_date": "2024-12-20",
+        "obligated_total_usd": 80000,
+        "expected_total_usd": 80000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-11296-A000",
+        "institutional_award_number": "23-11296-A000",
+        "institutional_award_line": "23-11296-A0001",
+        "title": "Photonic Integrated Circuit (PIC) based telescope’s front-end for future space applications",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1710030",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2024-04-22",
+        "end_date": "2024-09-29",
+        "obligated_total_usd": 54000,
+        "expected_total_usd": 54000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2999-A0002",
+        "institutional_award_number": "23-2999-A0002",
+        "institutional_award_line": "23-2999-A0002",
+        "title": "Monolithic W-Band Frequency Synthesizer",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1703621",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2023-09-28",
+        "end_date": "2024-09-29",
+        "obligated_total_usd": 50000,
+        "expected_total_usd": 50000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-10528-A000",
+        "institutional_award_number": "23-10528-A000",
+        "institutional_award_line": "23-10528-A0001",
+        "title": "Ultra-wideband High Efficiency Power Amplifier for Multifunction RF Systems",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Alphacore, Inc.",
+        "prime_sponsor": "Air Force",
+        "sponsor_award_number": "7117",
+        "prime_sponsor_award_number": "FA865023P1018",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2023-04-12",
+        "end_date": "2023-10-11",
+        "obligated_total_usd": 45000,
+        "expected_total_usd": 45000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2910-A0001",
+        "institutional_award_number": "23-2910-A0001",
+        "institutional_award_line": "23-2910-A0001-1",
+        "title": "SWIFT: Opportunistic mm-Wave Receivers",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "ECCS-2229535",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-01-01",
+        "end_date": "2026-12-31",
+        "obligated_total_usd": 750000,
+        "expected_total_usd": 750000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2999-A0001",
+        "institutional_award_number": "23-2999-A0001",
+        "institutional_award_line": "23-2999-A0001-1",
+        "title": "Monolithic W-Band Frequency Synthesizer",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Jet Propulsion Laboratory, California Institute of Technology",
+        "prime_sponsor": "National Aeronautics and Space Administration",
+        "sponsor_award_number": "1686401",
+        "prime_sponsor_award_number": "80NM0018D0004",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Closed",
+        "start_date": "2022-10-04",
+        "end_date": "2023-09-24",
+        "obligated_total_usd": 50000,
+        "expected_total_usd": 50000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2138-A0001",
+        "institutional_award_number": "23-2138-A0001",
+        "institutional_award_line": "23-2138-A0001-3",
+        "title": "Ultra-thin Lens-less 3D Camera Based on Coherent Optical Phased Array Transceiver",
+        "faculty_name_as_reported": "Hossein Hashemi",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Samsung Electronics Company",
+        "prime_sponsor": null,
+        "sponsor_award_number": "014629-00001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Contract",
+        "activity_type": "Research-Applied",
+        "status": "In Closeout",
+        "start_date": "2021-11-01",
+        "end_date": "2024-08-31",
+        "obligated_total_usd": 150000,
+        "expected_total_usd": 150000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 11,
+      "detailed_expected_total_usd": 2634000,
+      "legacy_record_count": 11,
+      "legacy_total_award_amount_usd": 2634000,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [
+    {
+      "honor": "IEEE Fellow",
+      "year": null,
+      "source_refs": [
+        "src-notion-hossein_hashemi-1"
+      ],
+      "review_status": "Proposed"
+    }
+  ],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-hossein_hashemi-1",
+      "source_type": "notion_export",
+      "title": "Hossein Hashemi Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Hossein Hashemi 37625febe2d681d59270da5a47d2929c.md",
+      "web_url": "https://app.notion.com/p/37625febe2d681d59270da5a47d2929c",
+      "source_version": null,
+      "fingerprint_sha256": "EBA8179C953943D54904068158A5D378D52335DC070F3DA89361496DE5B41D89",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local export present; human review required",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Notion export is migration evidence; preserve its upstream links but do not treat it as the original authority."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0001_hossein_hashemi_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "93889D5D097169962918E6882057786F864C4334605F86A83F4731333EC7ABD4",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-official-hossein_hashemi-20260807",
+      "source_type": "official_faculty_profile",
+      "title": "Hossein Hashemi USC faculty profile",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Hashemi/Hossein",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "notes": "This page was supplied by the reviewer or reached directly from a supplied faculty-specific source."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0001_hossein_hashemi_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "93889D5D097169962918E6882057786F864C4334605F86A83F4731333EC7ABD4",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-research-hossein_hashemi-20260807",
+      "source_type": "faculty_research_website",
+      "title": "Hossein Hashemi faculty/lab research website",
+      "web_url": "https://hhlab.usc.edu/",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "notes": "Reviewed pages: https://hhlab.usc.edu/; https://hhlab.usc.edu/research/; https://hhlab.usc.edu/publications/"
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0001_hossein_hashemi_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "93889D5D097169962918E6882057786F864C4334605F86A83F4731333EC7ABD4",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-scholar-hossein_hashemi-20260807",
+      "source_type": "publication_provider_profile",
+      "title": "Hossein Hashemi Google Scholar profile",
+      "web_url": "https://scholar.google.com/citations?hl=en&user=5lgiZoMAAAAJ",
+      "authority_level": "Publication discovery and point-in-time citation snapshot",
+      "qa_status": "Faculty identity matched; recent and most-cited views captured",
+      "notes": "Use for discovery and dated citation views; reconcile public article links to DOI or publisher URLs before production display."
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion-only profile plus authoritative award detail",
+    "missing_sources": [
+      "Current faculty CV",
+      "Official USC patent/invention reconciliation",
+      "Article-level DOI or publisher-link reconciliation for newly discovered works"
+    ],
+    "conflicts": [],
+    "duplicate_sources": [],
+    "warnings": [
+      "Citation counts are point-in-time provider snapshots and must be refreshed before future ranking."
+    ],
+    "source_reference_count": 6
+  },
+  "refresh": {
+    "package_version": "0.3",
+    "created_at": "2026-08-12T19:18:10.332Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0001_hossein_hashemi_draft_v0.2.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-07",
+      "reviewed_by": "Blair Lake",
+      "reviewer_response": "https://scholar.google.com/citations?hl=en&user=5lgiZoMAAAAJ&view_op=list_works&sortby=pubdate",
+      "decision": "Approve with corrections",
+      "processing_outcome": "Reviewer-supplied URL and directly linked faculty-specific sources processed into package v0.2 before broader external search."
+    },
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

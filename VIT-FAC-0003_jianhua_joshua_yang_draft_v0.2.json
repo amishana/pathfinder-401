@@ -1,0 +1,642 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0003",
+  "identity": {
+    "canonical_name": "Jianhua (Joshua) Yang",
+    "preferred_display_name": "J. Joshua Yang",
+    "publishing_names": [
+      "Jianhua Yang",
+      "J. Joshua Yang",
+      "J. Yang"
+    ],
+    "usc_email": "jjoshuay@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Arthur B. Freeman Chair and Professor of Electrical and Computer Engineering; Director, Center of Excellence on Neuromorphic Computing",
+        "unit": "Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics / Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "appointment_type": "Primary or joint appointment summary",
+        "source_refs": [
+          "src-notion-joshua_yang-1",
+          "src-cv-joshua_yang-yangjjoshua_cv_0826",
+          "src-pilot-roster-20260806",
+          "src-official-joshua_yang-20260812"
+        ],
+        "review_status": "Proposed from official USC profile reviewed 2026-08-12"
+      }
+    ],
+    "source_refs": [
+      "src-notion-joshua_yang-1",
+      "src-cv-joshua_yang-yangjjoshua_cv_0826",
+      "src-pilot-roster-20260806",
+      "src-official-joshua_yang-20260812"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Yang/J-Joshua",
+      "source_refs": [
+        "src-official-joshua_yang-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "faculty_or_lab_research",
+      "url": "https://sites.usc.edu/jjyang/",
+      "source_refs": [
+        "src-research-joshua_yang-20260812"
+      ],
+      "review_status": "Verified 2026-08-12"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://sites.usc.edu/jjyang/publications/",
+      "source_refs": [
+        "src-publications-joshua_yang-20260812"
+      ],
+      "review_status": "Reviewed 2026-08-12"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?user=9Oaf_cUAAAAJ&hl=en",
+      "source_refs": [
+        "src-scholar-joshua_yang-20260812"
+      ],
+      "review_status": "Identity verified and cited view captured 2026-08-12"
+    }
+  ],
+  "research": {
+    "summary": "Research focuses on post-CMOS computing devices and systems, especially memristors, neuromorphic and in-memory computing, artificial-intelligence hardware, and device-to-system co-design.",
+    "domains": [
+      "Memristors",
+      "Neuromorphic computing",
+      "In-memory computing",
+      "Post-CMOS devices",
+      "AI hardware"
+    ],
+    "methods": [
+      "Electronic device fabrication",
+      "Device characterization",
+      "Circuit and system co-design",
+      "Materials and interface engineering"
+    ],
+    "applications": [
+      "Energy-efficient artificial intelligence",
+      "Multimodal sensing",
+      "Analog computing",
+      "Brain-inspired computing"
+    ],
+    "source_refs": [
+      "src-notion-joshua_yang-1",
+      "src-cv-joshua_yang-yangjjoshua_cv_0826",
+      "src-official-joshua_yang-20260812",
+      "src-research-joshua_yang-20260812"
+    ],
+    "review_status": "Proposed from local and faculty-specific sources reviewed 2026-08-12"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-VIT-FAC-0003-2026-RECENT-01",
+        "title": "Self-powered analogue neuromorphic system for multimodal sensing, encoding and learning with diffusive and drift memristors",
+        "venue": "Nature Sensors",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-joshua_yang-20260812",
+          "src-cv-joshua_yang-yangjjoshua_cv_0826"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0003-2026-RECENT-02",
+        "title": "High-temperature memristors enabled by interfacial engineering",
+        "venue": "Science",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-joshua_yang-20260812",
+          "src-cv-joshua_yang-yangjjoshua_cv_0826"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0003-2024-RECENT-03",
+        "title": "Programming memristor arrays with arbitrarily high precision for analog computing",
+        "venue": "Science",
+        "publication_year": 2024,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-publications-joshua_yang-20260812",
+          "src-cv-joshua_yang-yangjjoshua_cv_0826"
+        ],
+        "review_status": "Proposed from faculty-specific publication source; Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0003-2013-CITED-01",
+        "title": "Memristive devices for computing",
+        "authors": "JJ Yang, DB Strukov, DR Stewart",
+        "venue": "Nature Nanotechnology 8 (1), 13-24",
+        "publication_year": 2013,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9Oaf_cUAAAAJ&citation_for_view=9Oaf_cUAAAAJ%3Ap01w2OdOcUcC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 4576,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-joshua_yang-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0003-2008-CITED-02",
+        "title": "Memristive switching mechanism for metal/oxide/metal nanodevices",
+        "authors": "JJ Yang, MD Pickett, X Li, DAA Ohlberg, DR Stewart, RS Williams",
+        "venue": "Nature Nanotechnology 3 (7), 429-433",
+        "publication_year": 2008,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9Oaf_cUAAAAJ&citation_for_view=9Oaf_cUAAAAJ%3A2osOgNQ5qMEC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 3519,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-joshua_yang-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0003-2020-CITED-03",
+        "title": "Fully hardware-implemented memristor convolutional neural network",
+        "authors": "P Yao, H Wu, B Gao, J Tang, Q Zhang, W Zhang, JJ Yang, H Qian",
+        "venue": "Nature 577 (7792), 641-646",
+        "publication_year": 2020,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9Oaf_cUAAAAJ&citation_for_view=9Oaf_cUAAAAJ%3AOATjCxfXK_sC",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 2807,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-12",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-joshua_yang-20260812"
+        ],
+        "review_status": "Identity-matched provider snapshot; DOI or publisher link remains a production enhancement"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0003-2026-RECENT-01",
+        "PUB-VIT-FAC-0003-2026-RECENT-02",
+        "PUB-VIT-FAC-0003-2024-RECENT-03"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-VIT-FAC-0003-2013-CITED-01",
+        "PUB-VIT-FAC-0003-2008-CITED-02",
+        "PUB-VIT-FAC-0003-2020-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent publications are retained from faculty-specific sources. The top three most-cited records were captured from the identity-matched Google Scholar profile on 2026-08-12. DOI/publisher-link reconciliation remains a production enrichment task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:24-2219-A0002",
+        "institutional_award_number": "24-2219-A0002",
+        "institutional_award_line": "24-2219-A0002",
+        "title": "Analog Neuromorphic Front-end Preprocessor for WARCHAMP Phase 2",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "NextFlex",
+        "prime_sponsor": "Air Force Research Laboratory",
+        "sponsor_award_number": "ADP#113 Agreement/Project No. 716296",
+        "prime_sponsor_award_number": "FA8650-20-2-5506",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-05-01",
+        "end_date": "2026-04-30",
+        "obligated_total_usd": 450000,
+        "expected_total_usd": 450000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-0400-A0001",
+        "institutional_award_number": "24-0400-A0001",
+        "institutional_award_line": "24-0400-A0001-2",
+        "title": "Center of Neuromorphic Computing under Extreme Environments",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Air Force Office of Scientific Research",
+        "prime_sponsor": null,
+        "sponsor_award_number": "FA9550-24-1-0322",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-30",
+        "end_date": "2029-09-29",
+        "obligated_total_usd": 2000611,
+        "expected_total_usd": 5000000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2102-A0001",
+        "institutional_award_number": "24-2102-A0001",
+        "institutional_award_line": "24-2102-A0001-2",
+        "title": "Spaceborne Low-Energy AI Computing (SLEAC)",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Arizona State University",
+        "prime_sponsor": "Naval Surface Warfare Center",
+        "sponsor_award_number": "ASUB00001854",
+        "prime_sponsor_award_number": "N00164-19-9-0001",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-30",
+        "end_date": "2026-11-30",
+        "obligated_total_usd": 400000,
+        "expected_total_usd": 400000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2035-A0001",
+        "institutional_award_number": "24-2035-A0001",
+        "institutional_award_line": "24-2035-A0001-2",
+        "title": "Energy-Efficient, Scalable, and Self-Learning AI Hardware with 3D Electronic-Photonic-Integrated-Circuits",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "University of California Davis",
+        "prime_sponsor": "National Security Technology Accelerator",
+        "sponsor_award_number": "A25-1075-S004",
+        "prime_sponsor_award_number": "N00164-23-9-G057-02/N00164-19-9-0001",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-13",
+        "end_date": "2026-11-30",
+        "obligated_total_usd": 230000,
+        "expected_total_usd": 230000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2050-A0001",
+        "institutional_award_number": "24-2050-A0001",
+        "institutional_award_line": "24-2050-A0001-2",
+        "title": "Lab-to-fab transfer of CMOS+memristor chips for edge intelligence",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Tetramem Inc",
+        "prime_sponsor": "U.S. Department of Defense",
+        "sponsor_award_number": "018621-9368-1000",
+        "prime_sponsor_award_number": "N00164-23-9-G060-02",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-09-13",
+        "end_date": "2026-11-30",
+        "obligated_total_usd": 1000000,
+        "expected_total_usd": 2000000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2219-A0001",
+        "institutional_award_number": "24-2219-A0001",
+        "institutional_award_line": "24-2219-A0001-1",
+        "title": "Analog Neuromorphic Front-end Preprocessor for WARCHAMP Phase 1",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "NextFlex",
+        "prime_sponsor": "Air Force Research Laboratory",
+        "sponsor_award_number": "716258",
+        "prime_sponsor_award_number": "FA8650-20-2-5506",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2024-04-11",
+        "end_date": "2025-06-30",
+        "obligated_total_usd": 450000,
+        "expected_total_usd": 450000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2578-A0001",
+        "institutional_award_number": "24-2578-A0001",
+        "institutional_award_line": "24-2578-A0001-2",
+        "title": "Fundamental studies of resistance switching",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Tetramem Inc",
+        "prime_sponsor": null,
+        "sponsor_award_number": "24-2578-A0001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-03-31",
+        "end_date": "2026-08-31",
+        "obligated_total_usd": 200000,
+        "expected_total_usd": 200000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2947-A0001",
+        "institutional_award_number": "23-2947-A0001",
+        "institutional_award_line": "23-2947-A0001-8",
+        "title": "Modeling Study of Memcapacitive Neural Network for Neuromorphic Computing",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Air Force Research Laboratory",
+        "prime_sponsor": null,
+        "sponsor_award_number": "FA8750-22-1-0501",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-09-19",
+        "end_date": "2025-09-19",
+        "obligated_total_usd": 502889,
+        "expected_total_usd": 600000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2856-A0001",
+        "institutional_award_number": "23-2856-A0001",
+        "institutional_award_line": "23-2856-A0001-3",
+        "title": "Fundamental studies of resistance switching materials and processes",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Tetramem Inc",
+        "prime_sponsor": null,
+        "sponsor_award_number": "015542-00001",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-08-01",
+        "end_date": "2025-08-31",
+        "obligated_total_usd": 411283,
+        "expected_total_usd": 411283,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2323-A0001",
+        "institutional_award_number": "23-2323-A0001",
+        "institutional_award_line": "23-2323-A0001-2",
+        "title": "Memristive Material Studies",
+        "faculty_name_as_reported": "Joshua Yang",
+        "faculty_unit_as_reported": "CA101522 Viterbi Ming Hsieh Department of Electrical and Computer Engineering - Electrophysics",
+        "sponsor": "Spectral Energies, LLC",
+        "prime_sponsor": "Air Force Research Laboratory",
+        "sponsor_award_number": "SB2126-001-1",
+        "prime_sponsor_award_number": "FA8650-21-C-5405",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2022-03-16",
+        "end_date": "2024-04-30",
+        "obligated_total_usd": 209984,
+        "expected_total_usd": 209984,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 10,
+      "detailed_expected_total_usd": 9951267,
+      "legacy_record_count": 10,
+      "legacy_total_award_amount_usd": 9951267,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [],
+  "patents_and_inventions": [],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-12",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-joshua_yang-1",
+      "source_type": "notion_export",
+      "title": "J. Joshua Yang Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/J Joshua Yang 35925febe2d681cd924ff3576cb708c4.md",
+      "web_url": "https://www.notion.so/35825febe2d6816e830ce20c87e659ba",
+      "source_version": null,
+      "fingerprint_sha256": "DF6E452E3478D0981E808829C9749E17483ACC43E32E4058BF2EF41C11C6FE31",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local source reviewed for pilot package",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Migration evidence; upstream faculty links are preserved."
+    },
+    {
+      "source_id": "src-cv-joshua_yang-yang_j_joshua_cv",
+      "source_type": "faculty_cv",
+      "title": "J. Joshua Yang CV",
+      "repository_path": "inputs/Faculty Profiles Library/Pilot CVs/yang_j. joshua_cv.pdf",
+      "web_url": "https://drive.google.com/file/d/1JuBfBVh8tPn6-mKFyuSPgRZI8R7X2PbI/view?usp=drive_link",
+      "source_version": null,
+      "fingerprint_sha256": "2B9B3ECF20BD4545B273CB610800836AE7E80042F1E4D10480878B459B4035FF",
+      "authority_level": "Faculty-authored evidence",
+      "qa_status": "Duplicate or alternate representation",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": "EXACT-CV-02",
+      "selected_for_package": false,
+      "notes": "Exact binary duplicate; keep one canonical copy for ingestion."
+    },
+    {
+      "source_id": "src-cv-joshua_yang-yangjjoshua_cv_0826",
+      "source_type": "faculty_cv",
+      "title": "J. Joshua Yang CV",
+      "repository_path": "inputs/Faculty Profiles Library/Pilot CVs/yangjjoshua_cv_0826.pdf",
+      "web_url": "https://drive.google.com/file/d/1JuBfBVh8tPn6-mKFyuSPgRZI8R7X2PbI/view?usp=drive_link",
+      "source_version": "2026-08",
+      "fingerprint_sha256": "2B9B3ECF20BD4545B273CB610800836AE7E80042F1E4D10480878B459B4035FF",
+      "authority_level": "Faculty-authored evidence",
+      "qa_status": "Local source reviewed for pilot package",
+      "accessed_date": "2026-08-12",
+      "duplicate_group": "EXACT-CV-02",
+      "selected_for_package": true,
+      "notes": "Exact binary duplicate; keep one canonical copy for ingestion."
+    },
+    {
+      "source_id": "src-official-joshua_yang-20260812",
+      "source_type": "official_faculty_profile",
+      "title": "J. Joshua Yang USC faculty profile",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0003_j_joshua_yang_2026-08-12.json",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Yang/J-Joshua",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "5148F8CE5A02CB0AE402994F81C6A7848DC5B8CF41C16585E1E0862D11F9A836",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed before broader external search."
+    },
+    {
+      "source_id": "src-research-joshua_yang-20260812",
+      "source_type": "faculty_research_website",
+      "title": "J. Joshua Yang faculty or lab research website",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0003_j_joshua_yang_2026-08-12.json",
+      "web_url": "https://sites.usc.edu/jjyang/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "5148F8CE5A02CB0AE402994F81C6A7848DC5B8CF41C16585E1E0862D11F9A836",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Reviewed faculty-specific pages: https://sites.usc.edu/jjyang/"
+    },
+    {
+      "source_id": "src-publications-joshua_yang-20260812",
+      "source_type": "faculty_publication_list",
+      "title": "J. Joshua Yang faculty-specific publication list",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0003_j_joshua_yang_2026-08-12.json",
+      "web_url": "https://sites.usc.edu/jjyang/publications/",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "5148F8CE5A02CB0AE402994F81C6A7848DC5B8CF41C16585E1E0862D11F9A836",
+      "authority_level": "Faculty-specific publication discovery source",
+      "qa_status": "Recent records captured for human review",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Use faculty-specific source for discovery; reconcile article-level DOI or publisher links before production display."
+    },
+    {
+      "source_id": "src-scholar-joshua_yang-20260812",
+      "source_type": "publication_provider_snapshot",
+      "title": "J. Joshua Yang Google Scholar identity link",
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-12/VIT-FAC-0003_j_joshua_yang_2026-08-12.json",
+      "web_url": "https://scholar.google.com/citations?user=9Oaf_cUAAAAJ&hl=en",
+      "source_version": "2026-08-12",
+      "fingerprint_sha256": "5148F8CE5A02CB0AE402994F81C6A7848DC5B8CF41C16585E1E0862D11F9A836",
+      "authority_level": "Publication-provider identity link for future refresh",
+      "qa_status": "Identity verified; top three cited records captured",
+      "accessed_date": "2026-08-12",
+      "selected_for_package": true,
+      "notes": "Profile name: J. Joshua Yang. Affiliation evidence: University of Southern California, Arthur B. Freeman Chair Professor, IEEE Fellow / NAI Fellow"
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion + CV",
+    "missing_sources": [
+      "Article-level DOI or publisher-link reconciliation",
+      "Record-level reconciliation of the CV's patent portfolio against USC's invention source"
+    ],
+    "conflicts": [],
+    "duplicate_sources": [
+      "Two local Joshua Yang CV PDFs are exact binary duplicates; yangjjoshua_cv_0826.pdf is canonical."
+    ],
+    "warnings": [
+      "The CV reports an extensive patent portfolio, but aggregate counts are not converted into public patent records without identifiers."
+    ],
+    "source_reference_count": 9
+  },
+  "refresh": {
+    "package_version": "0.2",
+    "created_at": "2026-08-12T19:18:10.372Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0003_jianhua_joshua_yang_draft_v0.1.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}

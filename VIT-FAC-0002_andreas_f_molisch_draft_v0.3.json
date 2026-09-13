@@ -1,0 +1,931 @@
+{
+  "schema_version": "faculty-package-draft-v0.1",
+  "package_status": "Pilot Complete - Search-Safe Package Ready for Retrieval Evaluation",
+  "approval_status": "Pilot Processing Approved",
+  "release_scope": "Search-safe pilot evaluation",
+  "faculty_id": "VIT-FAC-0002",
+  "identity": {
+    "canonical_name": "Andreas F. Molisch",
+    "preferred_display_name": "Andreas F. Molisch",
+    "publishing_names": [
+      "Andreas Molisch",
+      "A. F. Molisch"
+    ],
+    "usc_email": "molisch@usc.edu",
+    "identity_status": "Proposed",
+    "identity_confidence": "High",
+    "appointments": [
+      {
+        "title": "Solomon Golomb – Andrew and Erna Viterbi Chair and Professor of Electrical and Computer Engineering",
+        "unit": "Ming Hsieh Department of Electrical and Computer Engineering",
+        "appointment_type": "Primary",
+        "source_refs": [
+          "src-notion-andreas_molisch-1",
+          "src-cv-andreas_molisch-molischandreas_cv_0826",
+          "src-official-andreas_molisch-20260807"
+        ],
+        "review_status": "Confirmed from official USC profile on 2026-08-07"
+      }
+    ],
+    "source_refs": [
+      "src-notion-andreas_molisch-1",
+      "src-cv-andreas_molisch-molischandreas_cv_0826",
+      "src-pilot-roster-20260806",
+      "src-official-andreas_molisch-20260807"
+    ]
+  },
+  "links": [
+    {
+      "link_type": "official_profile",
+      "url": "https://viterbi.usc.edu/directory/faculty/Molisch/Andreas",
+      "source_refs": [
+        "src-notion-andreas_molisch-1",
+        "src-official-andreas_molisch-20260807"
+      ],
+      "review_status": "Verified from reviewer-supplied or directly linked USC source"
+    },
+    {
+      "link_type": "lab",
+      "url": "https://wides.usc.edu/",
+      "source_refs": [
+        "src-notion-andreas_molisch-1",
+        "src-research-andreas_molisch-20260807"
+      ],
+      "review_status": "Verified from official faculty page"
+    },
+    {
+      "link_type": "google_scholar",
+      "url": "https://scholar.google.com/citations?hl=en&user=W0wwrucAAAAJ",
+      "source_refs": [
+        "src-notion-andreas_molisch-1",
+        "src-scholar-andreas_molisch-20260807"
+      ],
+      "review_status": "Identity matched and snapshot captured 2026-08-07"
+    },
+    {
+      "link_type": "recent_publications",
+      "url": "https://scholar.google.com/citations?hl=en&user=W0wwrucAAAAJ&view_op=list_works&sortby=pubdate",
+      "source_refs": [
+        "src-scholar-andreas_molisch-20260807"
+      ],
+      "review_status": "Current provider view captured 2026-08-07"
+    }
+  ],
+  "research": {
+    "summary": "Current work spans wireless propagation measurement and modeling for sub-terahertz, mm-wave, vehicular, UAV, massive-MIMO, and cell-free systems; machine learning for channel generation, prediction, and localization; ultrawideband and near-field localization; integrated sensing and communications; and joint communication, computing, and caching. Recent 2026 work emphasizes data-driven channel models, foundation models for indoor localization, vehicular ISAC synchronization, and reconfigurable-antenna localization.",
+    "domains": [
+      "Wireless propagation and channel modeling",
+      "5G/6G systems",
+      "Integrated sensing and communication",
+      "Machine learning for wireless systems",
+      "Wireless propagation channels",
+      "Sub-THz and mm-wave systems",
+      "Massive and cell-free MIMO",
+      "Wireless localization and ISAC",
+      "Edge communication and computing"
+    ],
+    "methods": [
+      "Channel measurement and modeling",
+      "MIMO and beamforming",
+      "Ultrawideband localization",
+      "Machine-learning-assisted wireless modeling",
+      "Channel measurement and sounding",
+      "Statistical channel modeling",
+      "Machine learning and foundation models",
+      "MIMO and reconfigurable-antenna design"
+    ],
+    "applications": [
+      "Wireless networks",
+      "Vehicular radar and sensing",
+      "Localization",
+      "Satellite-terrestrial coexistence",
+      "5G/6G communications",
+      "Indoor and vehicular localization",
+      "Vehicle-to-vehicle and UAV links",
+      "Mission-critical networks",
+      "Wireless sensing"
+    ],
+    "source_refs": [
+      "src-notion-andreas_molisch-1",
+      "src-cv-andreas_molisch-molischandreas_cv_0826",
+      "src-official-andreas_molisch-20260807",
+      "src-research-andreas_molisch-20260807",
+      "src-scholar-andreas_molisch-20260807"
+    ],
+    "review_status": "Proposed - reviewer-supplied and directly linked faculty-specific sources reviewed 2026-08-07"
+  },
+  "publications": {
+    "records": [
+      {
+        "publication_id": "PUB-MOLISCH-2026-01",
+        "title": "Efficient Split Learning With Overlapping Areas: Handling Distribution Shift in Multi-Cell Networks",
+        "venue": "IEEE Transactions on Networking",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-andreas_molisch-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2026-02",
+        "title": "Hybrid codebook design for localization using electromagnetically reconfigurable fluid antenna system",
+        "venue": "IEEE Journal of Selected Topics in Signal Processing",
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-andreas_molisch-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2025-01",
+        "title": "An Ultra-Wideband Study of Vegetation Impact on Upper Midband/FR3 Communication",
+        "venue": "IEEE Wireless Communications Letters",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-andreas_molisch-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2025-02",
+        "title": "CUNEC: A Path Loss Model for Urban Cell-Free Massive MIMO Networks",
+        "venue": "IEEE Transactions on Wireless Communications",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-andreas_molisch-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2025-03",
+        "title": "Cars and Trucks as Blockers and Reflectors in Vehicular ISAC Systems",
+        "venue": "IEEE Vehicular Technology Magazine",
+        "publication_year": 2025,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "recent_legacy_view"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-notion-andreas_molisch-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2012-01",
+        "title": "Wireless Communications",
+        "venue": "John Wiley & Sons",
+        "publication_year": 2012,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&citation_for_view=W0wwrucAAAAJ:9yKSN-GCB0IC",
+        "selection_basis": [
+          "most_cited_legacy_view",
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 4839,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-notion-andreas_molisch-1",
+          "src-cv-andreas_molisch-molischandreas_cv_0826",
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2017-01",
+        "title": "5G: A tutorial overview of standards, trials, challenges, deployment, and practice",
+        "venue": "IEEE Journal on Selected Areas in Communications",
+        "publication_year": 2017,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&citation_for_view=W0wwrucAAAAJ:MSzX15-gZgkC",
+        "selection_basis": [
+          "most_cited_legacy_view",
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 3013,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-notion-andreas_molisch-1",
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-MOLISCH-2005-01",
+        "title": "Localization via ultra-wideband radios",
+        "venue": "IEEE Signal Processing Magazine",
+        "publication_year": 2005,
+        "doi": null,
+        "publication_link": null,
+        "selection_basis": [
+          "most_cited_legacy_view"
+        ],
+        "citation_snapshot": {
+          "count": 2943,
+          "source": "Google Scholar as transcribed in migration evidence",
+          "snapshot_date": null,
+          "review_status": "Refresh before using for ranking"
+        },
+        "source_refs": [
+          "src-notion-andreas_molisch-1"
+        ],
+        "review_status": "Proposed - Human Review Required"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0002-2026-RECENT-01",
+        "title": "Stochastic Cluster-based Channel Modeling for Sub-Terahertz Outdoor Device-to-Device Radio Propagation at 145 GHz",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&sortby=pubdate&citation_for_view=W0wwrucAAAAJ:zxzvZ9-XIW8C",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0002-2026-RECENT-02",
+        "title": "Double-Directional Wireless Channel Generation using Statistics-Informed Machine Learning",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&sortby=pubdate&citation_for_view=W0wwrucAAAAJ:9hNLEifDsrsC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0002-2026-RECENT-03",
+        "title": "OmniLoc: A Geometry-Aware Foundation Model for Anchor-Free UE Localization Across Diverse Indoor Environments",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&sortby=pubdate&citation_for_view=W0wwrucAAAAJ:-fj4grS0xi0C",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0002-2026-RECENT-04",
+        "title": "Near-Field Localization via Reconfigurable Antennas",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&sortby=pubdate&citation_for_view=W0wwrucAAAAJ:Wu2CBzYYpfQC",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0002-2026-RECENT-05",
+        "title": "MAVIS: Map-Aided Vehicular ISAC Synchronization",
+        "venue": null,
+        "publication_year": 2026,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&sortby=pubdate&citation_for_view=W0wwrucAAAAJ:dpaHy1TF288C",
+        "selection_basis": [
+          "recent_current_snapshot"
+        ],
+        "citation_snapshot": null,
+        "source_refs": [
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      },
+      {
+        "publication_id": "PUB-VIT-FAC-0002-2005-CITED-03",
+        "title": "Localization via ultra-wideband radios: a look at positioning aspects for future sensor networks",
+        "venue": null,
+        "publication_year": 2005,
+        "doi": null,
+        "publication_link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=W0wwrucAAAAJ&citation_for_view=W0wwrucAAAAJ:u5HHmVD_uO8C",
+        "selection_basis": [
+          "most_cited_current_snapshot"
+        ],
+        "citation_snapshot": {
+          "count": 2954,
+          "source": "Google Scholar faculty profile",
+          "snapshot_date": "2026-08-07",
+          "review_status": "Point-in-time snapshot; refresh before future ranking"
+        },
+        "source_refs": [
+          "src-scholar-andreas_molisch-20260807"
+        ],
+        "review_status": "Current publication-provider snapshot; article-level DOI or publisher link pending"
+      }
+    ],
+    "views": {
+      "recent_publication_ids": [
+        "PUB-VIT-FAC-0002-2026-RECENT-01",
+        "PUB-VIT-FAC-0002-2026-RECENT-02",
+        "PUB-VIT-FAC-0002-2026-RECENT-03",
+        "PUB-VIT-FAC-0002-2026-RECENT-04",
+        "PUB-VIT-FAC-0002-2026-RECENT-05"
+      ],
+      "most_cited_publication_ids": [
+        "PUB-MOLISCH-2012-01",
+        "PUB-MOLISCH-2017-01",
+        "PUB-VIT-FAC-0002-2005-CITED-03"
+      ]
+    },
+    "coverage_note": "Recent and most-cited views were refreshed from the linked faculty Google Scholar profile on 2026-08-07. Citation-record URLs are preserved now; DOI/publisher-link reconciliation remains a production task."
+  },
+  "awards": {
+    "records": [
+      {
+        "award_record_id": "award:26-2036-A0001",
+        "institutional_award_number": "26-2036-A0001",
+        "institutional_award_line": "26-2036-A0001",
+        "title": "Cellular Joint Communication and Radar Sensing: Simultaneous Localization and Mapping and Machine Learning for Accuracy and Performance",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "General Motors Holdings LLC",
+        "prime_sponsor": null,
+        "sponsor_award_number": "GAC 4719 / PO 7100576403",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Contract",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2026-04-01",
+        "end_date": "2026-12-31",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-0963-A0001",
+        "institutional_award_number": "25-0963-A0001",
+        "institutional_award_line": "25-0963-A0001",
+        "title": "Collaborative Research: CIF: Medium: Ultrawideband Communications and Sensing with True Time Delay Arrays in the Upper Midband",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CCF-2504811",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2026-02-01",
+        "end_date": "2030-01-31",
+        "obligated_total_usd": 400000,
+        "expected_total_usd": 400000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:26-0414-A0001",
+        "institutional_award_number": "26-0414-A0001",
+        "institutional_award_line": "26-0414-A0001-1",
+        "title": "RF Propagation – AI Driven Path Loss Model Project",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Verizon Corporate Services Group Incorporated",
+        "prime_sponsor": null,
+        "sponsor_award_number": "6000295367",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "obligated_total_usd": 150000,
+        "expected_total_usd": 150000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2824-A0001",
+        "institutional_award_number": "24-2824-A0001",
+        "institutional_award_line": "24-2824-A0001",
+        "title": "NewSpectrum: Interference from terrestrial cellular systems to satellites: Measurement, modeling, and effective mitigation strategies",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "ECCS-2433981",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-04-15",
+        "end_date": "2028-03-31",
+        "obligated_total_usd": 728637,
+        "expected_total_usd": 728637,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:25-1697-A0001",
+        "institutional_award_number": "25-1697-A0001",
+        "institutional_award_line": "25-1697-A0001-2",
+        "title": "Next-Generation Radar with Enhanced Information Extraction and Resolution Utilizing Advanced Spatially Structured Electromagnetic Waves",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Defense Advanced Research Projects Agency",
+        "prime_sponsor": null,
+        "sponsor_award_number": "HR00112590138",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Other",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2025-03-24",
+        "end_date": "2026-09-24",
+        "obligated_total_usd": 1950000,
+        "expected_total_usd": 1950000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-0456-A0009",
+        "institutional_award_number": "23-0456-A0009",
+        "institutional_award_line": "23-0456-A0009",
+        "title": "Cellular Joint Communication and Radar Sensing: Information Fusion and Experimental Investigation",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "General Motors Corporation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "GAC 4419",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2025-03-04",
+        "end_date": "2026-01-03",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-2769-A0001",
+        "institutional_award_number": "24-2769-A0001",
+        "institutional_award_line": "24-2769-A0001-4",
+        "title": "Concept for impulse-response based communications at HF",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "DEFENSEWERX",
+        "prime_sponsor": "CIA Labs",
+        "sponsor_award_number": "24-279-A0001",
+        "prime_sponsor_award_number": "2024-24013100001",
+        "instrument_type": "Incoming Subaward",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2024-06-17",
+        "end_date": "2026-10-30",
+        "obligated_total_usd": 702382,
+        "expected_total_usd": 702382,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1591-A0001",
+        "institutional_award_number": "24-1591-A0001",
+        "institutional_award_line": "24-1591-A0001",
+        "title": "Implementation Aspects of Cellular Joint Communication and Radar Sensing",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "General Motors Holdings LLC",
+        "prime_sponsor": null,
+        "sponsor_award_number": "GAC 4192",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2024-01-25",
+        "end_date": "2024-12-24",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:24-1371-A0001",
+        "institutional_award_number": "24-1371-A0001",
+        "institutional_award_line": "24-1371-A0001",
+        "title": "Foundational models for wireless propagation channels based on physical insights",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "Amazon.com Services LLC",
+        "prime_sponsor": null,
+        "sponsor_award_number": "00588507 2023 TR",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "In Closeout",
+        "start_date": "2023-12-22",
+        "end_date": "2024-12-31",
+        "obligated_total_usd": 100000,
+        "expected_total_usd": 100000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-10263-A000",
+        "institutional_award_number": "23-10263-A000",
+        "institutional_award_line": "23-10263-A0001",
+        "title": "CIF: Small: Impact of radiation trapping on sensing and communication systems in the THz, infrared, and optical regime - foundations, challenges, and opportunities",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CCF-2320937",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2023-10-01",
+        "end_date": "2026-09-30",
+        "obligated_total_usd": 599997,
+        "expected_total_usd": 599997,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2460-A0001",
+        "institutional_award_number": "23-2460-A0001",
+        "institutional_award_line": "23-2460-A0001-4",
+        "title": "RINGS: Resilient Delivery of Real-Time Interactive Services Over NextG Compute-Dense Mobile Networks",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CNS-2148315",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2022-05-01",
+        "end_date": "2027-04-30",
+        "obligated_total_usd": 899995,
+        "expected_total_usd": 899995,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-2367-A0001",
+        "institutional_award_number": "23-2367-A0001",
+        "institutional_award_line": "23-2367-A0001-2",
+        "title": "NSF-IITP: CNS Core: Small: Federated Learning for Privacy-preserving Video Caching Network",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CNS-2152646",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Active",
+        "start_date": "2022-03-15",
+        "end_date": "2026-09-30",
+        "obligated_total_usd": 499842,
+        "expected_total_usd": 499842,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-1964-A0001",
+        "institutional_award_number": "23-1964-A0001",
+        "institutional_award_line": "23-1964-A0001-3",
+        "title": "NSF-AoF: Impact of user, environment, and artificial surfaces on above100 GHz wireless communications",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CCF-2133655",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Closed",
+        "start_date": "2022-01-01",
+        "end_date": "2025-12-31",
+        "obligated_total_usd": 490000,
+        "expected_total_usd": 490000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      },
+      {
+        "award_record_id": "award:23-1864-A0001",
+        "institutional_award_number": "23-1864-A0001",
+        "institutional_award_line": "23-1864-A0001-5",
+        "title": "Collaborative Research: CNS Core: Medium: Localization in Millimeter Wave Cellular Networks: Fundamentals, Algorithms, and Measurement-inspired Simulator",
+        "faculty_name_as_reported": "Andreas Molisch",
+        "faculty_unit_as_reported": "CA101523 Viterbi Ming Hsieh Department of Electrical and Computer Engineering",
+        "sponsor": "National Science Foundation",
+        "prime_sponsor": null,
+        "sponsor_award_number": "CNS-2106602",
+        "prime_sponsor_award_number": null,
+        "instrument_type": "Grant",
+        "activity_type": "Research-Basic",
+        "status": "Closed",
+        "start_date": "2021-10-01",
+        "end_date": "2025-09-30",
+        "obligated_total_usd": 365000,
+        "expected_total_usd": 365000,
+        "source_refs": [
+          "src-awards-pi-details"
+        ],
+        "review_status": "Imported - Human Review Required"
+      }
+    ],
+    "rollup": {
+      "detailed_record_count": 14,
+      "detailed_expected_total_usd": 7185853,
+      "legacy_record_count": 14,
+      "legacy_total_award_amount_usd": 7185853,
+      "reconciliation_status": "Detailed rows match legacy aggregate",
+      "source_refs": [
+        "src-awards-pi-details",
+        "src-pilot-roster-20260806"
+      ],
+      "review_status": "Proposed - Human Review Required"
+    }
+  },
+  "honors": [
+    {
+      "honor": "Propagation Award of the European Antenna and Propagation Society",
+      "year": 2025,
+      "source_refs": [
+        "src-cv-andreas_molisch-molischandreas_cv_0826"
+      ],
+      "review_status": "Proposed"
+    },
+    {
+      "honor": "A1 Invention Award, Samsung Research America",
+      "year": 2025,
+      "source_refs": [
+        "src-cv-andreas_molisch-molischandreas_cv_0826"
+      ],
+      "review_status": "Proposed"
+    }
+  ],
+  "patents_and_inventions": [
+    {
+      "patent_record_id": "PAT-MOLISCH-2025-01",
+      "title": "CSI prediction using machine learning",
+      "jurisdiction_identifier": "US Patent Application 18/894,934",
+      "status": "Application",
+      "event_date": "2025",
+      "public_link": null,
+      "source_refs": [
+        "src-notion-andreas_molisch-1"
+      ],
+      "review_status": "Proposed - Verify against USC invention source"
+    },
+    {
+      "patent_record_id": "PAT-MOLISCH-2025-02",
+      "title": "Multi-static radar detection system for vehicles",
+      "jurisdiction_identifier": "US Patent 12,392,885",
+      "status": "Granted",
+      "event_date": "2025",
+      "public_link": null,
+      "source_refs": [
+        "src-notion-andreas_molisch-1"
+      ],
+      "review_status": "Proposed - Verify against USC invention source"
+    },
+    {
+      "patent_record_id": "PAT-MOLISCH-2025-03",
+      "title": "Processing apparatus for cell-free communication systems",
+      "jurisdiction_identifier": "US Patent 12,414,010",
+      "status": "Granted",
+      "event_date": "2025",
+      "public_link": null,
+      "source_refs": [
+        "src-notion-andreas_molisch-1"
+      ],
+      "review_status": "Proposed - Verify against USC invention source"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "src-pilot-roster-20260806",
+      "source_type": "pilot_roster",
+      "title": "Pilot Faculty List",
+      "repository_path": "inputs/Pilot_Faculty_List_080626.xlsx",
+      "web_url": null,
+      "source_version": "2026-08-06",
+      "fingerprint_sha256": "314CD666CF5E22AFDFA5D5E0C6FD9B830047FBCABD38158517618DA3FA1F75F8",
+      "authority_level": "Migration evidence and pilot scope",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Legacy fields are retained for reconciliation. A legacy Complete status is not package approval."
+    },
+    {
+      "source_id": "src-awards-pi-details",
+      "source_type": "award_detail_workbook",
+      "title": "Viterbi PI Award Details",
+      "repository_path": "inputs/DCG Reports/Viterbi PI Award Details (1).xlsx",
+      "web_url": null,
+      "source_version": null,
+      "fingerprint_sha256": "00CB31F3F5E00E334B6D480591B5622A904221302EDD352C0D67688843315AAD",
+      "authority_level": "Primary award detail source",
+      "qa_status": "Imported; human review required",
+      "accessed_date": "2026-08-07",
+      "notes": "Detailed rows are used as the award baseline for this pilot snapshot."
+    },
+    {
+      "source_id": "src-notion-andreas_molisch-1",
+      "source_type": "notion_export",
+      "title": "Andreas Molisch Notion profile export",
+      "repository_path": "inputs/Faculty Profiles Library/Notion Profiles/Andreas F Molisch 37625febe2d68157837ff68d597d98b3.md",
+      "web_url": "https://app.notion.com/p/37625febe2d68157837ff68d597d98b3",
+      "source_version": null,
+      "fingerprint_sha256": "4897BDAA2EE0E299004DCCA29CF2288F8BA8EC847680C69081BE7C92F64634C4",
+      "authority_level": "Migration evidence",
+      "qa_status": "Local export present; human review required",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": null,
+      "selected_for_package": true,
+      "notes": "Notion export is migration evidence; preserve its upstream links but do not treat it as the original authority."
+    },
+    {
+      "source_id": "src-cv-andreas_molisch-andreas_f_molisch_cva34",
+      "source_type": "faculty_cv",
+      "title": "Andreas Molisch CV",
+      "repository_path": "inputs/Faculty Profiles Library/Pilot CVs/Andreas F. Molisch - CVa34.pdf",
+      "web_url": "https://drive.google.com/file/d/1oniZMJ8E8hs-YYFeTRjVgvKX-a9TxpXO/view?usp=drive_link",
+      "source_version": null,
+      "fingerprint_sha256": "BA6DB78DB1E80DEDCAE08F96A0C008A07681E6A0F14E075F4E1CBE204A52987B",
+      "authority_level": "Faculty-authored evidence",
+      "qa_status": "Duplicate or alternate representation",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": "EXACT-CV-01",
+      "selected_for_package": false,
+      "notes": "Exact duplicate retained in the source registry but not re-ingested."
+    },
+    {
+      "source_id": "src-cv-andreas_molisch-molischandreas_cv_0826",
+      "source_type": "faculty_cv",
+      "title": "Andreas Molisch CV",
+      "repository_path": "inputs/Faculty Profiles Library/Pilot CVs/MolischAndreas_CV_0826.pdf",
+      "web_url": "https://drive.google.com/file/d/1oniZMJ8E8hs-YYFeTRjVgvKX-a9TxpXO/view?usp=drive_link",
+      "source_version": "2026-08",
+      "fingerprint_sha256": "BA6DB78DB1E80DEDCAE08F96A0C008A07681E6A0F14E075F4E1CBE204A52987B",
+      "authority_level": "Faculty-authored evidence",
+      "qa_status": "Text extracted and visual layout reviewed",
+      "accessed_date": "2026-08-07",
+      "duplicate_group": "EXACT-CV-01",
+      "selected_for_package": true,
+      "notes": "Selected CV representation for the pilot package."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0002_andreas_molisch_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "504FEB0CABA47361B2A21F76BFD32E33A2680B4E59E684011C9A19493B175B9E",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-official-andreas_molisch-20260807",
+      "source_type": "official_faculty_profile",
+      "title": "Andreas F. Molisch USC faculty profile",
+      "web_url": "https://viterbi.usc.edu/directory/faculty/Molisch/Andreas",
+      "authority_level": "Primary USC source for identity, appointment, contact, and outbound faculty links",
+      "qa_status": "Opened and reviewed",
+      "notes": "This page was supplied by the reviewer or reached directly from a supplied faculty-specific source."
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0002_andreas_molisch_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "504FEB0CABA47361B2A21F76BFD32E33A2680B4E59E684011C9A19493B175B9E",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-research-andreas_molisch-20260807",
+      "source_type": "faculty_research_website",
+      "title": "Andreas F. Molisch faculty/lab research website",
+      "web_url": "https://wides.usc.edu/",
+      "authority_level": "High-value self-described research context",
+      "qa_status": "Opened and reviewed",
+      "notes": "Reviewed pages: https://wides.usc.edu/; https://wides.usc.edu/research.html; https://wides.usc.edu/format_pappers.html"
+    },
+    {
+      "repository_path": "inputs/Faculty Profiles Library/Website Snapshots/2026-08-07/VIT-FAC-0002_andreas_molisch_2026-08-07.json",
+      "source_version": "2026-08-07",
+      "fingerprint_sha256": "504FEB0CABA47361B2A21F76BFD32E33A2680B4E59E684011C9A19493B175B9E",
+      "accessed_date": "2026-08-07",
+      "selected_for_package": true,
+      "source_id": "src-scholar-andreas_molisch-20260807",
+      "source_type": "publication_provider_profile",
+      "title": "Andreas F. Molisch Google Scholar profile",
+      "web_url": "https://scholar.google.com/citations?hl=en&user=W0wwrucAAAAJ",
+      "authority_level": "Publication discovery and point-in-time citation snapshot",
+      "qa_status": "Faculty identity matched; recent and most-cited views captured",
+      "notes": "Use for discovery and dated citation views; reconcile public article links to DOI or publisher URLs before production display."
+    }
+  ],
+  "data_quality": {
+    "evidence_pattern": "Notion profile plus CV and authoritative award detail",
+    "missing_sources": [
+      "Official USC patent/invention reconciliation",
+      "Article-level DOI or publisher-link reconciliation for newly discovered works"
+    ],
+    "conflicts": [],
+    "duplicate_sources": [
+      "Two CV PDFs are exact binary duplicates; the 0826 filename was selected."
+    ],
+    "warnings": [
+      "Notion citation counts are undated and must not drive ranking until refreshed.",
+      "Citation counts are point-in-time provider snapshots and must be refreshed before future ranking."
+    ],
+    "source_reference_count": 8
+  },
+  "refresh": {
+    "package_version": "0.3",
+    "created_at": "2026-08-12T19:18:10.361Z",
+    "source_snapshot_date": "2026-08-12",
+    "supersedes": "VIT-FAC-0002_andreas_f_molisch_draft_v0.2.json"
+  },
+  "review_history": [
+    {
+      "review_date": "2026-08-07",
+      "reviewed_by": "Blair Lake",
+      "reviewer_response": "https://scholar.google.com/citations?hl=en&user=W0wwrucAAAAJ",
+      "decision": "Approve with corrections",
+      "processing_outcome": "Reviewer-supplied URL and directly linked faculty-specific sources processed into package v0.2 before broader external search."
+    },
+    {
+      "review_date": "2026-08-12",
+      "reviewer": "Codex processing workflow",
+      "decision": "Pilot processing approved",
+      "notes": "Faculty-specific sources and available publication-provider evidence processed; package marked search-safe and ready for retrieval evaluation. Remaining source-availability gaps are explicit and non-blocking."
+    }
+  ]
+}
