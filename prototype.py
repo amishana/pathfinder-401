@@ -30,7 +30,7 @@ TOP_EVIDENCE = 3
 def load_evidence():
     """Flatten every package into one list of (faculty_id, name, kind, text) evidence pieces."""
     evidence = []
-    for path in sorted(glob.glob("VIT-FAC-*.json")):
+    for path in sorted(glob.glob("faculty-json-outputs/VIT-FAC-*.json")):
         pkg = json.load(open(path))
         fid = pkg["faculty_id"]
         name = pkg["identity"]["canonical_name"]
