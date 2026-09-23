@@ -1,0 +1,7 @@
+sentence-transformers<4
+transformers<4.50
+psycopg2-binary
+pgvector
+numpy<2
+fastapi
+uvicorn
