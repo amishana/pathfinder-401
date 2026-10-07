@@ -46,33 +46,41 @@ STOPWORDS = {
 }
 
 
+def package_evidence(pkg):
+    """Split one package into (kind, text, source_ref) evidence pieces.
+
+    source_ref is the record ID the piece came from, or None for research and honors.
+    load_db.py uses this too, so the database and this prototype index the same pieces.
+    """
+    pieces = []
+
+    research = pkg["research"]
+    pieces.append(("research", f"{research['summary']} Areas: {', '.join(research['domains'])}.", None))
+
+    for pub in pkg["publications"]["records"]:
+        venue = f" ({pub['venue']})" if pub["venue"] else ""
+        pieces.append((f"pub {pub['publication_year']}", f"{pub['title']}{venue}", pub["publication_id"]))
+
+    for award in pkg["awards"]["records"]:
+        text = f"{award['title']} - sponsor: {award['sponsor']}"
+        pieces.append((f"award {award['status']}", text, award["award_record_id"]))
+
+    for patent in pkg.get("patents_and_inventions") or []:
+        pieces.append((f"patent {patent['status']}", patent["title"], patent["patent_record_id"]))
+
+    for honor in pkg.get("honors") or []:
+        pieces.append(("honor", honor["honor"], None))
+
+    return pieces
+
+
 def load_evidence():
     """Flatten every package into one list of (faculty_id, name, kind, text) evidence pieces."""
     evidence = []
     for path in sorted(glob.glob("faculty-json-outputs/VIT-FAC-*.json")):
         pkg = json.load(open(path))
-        fid = pkg["faculty_id"]
-        name = pkg["identity"]["canonical_name"]
-
-        def add(kind, text):
-            evidence.append((fid, name, kind, text))
-
-        research = pkg["research"]
-        add("research", f"{research['summary']} Areas: {', '.join(research['domains'])}.")
-
-        for pub in pkg["publications"]["records"]:
-            venue = f" ({pub['venue']})" if pub["venue"] else ""
-            add(f"pub {pub['publication_year']}", f"{pub['title']}{venue}")
-
-        for award in pkg["awards"]["records"]:
-            add(f"award {award['status']}", f"{award['title']} - sponsor: {award['sponsor']}")
-
-        for patent in pkg.get("patents_and_inventions") or []:
-            add(f"patent {patent['status']}", patent["title"])
-
-        for honor in pkg.get("honors") or []:
-            add("honor", honor["honor"])
-
+        for kind, text, _ in package_evidence(pkg):
+            evidence.append((pkg["faculty_id"], pkg["identity"]["canonical_name"], kind, text))
     return evidence
 
 
