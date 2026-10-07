@@ -105,37 +105,61 @@ def rank_positions(scores):
     return (scores[None, :] > scores[:, None]).sum(axis=1) + 1
 
 
-def rank(query, evidence, vectors, model, bm25):
-    """Score each faculty member by the mean of their strongest matching evidence.
+def rank_faculty(hits):
+    """Merge the two rankings with RRF and score each faculty member.
+
+    hits: one (faculty_id, name, embedding_rank, keyword_rank, cosine, kind, text) tuple per
+    evidence piece. keyword_rank is None when no query word matched.
 
     Each evidence piece gets 1/(RRF_K + embedding rank) + 1/(RRF_K + keyword rank).
     Pieces with no keyword match get no keyword term, so unrelated pieces are not boosted.
+    Each faculty member's score is the mean of their TOP_EVIDENCE strongest pieces.
+
+    prototype.py and search_db.py both call this, so the JSON path and the database path
+    rank faculty with the same code.
     """
+    by_faculty = {}
+    for fid, name, embedding_rank, keyword_rank, cosine, kind, text in hits:
+        fused = 1 / (RRF_K + embedding_rank)
+        if keyword_rank is not None:
+            fused += 1 / (RRF_K + keyword_rank)
+        fused /= 2 / (RRF_K + 1)  # 1.00 = ranked first by both methods
+        by_faculty.setdefault((fid, name), []).append((fused, cosine, keyword_rank, kind, text))
+
+    ranked = []
+    for (fid, name), pieces in by_faculty.items():
+        pieces.sort(key=lambda piece: piece[0], reverse=True)
+        top = pieces[:TOP_EVIDENCE]
+        ranked.append((float(np.mean([piece[0] for piece in top])), fid, name, top))
+    ranked.sort(key=lambda result: result[0], reverse=True)
+    return ranked
+
+
+def rank(query, evidence, vectors, model, bm25):
+    """Rank faculty for a query, using evidence and embeddings held in memory."""
     query_vector = model.encode(query, normalize_embeddings=True)
     cosine = vectors @ query_vector
     keyword = bm25.get_scores(tokenize(query))
 
     embedding_ranks = rank_positions(cosine)
     keyword_ranks = rank_positions(keyword)
-    has_keyword = keyword > 0
 
-    fused = 1 / (RRF_K + embedding_ranks)
-    fused = fused + np.where(has_keyword, 1 / (RRF_K + keyword_ranks), 0)
-    fused = fused / (2 / (RRF_K + 1))  # 1.00 = ranked first by both methods
-
-    by_faculty = {}
+    hits = []
     for i, (fid, name, kind, text) in enumerate(evidence):
-        keyword_rank = int(keyword_ranks[i]) if has_keyword[i] else None
-        hit = (float(fused[i]), float(cosine[i]), keyword_rank, kind, text)
-        by_faculty.setdefault((fid, name), []).append(hit)
+        keyword_rank = int(keyword_ranks[i]) if keyword[i] > 0 else None
+        hits.append((fid, name, int(embedding_ranks[i]), keyword_rank, float(cosine[i]), kind, text))
+    return rank_faculty(hits)
 
-    ranked = []
-    for (fid, name), hits in by_faculty.items():
-        hits.sort(key=lambda hit: hit[0], reverse=True)
-        top = hits[:TOP_EVIDENCE]
-        ranked.append((float(np.mean([hit[0] for hit in top])), fid, name, top))
-    ranked.sort(key=lambda result: result[0], reverse=True)
-    return ranked
+
+def print_results(query, ranked):
+    """Print the top faculty and the evidence that produced each match."""
+    print(f"Query: {query}\n")
+    for position, (score, fid, name, top) in enumerate(ranked[:TOP_FACULTY], 1):
+        print(f"{position}. {fid}  {name}  (score {score:.2f})")
+        for fused, cosine, keyword_rank, kind, text in top:
+            keyword_label = f"kw #{keyword_rank}" if keyword_rank else "kw -"
+            print(f"     [{kind}] {text[:100]}  ({fused:.2f} · cos {cosine:.2f} · {keyword_label})")
+        print()
 
 
 def main():
@@ -146,14 +170,7 @@ def main():
     vectors = model.encode([text for *_, text in evidence], normalize_embeddings=True)
     bm25 = BM25Okapi([tokenize(text) for *_, text in evidence])
     print(f"\nIndexed {len(evidence)} evidence pieces from 16 faculty packages.")
-    print(f"Query: {query}\n")
-
-    for position, (score, fid, name, top) in enumerate(rank(query, evidence, vectors, model, bm25)[:TOP_FACULTY], 1):
-        print(f"{position}. {fid}  {name}  (score {score:.2f})")
-        for fused, cosine, keyword_rank, kind, text in top:
-            keyword_label = f"kw #{keyword_rank}" if keyword_rank else "kw -"
-            print(f"     [{kind}] {text[:100]}  ({fused:.2f} · cos {cosine:.2f} · {keyword_label})")
-        print()
+    print_results(query, rank(query, evidence, vectors, model, bm25))
 
 
 if __name__ == "__main__":
