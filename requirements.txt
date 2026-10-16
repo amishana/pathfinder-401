@@ -4,3 +4,4 @@ rank-bm25==0.2.2
 psycopg[binary]==3.3.6
 pgvector==0.5.0
 python-dotenv==1.2.4
+pymupdf==1.28.2
