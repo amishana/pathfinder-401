@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty Profile — Viterbi Pathfinder</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+<style>
+  :root{
+    --accent:#9E1B32;
+    --accent-hover:#7A1527;
+    --ink:#1c1c1c;
+    --muted:#5b5b5b;
+    --faint:#8a8a8a;
+    --line:#e3e2df;
+    --bg:#ffffff;
+    --bg-soft:#f7f7f5;
+    --active-dot:#2563EB;
+    --closeout-dot:#9E1B32;
+    --closed-dot:#8a8a8a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --accent:#c2495f;
+      --accent-hover:#d97086;
+      --ink:#eae6e5;
+      --muted:#b3a8aa;
+      --faint:#8c8082;
+      --line:#3a3134;
+      --bg:#181416;
+      --bg-soft:#211b1d;
+      --active-dot:#60a5fa;
+      --closeout-dot:#c2495f;
+      --closed-dot:#8c8082;
+    }
+  }
+  :root[data-theme="dark"]{
+    --accent:#c2495f;
+    --accent-hover:#d97086;
+    --ink:#eae6e5;
+    --muted:#b3a8aa;
+    --faint:#8c8082;
+    --line:#3a3134;
+    --bg:#181416;
+    --bg-soft:#211b1d;
+    --active-dot:#60a5fa;
+    --closeout-dot:#c2495f;
+    --closed-dot:#8c8082;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:"Source Serif 4",Georgia,"Iowan Old Style","Palatino Linotype",serif;
+    font-weight:400;
+    color:var(--ink);
+    margin:0;
+    text-wrap:balance;
+  }
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 28px;}
+
+  /* ── nav ── */
+  header.site-nav{border-bottom:1px solid var(--line);}
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;max-width:980px;margin:0 auto;
+    flex-wrap:wrap;gap:12px;
+  }
+  .brand{
+    font-family:"Source Serif 4",Georgia,"Iowan Old Style",serif;
+    font-size:20px;letter-spacing:0.2px;
+  }
+  .brand .mark{color:var(--accent);}
+  .brand a{color:inherit;}
+  .back-link{
+    font-size:13.5px;color:var(--muted);
+    display:flex;align-items:center;gap:6px;
+  }
+  .back-link:hover{color:var(--accent);}
+  .back-link svg{flex:none;}
+
+  /* ── breadcrumb strip ── */
+  .crumb-strip{
+    border-bottom:1px solid var(--line);
+    background:var(--bg-soft);
+    padding:9px 0;
+  }
+  .crumb{
+    font-size:12.5px;color:var(--muted);
+    display:flex;align-items:center;gap:6px;
+  }
+  .crumb a:hover{color:var(--accent);}
+  .crumb .sep{color:var(--faint);}
+
+  /* ── page layout ── */
+  .profile-page{padding:44px 0 80px;}
+  .profile-grid{
+    display:grid;
+    grid-template-columns:1fr 268px;
+    gap:56px;
+    align-items:start;
+  }
+
+  /* ── profile header ── */
+  .profile-head{
+    display:flex;gap:20px;align-items:flex-start;
+    padding-bottom:28px;border-bottom:1px solid var(--line);
+    margin-bottom:32px;
+  }
+  .avatar{
+    width:64px;height:64px;flex:none;
+    background:var(--bg-soft);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Source Serif 4",Georgia,serif;font-size:20px;color:var(--accent);
+  }
+  .head-body{flex:1;}
+  .head-body h1{font-size:26px;line-height:1.15;}
+  .head-dept{
+    font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.4;
+  }
+  .courtesy-list{
+    font-size:12px;color:var(--faint);margin-top:4px;
+  }
+  .head-email{
+    margin-top:8px;font-size:13px;color:var(--accent);
+  }
+  .head-email a:hover{text-decoration:underline;}
+
+  /* ── section layout ── */
+  .section{margin-bottom:36px;}
+  .section-label{
+    font-size:11px;text-transform:uppercase;letter-spacing:.45px;
+    color:var(--muted);margin-bottom:12px;font-family:inherit;font-weight:normal;
+  }
+
+  /* ── research summary ── */
+  .summary-text{
+    font-size:14.5px;color:var(--ink);line-height:1.7;max-width:64ch;
+    margin:0 0 20px;
+  }
+
+  /* ── tag groups ── */
+  .tag-group{margin-bottom:16px;}
+  .tag-group-label{
+    font-size:11px;text-transform:uppercase;letter-spacing:.4px;
+    color:var(--faint);margin-bottom:7px;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    font-size:12.5px;color:var(--muted);
+    border:1px solid var(--line);padding:3px 10px;
+    background:var(--bg-soft);
+    white-space:nowrap;
+  }
+
+  /* ── publications ── */
+  .pub-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:18px;}
+  .pub-tab{
+    background:none;border:none;font-family:inherit;cursor:pointer;
+    padding:9px 16px;font-size:13px;color:var(--muted);
+    border-bottom:2px solid transparent;margin-bottom:-1px;
+    letter-spacing:.1px;
+  }
+  .pub-tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600;}
+  .pub-tab:hover:not(.active){color:var(--ink);}
+  .pub-list{display:none;}
+  .pub-list.active{display:block;}
+
+  .pub-item{
+    padding:13px 0;border-bottom:1px solid var(--line);
+    display:flex;gap:14px;align-items:baseline;
+  }
+  .pub-year{
+    font-size:12px;color:var(--faint);flex:none;width:32px;
+    font-variant-numeric:tabular-nums;padding-top:1px;
+  }
+  .pub-body{flex:1;}
+  .pub-title{
+    font-size:14px;color:var(--ink);line-height:1.45;
+  }
+  .pub-title a:hover{color:var(--accent);text-decoration:underline;}
+  .pub-venue{font-size:12.5px;color:var(--muted);margin-top:2px;}
+  .pub-cite{font-size:12px;color:var(--faint);margin-top:2px;}
+  .pub-doi{
+    display:inline-block;margin-top:4px;font-size:11.5px;
+    color:var(--accent);letter-spacing:.1px;
+  }
+  .pub-doi:hover{text-decoration:underline;}
+
+  /* ── awards ── */
+  .award-item{
+    padding:14px 0;border-bottom:1px solid var(--line);
+    display:flex;gap:14px;
+  }
+  .award-status-dot{
+    flex:none;width:8px;height:8px;border-radius:50%;
+    margin-top:6px;
+  }
+  .award-status-dot.active{background:var(--active-dot);}
+  .award-status-dot.closeout{background:var(--closeout-dot);}
+  .award-status-dot.closed{background:var(--closed-dot);}
+  .award-body{flex:1;}
+  .award-title{font-size:14px;color:var(--ink);line-height:1.4;}
+  .award-meta{font-size:12.5px;color:var(--muted);margin-top:3px;}
+  .award-amount{font-size:12px;color:var(--faint);margin-top:2px;font-variant-numeric:tabular-nums;}
+  .award-status-tag{
+    font-size:10.5px;letter-spacing:.3px;text-transform:uppercase;
+    padding:1px 7px;border-radius:2px;margin-left:8px;
+    vertical-align:middle;font-family:inherit;
+  }
+  .award-status-tag.active{background:#DBEAFE;color:#1D4ED8;}
+  .award-status-tag.closeout{background:#FEE2E2;color:#991B1B;}
+  .award-status-tag.closed{background:var(--bg-soft);color:var(--faint);}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .award-status-tag.active{background:#1e3a5f;color:#93c5fd;}
+    :root:not([data-theme="light"]) .award-status-tag.closeout{background:#4c1d1d;color:#fca5a5;}
+    :root:not([data-theme="light"]) .award-status-tag.closed{background:var(--bg-soft);color:var(--faint);}
+  }
+  :root[data-theme="dark"] .award-status-tag.active{background:#1e3a5f;color:#93c5fd;}
+  :root[data-theme="dark"] .award-status-tag.closeout{background:#4c1d1d;color:#fca5a5;}
+  :root[data-theme="dark"] .award-status-tag.closed{background:var(--bg-soft);color:var(--faint);}
+
+  /* ── honors ── */
+  .honor-item{
+    padding:10px 0;border-bottom:1px solid var(--line);
+    display:flex;gap:14px;align-items:baseline;
+  }
+  .honor-year{
+    font-size:12px;color:var(--faint);flex:none;width:32px;
+    font-variant-numeric:tabular-nums;
+  }
+  .honor-text{font-size:14px;color:var(--ink);}
+
+  /* ── patents ── */
+  .patent-item{
+    padding:13px 0;border-bottom:1px solid var(--line);
+  }
+  .patent-title{font-size:14px;color:var(--ink);line-height:1.4;}
+  .patent-meta{font-size:12.5px;color:var(--muted);margin-top:3px;}
+  .patent-link{
+    display:inline-block;margin-top:4px;font-size:12px;color:var(--accent);
+  }
+  .patent-link:hover{text-decoration:underline;}
+
+  /* ── sidebar ── */
+  .sidebar{position:sticky;top:32px;}
+  .sidebar-block{border-top:1px solid var(--line);padding-top:16px;margin-bottom:28px;}
+  .sidebar-block h4{
+    font-size:11px;text-transform:uppercase;letter-spacing:.45px;
+    color:var(--muted);margin:0 0 12px;font-family:inherit;font-weight:normal;
+  }
+  .link-item{
+    display:flex;align-items:flex-start;gap:10px;
+    padding:9px 0;border-bottom:1px solid var(--line);
+    font-size:13.5px;color:var(--ink);
+  }
+  .link-item:last-child{border-bottom:none;}
+  .link-item:hover{color:var(--accent);}
+  .link-item svg{flex:none;margin-top:2px;opacity:.4;}
+  .link-item:hover svg{opacity:.8;}
+  .link-item-body{}
+  .link-label{display:block;line-height:1.3;}
+  .link-type{display:block;font-size:11.5px;color:var(--faint);margin-top:1px;}
+
+  /* ── data note ── */
+  .data-note{
+    margin-top:32px;padding:12px 14px;
+    border:1px solid var(--line);background:var(--bg-soft);
+    font-size:12px;color:var(--faint);line-height:1.5;
+  }
+
+  /* ── responsive ── */
+  @media (max-width:820px){
+    .profile-grid{grid-template-columns:1fr;}
+    .sidebar{position:static;}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 18px;}
+    .nav-row{padding:16px 18px;}
+    .profile-head{flex-direction:column;}
+    .pub-tab{padding:9px 10px;}
+  }
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <div class="brand"><a href="Viterbi_Pathfinder_POC.html"><span class="mark">Viterbi</span> Pathfinder</a></div>
+    <a href="Viterbi_Pathfinder_POC.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 11L5 7l4-4"/>
+      </svg>
+      Back to search
+    </a>
+  </div>
+</header>
+
+<div class="crumb-strip">
+  <div class="wrap">
+    <div class="crumb">
+      <a href="Viterbi_Pathfinder_POC.html">Search</a>
+      <span class="sep">›</span>
+      <span id="crumb-name">Loading…</span>
+    </div>
+  </div>
+</div>
+
+<div id="profile-error" style="display:none;padding:56px 28px;max-width:640px;margin:0 auto;">
+  <div style="font-size:15px;color:var(--muted);">Could not load faculty profile. Make sure the API is running.</div>
+</div>
+
+<div class="wrap profile-page" id="profile-page" style="display:none;">
+  <div class="profile-grid">
+
+    <div id="main-col"></div>
+    <aside class="sidebar" id="sidebar-col"></aside>
+  </div>
+</div>
+
+<script>
+  const API_BASE = 'http://127.0.0.1:8000';
+
+  function esc(str){ const d=document.createElement('div'); d.textContent=str||''; return d.innerHTML; }
+  function initials(name){ return (name||'').split(' ').map(w=>w.replace(/[^A-Za-z]/g,'')).filter(Boolean).map(w=>w[0]).join('').slice(0,2).toUpperCase(); }
+
+  function linkIcon(type){
+    if(type==='official_profile') return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="12" height="12" rx="1"/><path d="M4 4h6M4 7h6M4 10h3"/></svg>';
+    if(type==='lab') return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="6"/><path d="M7 1c-1.5 2-2.5 3.5-2.5 6s1 4 2.5 6M7 1c1.5 2 2.5 3.5 2.5 6s-1 4-2.5 6M1 7h12"/></svg>';
+    if(type==='google_scholar') return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1L1 5l6 4 6-4-6-4z"/><path d="M1 5v4M11 6v4a4 4 0 01-8 0V6"/></svg>';
+    return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h8M3 5h8M3 8h5"/></svg>';
+  }
+
+  function linkLabel(type){
+    return {official_profile:'USC Viterbi faculty page',lab:'Lab website',google_scholar:'Google Scholar',recent_publications:'Recent publications'}[type] || type;
+  }
+  function linkSubtitle(type){
+    return {official_profile:'Official profile',lab:'Lab website',google_scholar:'Publication record',recent_publications:'Sorted by date'}[type] || '';
+  }
+
+  function awardStatusClass(status){
+    if(!status) return 'closed';
+    const s = status.toLowerCase();
+    if(s.includes('active')) return 'active';
+    if(s.includes('closeout')) return 'closeout';
+    return 'closed';
+  }
+  function awardStatusLabel(status){
+    const cls = awardStatusClass(status);
+    return {active:'Active',closeout:'In closeout',closed:'Closed'}[cls];
+  }
+
+  function formatUSD(n){ if(!n) return ''; return '$'+Number(n).toLocaleString(); }
+  function formatDate(d){ if(!d) return ''; return d.slice(0,7).replace('-','/'); }
+
+  function renderTags(items, label){
+    if(!items||!items.length) return '';
+    return `<div class="tag-group"><div class="tag-group-label">${esc(label)}</div><div class="tags">${items.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div>`;
+  }
+
+  function renderPubs(records, views){
+    if(!records||!records.length) return '';
+    const byId = {};
+    records.forEach(p=>{ if(p.title) byId[p.title]=p; });
+
+    const recentIds = (views||{}).recent_publication_ids || [];
+    const citedIds  = (views||{}).most_cited_publication_ids || [];
+
+    // fallback: if no views, show all as recent
+    const recentPubs = recentIds.length
+      ? recentIds.map(id=>records.find(p=>p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
+      : records.slice(0,8);
+    const citedPubs  = citedIds.length
+      ? citedIds.map(id=>records.find(p=>p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
+      : [];
+
+    function pubItem(p){
+      const link = p.publication_link || (p.doi ? `https://doi.org/${p.doi}` : null);
+      const title = link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
+      const cite = (p.citation_snapshot||{}).count ? `<div class="pub-cite">${esc(String(p.citation_snapshot.count))} citations</div>` : '';
+      const doi  = p.doi ? `<a class="pub-doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)} ↗</a>` : '';
+      return `<div class="pub-item"><div class="pub-year">${esc(String(p.publication_year||''))}</div><div class="pub-body"><div class="pub-title">${title}</div>${p.venue?`<div class="pub-venue">${esc(p.venue)}</div>`:''}${cite}${doi}</div></div>`;
+    }
+
+    const hasCited = citedPubs.length > 0;
+    return `<div class="section"><div class="section-label">Publications</div>
+      <div class="pub-tabs">
+        <button class="pub-tab active" onclick="setPubTab('recent',this)">Recent</button>
+        ${hasCited?'<button class="pub-tab" onclick="setPubTab(\'cited\',this)">Most cited</button>':''}
+      </div>
+      <div class="pub-list active" id="pub-recent">${recentPubs.map(pubItem).join('')}</div>
+      ${hasCited?`<div class="pub-list" id="pub-cited">${citedPubs.map(pubItem).join('')}</div>`:''}
+    </div>`;
+  }
+
+  function renderAwards(awards){
+    const records = (awards||{}).records || [];
+    if(!records.length) return '';
+    return `<div class="section"><div class="section-label">Research funding</div>${records.map(a=>{
+      const cls = awardStatusClass(a.status);
+      const lbl = awardStatusLabel(a.status);
+      const meta = [a.sponsor, a.grant_number].filter(Boolean).join(' · ');
+      const dates = [formatDate(a.start_date), formatDate(a.end_date)].filter(Boolean).join(' – ');
+      const amount = a.obligated_total_usd ? formatUSD(a.obligated_total_usd) : '';
+      const amountLine = [amount, dates].filter(Boolean).join(' · ');
+      return `<div class="award-item"><div class="award-status-dot ${cls}"></div><div class="award-body">
+        <div class="award-title">${esc(a.title)} <span class="award-status-tag ${cls}">${lbl}</span></div>
+        ${meta?`<div class="award-meta">${esc(meta)}</div>`:''}
+        ${amountLine?`<div class="award-amount">${esc(amountLine)}</div>`:''}
+      </div></div>`;
+    }).join('')}</div>`;
+  }
+
+  function renderHonors(honors){
+    if(!honors||!honors.length) return '';
+    return `<div class="section"><div class="section-label">Honors &amp; awards</div>${honors.map(h=>`
+      <div class="honor-item"><div class="honor-year">${esc(String(h.year||''))}</div><div class="honor-text">${esc(h.honor)}</div></div>
+    `).join('')}</div>`;
+  }
+
+  function renderPatents(patents){
+    if(!patents||!patents.length) return '';
+    return `<div class="section"><div class="section-label">Patents &amp; inventions</div>${patents.map(p=>{
+      const meta = [p.jurisdiction_identifier, p.status, p.event_date ? p.event_date.slice(0,7) : null].filter(Boolean).join(' · ');
+      const link = p.public_link ? `<a class="patent-link" href="${esc(p.public_link)}" target="_blank" rel="noopener">View patent ↗</a>` : '';
+      return `<div class="patent-item"><div class="patent-title">${esc(p.title)}</div>${meta?`<div class="patent-meta">${esc(meta)}</div>`:''}${link}</div>`;
+    }).join('')}</div>`;
+  }
+
+  function renderFundingSummary(awards){
+    const records = (awards||{}).records || [];
+    if(!records.length) return '';
+    const total = records.reduce((s,a)=>s+(a.obligated_total_usd||0),0);
+    const active = records.filter(a=>awardStatusClass(a.status)==='active').length;
+    const closeout = records.filter(a=>awardStatusClass(a.status)==='closeout').length;
+    const dot = (cls,label)=>`<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--${cls}-dot);margin-right:6px;vertical-align:middle;"></span>${label}</span>`;
+    return `<div class="sidebar-block"><h4>Funding summary</h4>
+      <div style="font-size:22px;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);margin-bottom:4px;">${formatUSD(total)}</div>
+      <div style="font-size:12.5px;color:var(--muted);">Total across ${records.length} award${records.length!==1?'s':''}</div>
+      <div style="margin-top:10px;font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:4px;">
+        ${active?dot('active',`${active} active award${active!==1?'s':''}`):''}
+        ${closeout?dot('closeout',`${closeout} in closeout`):''}
+      </div>
+    </div>`;
+  }
+
+  async function loadProfile(){
+    const params = new URLSearchParams(location.search);
+    const facultyId = params.get('id');
+    if(!facultyId){
+      document.getElementById('crumb-name').textContent = 'Profile not found';
+      document.getElementById('profile-error').style.display='block';
+      return;
+    }
+
+    let pkg;
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`);
+      if(!res.ok) throw new Error(res.status);
+      pkg = await res.json();
+    }catch(e){
+      document.getElementById('crumb-name').textContent = facultyId;
+      document.getElementById('profile-error').style.display='block';
+      return;
+    }
+
+    const identity = pkg.identity || {};
+    const name = identity.canonical_name || facultyId;
+    document.title = `${name} — Viterbi Pathfinder`;
+    document.getElementById('crumb-name').textContent = name;
+
+    // primary appointment
+    const appts = identity.appointments || [];
+    const primary = appts.find(a=>a.appointment_type==='primary') || appts[0] || {};
+    const courtesy = appts.filter(a=>a.appointment_type==='courtesy');
+
+    // header
+    const research = pkg.research || {};
+    const mainCol = document.getElementById('main-col');
+    mainCol.innerHTML = `
+      <div class="profile-head">
+        <div class="avatar">${esc(initials(name))}</div>
+        <div class="head-body">
+          <h1>${esc(name)}</h1>
+          <div class="head-dept">${esc([primary.title, primary.unit].filter(Boolean).join('<br>'))}</div>
+          ${courtesy.length?`<div class="courtesy-list">Courtesy appointment: ${courtesy.map(c=>esc(c.unit)).join(' · ')}</div>`:''}
+          ${identity.usc_email?`<div class="head-email"><a href="mailto:${esc(identity.usc_email)}">${esc(identity.usc_email)}</a></div>`:''}
+        </div>
+      </div>
+
+      ${research.summary?`<div class="section"><div class="section-label">Research summary</div><p class="summary-text">${esc(research.summary)}</p>
+        ${renderTags(research.domains,'Research domains')}
+        ${renderTags(research.methods,'Methods')}
+        ${renderTags(research.applications,'Applications')}
+      </div>`:''}
+
+      ${renderPubs(pkg.publications?.records, pkg.publications?.views)}
+      ${renderAwards(pkg.awards)}
+      ${renderHonors(pkg.honors)}
+      ${renderPatents(pkg.patents_and_inventions)}
+    `;
+
+    // sidebar
+    const links = pkg.links || [];
+    const sidebar = document.getElementById('sidebar-col');
+    sidebar.innerHTML = `
+      ${links.length?`<div class="sidebar-block"><h4>Links</h4>${links.map(l=>`
+        <a href="${esc(l.url)}" class="link-item" target="_blank" rel="noopener">
+          ${linkIcon(l.link_type)}
+          <div class="link-item-body">
+            <span class="link-label">${esc(linkLabel(l.link_type))}</span>
+            <span class="link-type">${esc(linkSubtitle(l.link_type))}</span>
+          </div>
+        </a>`).join('')}</div>`:''}
+      ${renderFundingSummary(pkg.awards)}
+    `;
+
+    document.getElementById('profile-page').style.display='block';
+  }
+
+  function setPubTab(tab, btn){
+    document.querySelectorAll('.pub-list').forEach(l=>l.classList.remove('active'));
+    document.querySelectorAll('.pub-tab').forEach(b=>b.classList.remove('active'));
+    const el = document.getElementById('pub-'+tab);
+    if(el) el.classList.add('active');
+    btn.classList.add('active');
+  }
+
+  loadProfile();
+</script>
+
+</body>
+</html>

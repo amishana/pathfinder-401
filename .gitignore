@@ -1,0 +1,6 @@
+.venv/
+viterbi-faculty-search/activate/
+.env
+.claude/
+__pycache__/
+*.pyc

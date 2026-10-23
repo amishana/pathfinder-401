@@ -11,10 +11,14 @@ import glob
 import json
 import os
 
+from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 
 from config import MODEL, get_conn
 from evidence import extract_evidence
+from summarize import generate_summary
+
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 
 def load_packages(data_dir):
@@ -46,6 +50,15 @@ def ingest(data_dir):
         with conn:
             with conn.cursor() as cur:
                 for faculty_id, name, pkg in packages:
+                    research = pkg.setdefault("research", {})
+                    if not research.get("summary"):
+                        print(f"  {faculty_id}  generating summary via OpenAI...")
+                        summary = generate_summary(pkg)
+                        if summary:
+                            research["summary"] = summary
+                        else:
+                            print(f"  {faculty_id}  no summary generated (check OPENAI_API_KEY)")
+
                     pieces = extract_evidence(pkg)
                     texts = [p["text"] for p in pieces]
                     embeddings = (

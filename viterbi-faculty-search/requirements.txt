@@ -5,3 +5,5 @@ pgvector
 numpy<2
 fastapi
 uvicorn
+openai
+python-dotenv
