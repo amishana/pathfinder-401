@@ -4,3 +4,7 @@ viterbi-faculty-search/activate/
 .claude/
 __pycache__/
 *.pyc
+
+# CVs uploaded through the app (may be private)
+cv-uploads/
+cv-structured-outputs/drafts/

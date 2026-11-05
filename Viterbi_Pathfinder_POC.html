@@ -166,7 +166,14 @@
     padding:48px 24px;text-align:center;color:var(--muted);
     transition:border-color .15s,background .15s;
   }
-  .dropzone:hover{border-color:var(--accent);background:var(--bg-soft);}
+  .dropzone{cursor:pointer;}
+  .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:var(--bg-soft);}
+  .dropzone.busy{opacity:.5;pointer-events:none;}
+  .upload-status{margin-top:18px;font-size:14px;color:var(--ink);}
+  .upload-status:empty{display:none;}
+  .upload-status.error{color:var(--accent);}
+  .upload-status ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13px;}
+  .upload-status a{color:var(--accent);text-decoration:underline;}
   .dropzone .dz-title{font-family:"Source Serif 4",Georgia,serif;font-size:17px;color:var(--ink);margin-bottom:8px;}
   .dropzone .dz-sub{font-size:13px;}
   .dropzone .dz-btn{
@@ -198,6 +205,20 @@
   .profile-desc h4{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin:24px 0 10px;}
 
   .sidebar-box{border-top:1px solid var(--line);padding-top:16px;}
+  .review-empty{color:var(--muted);font-size:14.5px;}
+  .source-item{cursor:pointer;}
+  .source-item.active{color:var(--accent);font-weight:600;}
+  .mode-tag{
+    display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.4px;
+    border:1px solid var(--line);padding:1px 8px;margin-left:8px;vertical-align:middle;color:var(--muted);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  }
+  .review-list{margin:0 0 6px;padding-left:18px;font-size:14px;}
+  .review-list li{margin-bottom:4px;}
+  .review-none{color:var(--faint);font-size:13.5px;margin:0 0 6px;}
+  .review-warn{border-left:3px solid var(--accent);padding:8px 12px;background:var(--bg-soft);font-size:13.5px;margin-bottom:8px;}
+  .review-actions-note{margin-top:10px;font-size:13px;color:var(--muted);}
+  .review-actions-note.error{color:var(--accent);}
   .sidebar-box h4{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);margin:0 0 12px;}
   .source-item{display:block;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;}
   .source-item .src-type{display:block;font-size:11px;color:var(--faint);margin-top:2px;}
@@ -273,7 +294,7 @@
 <section class="view" id="view-upload">
   <div class="wrap upload-intro">
     <h2>Add faculty information</h2>
-    <p class="lede">Upload a CV to create a new faculty profile, or add more information to a profile that already exists. This is a preview, uploads are not processed.</p>
+    <p class="lede">Upload a CV to create a new faculty profile, or add more information to a profile that already exists. The CV is read automatically and held on the Profile Review tab, so nothing is added to the search database until it is approved.</p>
 
     <div class="mode-toggle">
       <button class="mode-btn active" data-mode="new" onclick="setMode('new')">New professor</button>
@@ -283,13 +304,9 @@
 
   <div class="wrap upload-layout">
       <div class="mode-panel active" id="mode-new">
-        <div class="field">
-          <label for="newProfessorName">Professor name</label>
-          <input id="newProfessorName" type="text" placeholder="e.g. Priya Anand" />
-        </div>
-        <div class="dropzone" onclick="demoToast(event)">
+        <div class="dropzone" data-mode="new">
           <div class="dz-title">Drag and drop a CV here</div>
-          <div class="dz-sub">PDF, up to 10MB. A new profile will be generated for review.</div>
+          <div class="dz-sub">PDF, up to 10MB. The professor's name and details are read from the CV, and a new profile is created for review.</div>
           <span class="dz-btn">Browse files</span>
         </div>
       </div>
@@ -298,50 +315,35 @@
         <div class="field">
           <label for="existingProfessor">Select professor</label>
           <select id="existingProfessor">
-            <option>Robin Jia, Thomas Lord Department of Computer Science</option>
-            <option>Mahta Moghaddam, Electrical and Computer Engineering, Electrophysics</option>
-            <option>Antonio Ortega, Electrical and Computer Engineering</option>
+            <option value="">Loading professors…</option>
           </select>
         </div>
-        <div class="dropzone" onclick="demoToast(event)">
-          <div class="dz-title">Add documents to this profile</div>
-          <div class="dz-sub">Drag and drop an updated CV, paper, or bio. Existing profile details will be preserved.</div>
+        <div class="dropzone" data-mode="existing">
+          <div class="dz-title">Add a CV to this profile</div>
+          <div class="dz-sub">Drag and drop an updated CV (PDF, up to 10MB). New publications, honors, patents, and links are added; existing profile details are preserved.</div>
           <span class="dz-btn">Browse files</span>
         </div>
       </div>
+
+      <input type="file" id="cvFileInput" accept="application/pdf,.pdf" hidden />
+      <div class="upload-status" id="uploadStatus" role="status" aria-live="polite"></div>
   </div>
 </section>
 
 <section class="view" id="view-profile">
+  <div class="wrap upload-intro">
+    <h2>Review uploaded CVs</h2>
+    <p class="lede">Each uploaded CV is read automatically and held here. Check what it would add against the original CV, then approve it to add it to the search database, or reject it.</p>
+    <div class="upload-status" id="reviewBanner" role="status" aria-live="polite"></div>
+  </div>
   <div class="wrap profile-layout">
-    <div>
-      <div class="profile-header">
-        <div class="profile-avatar">AO</div>
-        <div style="flex:1;">
-          <h2>Antonio Ortega</h2>
-          <div class="ptitle">Dean's Professor of Electrical and Computer Engineering, Viterbi Ming Hsieh Department of Electrical and Computer Engineering</div>
-          <div class="profile-actions">
-            <button class="btn primary" onclick="demoToast(event)">Approve</button>
-            <button class="btn" onclick="demoToast(event)">Edit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="profile-desc">
-        <h4>Generated summary</h4>
-        <p>Antonio Ortega's research focuses on graph signal processing and the compression of images, video, and three-dimensional data.<span class="fn">1</span> His lab develops graph-based transforms and quality-assessment methods used in point-cloud and video compression systems, along with distributed sensing and machine-learning approaches for sensor data.<span class="fn">2</span> Recent work extends this to image and video coding designed for machine vision rather than the human eye.<span class="fn">3</span></p>
-
-        <h4>Areas of expertise</h4>
-        <p style="margin:0;color:var(--muted);font-size:14px;">Graph signal processing, image and video compression, point-cloud processing, distributed source coding, sensor networks</p>
-      </div>
+    <div id="reviewDetail">
+      <p class="review-empty">Loading drafts…</p>
     </div>
 
     <div class="sidebar-box">
-      <h4>Linked sources</h4>
-      <a href="https://viterbi.usc.edu/directory/faculty/Ortega/Antonio" class="source-item" onclick="return demoToast(event)">USC Viterbi faculty page<span class="src-type">Official profile</span></a>
-      <a href="https://sites.google.com/usc.edu/stac-lab/home" class="source-item" onclick="return demoToast(event)">STAC Lab<span class="src-type">Lab website</span></a>
-      <a href="https://biron.usc.edu/wiki/index.php/Antonio_Ortega" class="source-item" onclick="return demoToast(event)">Recent publications<span class="src-type">BiRON wiki</span></a>
-      <a href="https://scholar.google.com/citations?user=K4bCJYcAAAAJ&hl=en" class="source-item" onclick="return demoToast(event)">Antonio Ortega<span class="src-type">Google Scholar</span></a>
+      <h4>Waiting for review</h4>
+      <div id="reviewQueue"></div>
     </div>
   </div>
 </section>
@@ -353,6 +355,7 @@
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     document.getElementById('view-'+name).classList.add('active');
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
+    if(name === 'profile') loadReviews();
   }
 
   function setMode(mode){
@@ -408,6 +411,224 @@
     }
 
     renderResults(data);
+  }
+
+  // ---------- CV upload ----------
+
+  // fill the "existing professor" picker from the database
+  async function loadProfessors(){
+    const select = document.getElementById('existingProfessor');
+    try{
+      const res = await fetch(`${API_BASE}/faculty`);
+      if(!res.ok) throw new Error(`backend returned ${res.status}`);
+      const data = await res.json();
+      select.innerHTML = '<option value="">Choose a professor</option>' + data.faculty.map(f =>
+        `<option value="${escapeHtml(f.faculty_id)}">${escapeHtml(f.name)}</option>`).join('');
+    }catch(err){
+      console.error(err);
+      select.innerHTML = '<option value="">Couldn\'t load professors, is api.py running?</option>';
+    }
+  }
+
+  let uploadMode = 'new';
+  let uploading = false;
+
+  function setUploadStatus(html, isError){
+    const el = document.getElementById('uploadStatus');
+    el.innerHTML = html;
+    el.classList.toggle('error', !!isError);
+  }
+
+  async function uploadCv(file, mode){
+    if(uploading || !file) return;
+    if(!/\.pdf$/i.test(file.name) && file.type !== 'application/pdf'){
+      setUploadStatus('Please choose a PDF file.', true);
+      return;
+    }
+    if(file.size > 10 * 1024 * 1024){
+      setUploadStatus('That file is larger than 10MB.', true);
+      return;
+    }
+    const facultyId = document.getElementById('existingProfessor').value;
+    if(mode === 'existing' && !facultyId){
+      setUploadStatus('Choose which professor this CV belongs to first.', true);
+      return;
+    }
+
+    const form = new FormData();
+    form.append('file', file);
+    form.append('mode', mode);
+    if(mode === 'existing') form.append('faculty_id', facultyId);
+
+    uploading = true;
+    document.querySelectorAll('.dropzone').forEach(z => z.classList.add('busy'));
+    setUploadStatus(`Reading <strong>${escapeHtml(file.name)}</strong>… this usually takes about a minute.`);
+
+    try{
+      const res = await fetch(`${API_BASE}/cv-upload`, {method:'POST', body:form});
+      const data = await res.json().catch(() => ({}));
+      if(!res.ok) throw new Error(data.detail || `backend returned ${res.status}`);
+
+      const a = data.added_counts;
+      const what = data.mode === 'new' ? 'A new profile for' : 'An update to the profile for';
+      setUploadStatus(
+        `${what} <strong>${escapeHtml(data.name)}</strong> is ready for review: ` +
+        `${a.publications} publications, ${a.honors} honors, ${a.patents} patents, ${a.links} links. ` +
+        `Nothing has been added to the database yet. ` +
+        `<a href="#" onclick="openReview('${escapeHtml(data.draft_id)}');return false;">Review it</a>`
+      );
+    }catch(err){
+      console.error(err);
+      const msg = err instanceof TypeError ? 'Couldn\'t reach the backend, make sure api.py is running.' : err.message;
+      setUploadStatus(escapeHtml(msg), true);
+    }finally{
+      uploading = false;
+      document.querySelectorAll('.dropzone').forEach(z => z.classList.remove('busy'));
+      document.getElementById('cvFileInput').value = '';
+    }
+  }
+
+  document.querySelectorAll('.dropzone').forEach(zone => {
+    zone.addEventListener('click', () => {
+      uploadMode = zone.dataset.mode;
+      document.getElementById('cvFileInput').click();
+    });
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      uploadCv(e.dataTransfer.files[0], zone.dataset.mode);
+    });
+  });
+  document.getElementById('cvFileInput').addEventListener('change', e => uploadCv(e.target.files[0], uploadMode));
+
+  loadProfessors();
+
+  // ---------- Profile review ----------
+
+  let currentDraftId = null;
+
+  function openReview(draftId){
+    currentDraftId = draftId;
+    goTab('profile');
+  }
+
+  async function loadReviews(){
+    const queue = document.getElementById('reviewQueue');
+    const detail = document.getElementById('reviewDetail');
+    let drafts;
+    try{
+      const res = await fetch(`${API_BASE}/reviews?status=pending`);
+      if(!res.ok) throw new Error(`backend returned ${res.status}`);
+      drafts = (await res.json()).drafts;
+    }catch(err){
+      console.error(err);
+      queue.innerHTML = '';
+      detail.innerHTML = '<p class="review-empty">Couldn\'t reach the backend, make sure api.py is running.</p>';
+      return;
+    }
+
+    if(!drafts.length){
+      queue.innerHTML = '<p class="review-none">Nothing waiting.</p>';
+      detail.innerHTML = '<p class="review-empty">No uploaded CVs are waiting for review. Upload one from the Upload tab.</p>';
+      currentDraftId = null;
+      return;
+    }
+    if(!drafts.some(d => d.draft_id === currentDraftId)) currentDraftId = drafts[0].draft_id;
+
+    queue.innerHTML = drafts.map(d => `
+      <a class="source-item${d.draft_id === currentDraftId ? ' active' : ''}" onclick="showDraft('${escapeHtml(d.draft_id)}')">
+        ${escapeHtml(d.name)}
+        <span class="src-type">${d.mode === 'new' ? 'New professor' : 'Update to existing'} · ${escapeHtml(d.cv_filename || '')}</span>
+      </a>`).join('');
+    showDraft(currentDraftId);
+  }
+
+  function reviewList(title, items){
+    const body = items && items.length
+      ? `<ul class="review-list">${items.map(i => `<li>${escapeHtml(String(i))}</li>`).join('')}</ul>`
+      : '<p class="review-none">None</p>';
+    return `<h4>${escapeHtml(title)} (${items ? items.length : 0})</h4>${body}`;
+  }
+
+  async function showDraft(draftId){
+    currentDraftId = draftId;
+    document.querySelectorAll('#reviewQueue .source-item').forEach(el =>
+      el.classList.toggle('active', el.getAttribute('onclick').includes(`'${draftId}'`)));
+    const detail = document.getElementById('reviewDetail');
+    let d;
+    try{
+      const res = await fetch(`${API_BASE}/reviews/${encodeURIComponent(draftId)}`);
+      if(!res.ok) throw new Error(`backend returned ${res.status}`);
+      d = await res.json();
+    }catch(err){
+      console.error(err);
+      detail.innerHTML = '<p class="review-empty">Couldn\'t load this draft.</p>';
+      return;
+    }
+
+    const pkg = d.package || {};
+    const research = pkg.research || {};
+    const appts = ((pkg.identity || {}).appointments || []).map(a => [a.title, a.unit].filter(Boolean).join(', '));
+    const isNew = d.mode === 'new';
+    const warnings = [
+      ...(d.conflicts || []).map(c => `<div class="review-warn"><strong>Conflict:</strong> ${escapeHtml(c)}</div>`),
+      ...(d.notes || []).map(n => `<div class="review-warn">${escapeHtml(n)}</div>`),
+    ].join('');
+
+    detail.innerHTML = `
+      <div class="profile-header">
+        <div class="profile-avatar">${escapeHtml(initials(d.name))}</div>
+        <div style="flex:1;">
+          <h2>${escapeHtml(d.name)}<span class="mode-tag">${isNew ? 'New professor' : 'Update'}</span></h2>
+          <div class="ptitle">${escapeHtml(d.faculty_id)}${appts.length ? ' · ' + appts.map(escapeHtml).join('; ') : ''}</div>
+          <div class="profile-actions">
+            <button class="btn primary" onclick="decideDraft('${escapeHtml(d.draft_id)}','approve')">Approve and add to database</button>
+            <button class="btn" onclick="decideDraft('${escapeHtml(d.draft_id)}','reject')">Reject</button>
+            <a class="btn" href="${API_BASE}/reviews/${encodeURIComponent(d.draft_id)}/cv" target="_blank" rel="noopener">View uploaded CV</a>
+          </div>
+          <div class="review-actions-note" id="reviewNote"></div>
+        </div>
+      </div>
+
+      <div class="profile-desc">
+        ${warnings ? `<h4>Check before approving</h4>${warnings}` : ''}
+        <h4>${isNew ? 'Generated summary' : 'Research summary (unchanged)'}</h4>
+        <p>${escapeHtml(research.summary || 'No summary.')}</p>
+        ${isNew && (research.domains || []).length ? `<h4>Areas of expertise</h4><p style="margin:0;color:var(--muted);font-size:14px;">${escapeHtml(research.domains.join(', '))}</p>` : ''}
+        ${reviewList(isNew ? 'Publications' : 'New publications', d.added.publications)}
+        ${reviewList(isNew ? 'Honors' : 'New honors', d.added.honors)}
+        ${reviewList(isNew ? 'Patents' : 'New patents', d.added.patents)}
+        ${reviewList(isNew ? 'Links' : 'New links', d.added.links)}
+      </div>`;
+  }
+
+  async function decideDraft(draftId, action){
+    const note = document.getElementById('reviewNote');
+    document.querySelectorAll('#reviewDetail .profile-actions .btn').forEach(b => b.disabled = true);
+    note.classList.remove('error');
+    note.textContent = action === 'approve' ? 'Adding to the database…' : 'Rejecting…';
+    try{
+      const res = await fetch(`${API_BASE}/reviews/${encodeURIComponent(draftId)}/${action}`, {method:'POST'});
+      const data = await res.json().catch(() => ({}));
+      if(!res.ok) throw new Error(data.detail || `backend returned ${res.status}`);
+      const banner = document.getElementById('reviewBanner');
+      if(action === 'approve'){
+        loadProfessors();
+        setUploadStatus('');
+        banner.innerHTML = `Added <strong>${escapeHtml(data.name)}</strong> (${escapeHtml(data.faculty_id)}) to the database. ` +
+          `<a href="profile.html?id=${encodeURIComponent(data.faculty_id)}">View profile</a>`;
+      }else{
+        banner.innerHTML = `Rejected the draft for <strong>${escapeHtml(data.name)}</strong>. Nothing was added.`;
+      }
+      loadReviews();
+    }catch(err){
+      console.error(err);
+      note.classList.add('error');
+      note.textContent = err.message;
+      document.querySelectorAll('#reviewDetail .profile-actions .btn').forEach(b => b.disabled = false);
+    }
   }
 
   function renderResults(data){
