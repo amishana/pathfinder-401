@@ -1,0 +1,149 @@
+/* Shared look for Viterbi Pathfinder pages.
+   Warm cream paper, editorial serif headlines, mono uppercase labels, hard 1px rules,
+   a USC Cardinal band for heroes, and USC Gold for the few things that should pop. */
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root{
+  --sand:#F6F0E6;              /* cream paper */
+  --sand-deep:#ECE3D4;
+  --cardinal:#990000;           /* USC Cardinal */
+  --cardinal-deep:#7A0000;
+  --gold:#FFCC00;               /* USC Gold */
+  --night:#1A1212;              /* dark-mode paper, warm near-black */
+  --night-soft:#251A1A;
+  --process-black:#0B0A08;
+
+  --bg:var(--sand);
+  --bg-soft:var(--sand-deep);
+  --ink:var(--process-black);
+  --muted:#57524A;
+  --faint:#857E72;
+  --line:rgba(11,10,8,.16);
+  --line-strong:var(--process-black);
+  --accent:var(--cardinal);      /* links and text accents: high contrast on cream */
+  --hot:var(--gold);             /* fills: buttons, highlights, active markers */
+  --hot-ink:var(--process-black);
+
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Figtree",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --gutter:clamp(18px,4vw,48px);
+  --max:1180px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:var(--night);
+    --bg-soft:var(--night-soft);
+    --ink:var(--sand);
+    --muted:#C9B9B4;
+    --faint:#9A8884;
+    --line:rgba(244,236,223,.16);
+    --line-strong:var(--sand);
+    --accent:var(--gold);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:var(--night);
+  --bg-soft:var(--night-soft);
+  --ink:var(--sand);
+  --muted:#C9B9B4;
+  --faint:#9A8884;
+  --line:rgba(244,236,223,.16);
+  --line-strong:var(--sand);
+  --accent:var(--gold);
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:-.01em;
+  line-height:1.02;
+  margin:0;
+  text-wrap:balance;
+}
+h1 em,h2 em{font-style:italic;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--hot);outline-offset:2px;
+}
+::selection{background:var(--hot);color:var(--hot-ink);}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);}
+
+/* mono label: "[ 01 ] SEARCH" style eyebrows and small caps everywhere */
+.mono,.eyebrow{
+  font-family:var(--mono);
+  font-size:11.5px;
+  font-weight:400;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--muted);}
+.eyebrow .num{color:var(--ink);}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* nav */
+header.site-nav{
+  position:sticky;top:0;z-index:50;
+  background:var(--bg);
+  border-bottom:1px solid var(--line-strong);
+}
+.nav-row{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:var(--max);margin:0 auto;padding:16px var(--gutter);
+  flex-wrap:wrap;
+}
+.brand{font-family:var(--serif);font-size:26px;line-height:1;letter-spacing:-.01em;}
+.brand .mark{font-style:italic;}
+.brand .dot{
+  display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--accent);margin-left:4px;vertical-align:super;
+}
+
+/* buttons */
+.btn,.login-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--line-strong);background:transparent;color:var(--ink);
+  padding:9px 16px;border-radius:999px;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.btn:hover,.login-link:hover{background:var(--ink);color:var(--bg);}
+.btn.primary{background:var(--hot);border-color:var(--hot);color:var(--hot-ink);}
+.btn.primary:hover{background:var(--ink);border-color:var(--ink);color:var(--bg);}
+.btn .arrow,.login-link .arrow{transition:transform .15s;}
+.btn:hover .arrow,.login-link:hover .arrow{transform:translateX(3px);}
+
+/* cardinal band used behind heroes, same in light and dark mode */
+.band{
+  background:var(--cardinal);color:var(--sand);
+  --ink:var(--sand);--muted:#EBCFCB;--faint:#D4A5A0;
+  --line:rgba(246,240,230,.24);--line-strong:var(--sand);
+  --accent:var(--gold);
+}
+
+#toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--hot);color:var(--hot-ink);padding:11px 20px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:999px;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;animation:none !important;}
+}
