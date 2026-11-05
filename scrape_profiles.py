@@ -135,10 +135,8 @@ def parse_picture(soup, base_url):
 
 
 def parse_education(soup):
-    """Find an 'Education' heading and collect the list items or paragraphs that follow it."""
-    # Look into seeing if there is a way to parse the education from their bio instead of their education section 
-    # because Assad Oberai's educationd did not populate.
-
+    """Find an 'Education' heading and collect the list items or paragraphs that follow it.
+    Falls back to extracting degree sentences from the biography section."""
     for heading in soup.find_all(HEADING_TAGS):
         if not EDUCATION_HEADING.match(heading.get_text(" ")):
             continue
@@ -146,7 +144,6 @@ def parse_education(soup):
         for sibling in heading.find_all_next():
             if sibling is heading:
                 continue
-            # Stop at the next heading of the same or higher level.
             if sibling.name in ("h1", "h2", "h3", "h4", "h5", "h6") and sibling.name <= (heading.name or "h6"):
                 break
             if sibling.name == "li":
@@ -157,8 +154,54 @@ def parse_education(soup):
                 break
         lines = [line for line in lines if line]
         if lines:
-            return "\n".join(dict.fromkeys(lines))  # drop duplicates, keep order
-    return None
+            return "\n".join(dict.fromkeys(lines))
+
+    return _education_from_bio(soup)
+
+
+_DEGREE_RE = re.compile(
+    r"\b(Ph\.?D\.?|M\.?S\.?|M\.?Sc\.?|M\.?Eng\.?|M\.?A\.?|B\.?S\.?|B\.?A\.?|B\.?Eng\.?"
+    r"|Doctor|Master|Bachelor|postdoc(?:toral)?)\b", re.I,
+)
+_BIO_HEADING = re.compile(r"^\s*(bio(?:graphy)?|about|overview|profile)\b", re.I)
+
+
+def _education_from_bio(soup):
+    """Extract degree-bearing sentences from a biography block when there is no Education section."""
+    # Try a labelled bio section first, then fall back to the longest paragraph.
+    bio_text = None
+    for heading in soup.find_all(HEADING_TAGS):
+        if not _BIO_HEADING.match(heading.get_text(" ")):
+            continue
+        paragraphs = []
+        for sibling in heading.find_all_next():
+            if sibling.name in ("h1", "h2", "h3", "h4", "h5", "h6") and sibling.name <= (heading.name or "h6"):
+                break
+            if sibling.name in ("p", "li") and not sibling.find("li"):
+                text = clean(sibling.get_text(" "))
+                if text:
+                    paragraphs.append(text)
+            if len(paragraphs) >= 10:
+                break
+        if paragraphs:
+            bio_text = " ".join(paragraphs)
+            break
+
+    if not bio_text:
+        # Fallback: largest paragraph on the page (likely the bio)
+        candidates = [
+            clean(p.get_text(" ")) for p in soup.find_all("p") if not p.find("li")
+        ]
+        candidates = [c for c in candidates if c]
+        bio_text = max(candidates, key=len) if candidates else None
+
+    if not bio_text:
+        return None
+
+    # Pull out individual sentences that mention a degree.
+    sentences = re.split(r"(?<=[.!?])\s+", bio_text)
+    lines = [s.strip() for s in sentences if _DEGREE_RE.search(s) and len(s.strip()) < 300]
+    return "\n".join(dict.fromkeys(lines)) or None
 
 
 def parse_contact(soup):
@@ -223,16 +266,21 @@ def package_url(faculty_id):
 
 
 def name_matches(html, canonical_name):
-    """True if the page's title/heading/start of text contains the professor's first and last name.
+    """True if the page contains the professor's last name and any first-name variant.
 
-    "Jianhua (Joshua) Yang" matches a page that says "Joshua Yang" or "Jianhua Yang". Fix this because right now Joshua's field did not populate. 
+    Handles nicknames: "Jianhua (Joshua) Yang" matches pages with "Joshua Yang" or
+    "Jianhua Yang" by extracting each word from the parenthetical as a separate candidate.
     """
     nickname = re.search(r"\(([^)]+)\)", canonical_name)
     words = re.findall(r"[A-Za-z\u00C0-\u024F'-]+", re.sub(r"\([^)]*\)", "", canonical_name))
     if len(words) < 2:
         return False
     first, last = words[0].lower(), words[-1].lower()
-    firsts = {first} | ({nickname.group(1).lower()} if nickname else set())
+    firsts = {first}
+    if nickname:
+        # split multi-word nicknames and add each word longer than one char
+        nick_words = re.findall(r"[A-Za-z\u00C0-\u024F'-]+", nickname.group(1))
+        firsts |= {w.lower() for w in nick_words if len(w) > 1}
 
     soup = BeautifulSoup(html, "html.parser")
     heading = " ".join(node.get_text(" ") for node in soup.find_all(["title", "h1", "h2"]))
@@ -333,6 +381,38 @@ def save_snapshot(faculty_id, data):
     )
 
 
+def _data_from_package(faculty_id):
+    """Pull title, contact, and education from the faculty JSON package as a fallback
+    when the USC profile page cannot be found online."""
+    for path in glob.glob(PACKAGE_GLOB):
+        pkg = json.load(open(path))
+        if pkg.get("faculty_id") != faculty_id:
+            continue
+        identity = pkg.get("identity") or {}
+
+        # title: primary appointment title + unit
+        title = None
+        for appt in identity.get("appointments") or []:
+            if appt.get("appointment_type") == "primary" or not title:
+                parts = [appt.get("title"), appt.get("unit")]
+                title = clean(", ".join(p for p in parts if p)) or title
+
+        # contact: email from identity
+        email = identity.get("usc_email")
+        contact = f"Email: {email}" if email else None
+
+        # education: not in the standard package schema — leave None so the bio fallback
+        # can still fill it if the page is later scraped
+        return {
+            "profile_picture": None,
+            "title": title,
+            "education": None,
+            "contact": contact,
+            "usc_profile": None,
+        }
+    return None
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("faculty_ids", nargs="*", help="faculty IDs to scrape (default: all)")
@@ -365,8 +445,19 @@ def main():
                         url, html = found
                         print(f"{fid}  {name}: found profile by search: {url}")
                 if not url:
-                    skipped.append(fid)
-                    print(f"{fid}  {name}: SKIPPED, no profile URL found (fill faculty.usc_profile by hand)")
+                    data = _data_from_package(fid)
+                    if data and any(data.values()):
+                        found_fields = [k for k, v in data.items() if v]
+                        print(f"{fid}  {name}: no profile URL found, using package data for {', '.join(found_fields)}")
+                        if not args.dry_run:
+                            save_to_db(conn, fid, data)
+                            save_snapshot(fid, data)
+                        else:
+                            print(json.dumps(data, indent=2, ensure_ascii=False))
+                        done += 1
+                    else:
+                        skipped.append(fid)
+                        print(f"{fid}  {name}: SKIPPED, no profile URL and no package data found")
                     time.sleep(REQUEST_DELAY_SECONDS)
                     continue
 

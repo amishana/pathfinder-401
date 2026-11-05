@@ -134,7 +134,9 @@ Field guidance:
 "Primary"; courtesy appointments are "Courtesy". title is the rank/chair, e.g. "Associate \
 Professor; Kenneth C. Dahlberg Early Career Chair". unit is the full department name.
 - links: only URLs printed in the CV that point to this person's own pages (lab site, personal \
-site, Google Scholar, GitHub, USC profile). Not dataset, paper, or media links.
+site, Google Scholar, GitHub, USC profile). Not dataset, paper, or media links. The "url" field \
+must be the full URL string itself (e.g. "https://linkedin.com/in/username"), never a label like \
+"LinkedIn" or "Personal Website". If the CV shows a label without a URL, omit that link entirely.
 - research.summary: 2-3 sentences, third person, present tense ("Current work develops ..."), \
 describing the current research program as shown by recent publications, grants, and patents.
 - research.domains: 5-8 short noun phrases (research areas). methods: 4-8 techniques or \
