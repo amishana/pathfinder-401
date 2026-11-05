@@ -63,12 +63,11 @@
   .section-label::before{content:"[ " counter(sec,decimal-leading-zero) " ]";color:var(--ink);}
   .section-label::after{content:"";flex:1;height:1px;background:var(--line);}
 
-  /* research summary: big editorial lede */
+  /* research summary */
   .summary-text{
-    font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.25;letter-spacing:-.005em;
-    max-width:30ch;margin:0 0 36px;
+    font-family:var(--sans);font-size:16px;line-height:1.65;letter-spacing:0;
+    max-width:72ch;margin:0 0 36px;
   }
-  @media (min-width:1000px){.summary-text{max-width:36ch;}}
 
   .tag-group{display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line);}
   .tag-group-label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding-top:5px;}

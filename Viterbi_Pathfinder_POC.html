@@ -100,8 +100,20 @@
 
   /* upload + profile review share a section header */
   .page-head{padding-top:clamp(56px,8vw,104px);}
-  .page-head h2{margin-top:24px;font-size:clamp(44px,6vw,80px);max-width:16ch;}
+  .page-head h2{margin-top:24px;font-size:clamp(44px,6vw,80px);max-width:none;white-space:nowrap;}
   .page-head p.lede{margin-top:20px;color:var(--muted);font-size:16px;max-width:52ch;}
+
+  /* upload tab: two-column hero so nothing is off-screen */
+  .upload-hero{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+    gap:clamp(32px,5vw,72px);align-items:center;
+    min-height:calc(100dvh - 62px);
+    padding:clamp(32px,4vw,56px) var(--gutter);
+  }
+  .upload-hero .page-head-inner{padding-top:0;}
+  .upload-hero .page-head-inner h2{margin-top:16px;font-size:clamp(32px,4vw,56px);white-space:normal;}
+  .upload-hero .page-head-inner p.lede{margin-top:16px;font-size:15px;max-width:44ch;}
+  .upload-hero .page-head-inner .mode-toggle{margin-top:24px;}
 
   .mode-toggle{
     margin-top:32px;display:inline-flex;padding:4px;gap:4px;
@@ -113,8 +125,7 @@
   }
   .mode-btn.active{background:var(--ink);color:var(--bg);}
 
-  .upload-layout{padding:36px var(--gutter) clamp(72px,9vw,120px);}
-  .upload-layout > div{max-width:720px;}
+  .upload-panels{width:100%;}
   .mode-panel{display:none;}
   .mode-panel.active{display:block;}
 
@@ -129,7 +140,7 @@
 
   .dropzone{
     margin-top:8px;border:1px dashed var(--line-strong);
-    padding:clamp(40px,6vw,72px) 24px;text-align:center;cursor:pointer;
+    padding:clamp(28px,4vw,48px) 24px;text-align:center;cursor:pointer;
     transition:background .15s;
   }
   .dropzone:hover,.dropzone.dragover{background:var(--bg-soft);border-color:var(--accent);}
@@ -154,14 +165,22 @@
   .upload-success p:last-of-type{margin-bottom:0;}
   .review-btn{
     display:inline-block;margin-top:14px;
-    background:var(--accent);color:#fff;border:none;
+    background:var(--ink);color:var(--bg);border:none;
     padding:10px 22px;font-size:13.5px;font-family:inherit;
     cursor:pointer;letter-spacing:.2px;
   }
-  .review-btn:hover{opacity:.88;}
+  .review-btn:hover{opacity:.8;}
 
   /* profile review */
-  .profile-layout{padding:44px var(--gutter) clamp(72px,9vw,120px);display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(32px,6vw,80px);}
+  .profile-layout{
+    padding:clamp(32px,4vw,56px) var(--gutter);
+    min-height:calc(100dvh - 62px);
+    display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(32px,6vw,80px);
+    align-items:start;
+  }
+  .profile-main .page-head-inner{margin-bottom:32px;}
+  .profile-main .page-head-inner h2{margin-top:16px;font-size:clamp(32px,4vw,56px);}
+  .profile-main .page-head-inner p.lede{margin-top:16px;font-size:15px;max-width:52ch;}
   .profile-header{display:flex;gap:22px;align-items:flex-start;border-bottom:1px solid var(--line-strong);padding-bottom:28px;margin-bottom:28px;}
   .profile-avatar{
     flex:none;width:72px;height:72px;border-radius:50%;background:var(--hot);color:var(--hot-ink);
@@ -264,18 +283,18 @@
 </section>
 
 <section class="view" id="view-upload">
-  <div class="wrap page-head">
-    <div class="eyebrow"><span class="num">[ 02 ]</span> Upload</div>
-    <h2>Add faculty <em>information</em></h2>
-    <p class="lede">Upload a CV to create a new faculty profile, or add more information to a profile that already exists. The CV is read automatically and held on the Profile review tab, so nothing is added to the search database until it is approved.</p>
-
-    <div class="mode-toggle">
-      <button class="mode-btn active" data-mode="new" onclick="setMode('new')">New professor</button>
-      <button class="mode-btn" data-mode="existing" onclick="setMode('existing')">Existing professor</button>
+  <div class="wrap upload-hero">
+    <div class="page-head-inner">
+      <div class="eyebrow"><span class="num">[ 02 ]</span> Upload</div>
+      <h2>Add faculty information</h2>
+      <p class="lede">Upload a CV to create a new faculty profile, or add more information to a profile that already exists. The CV is read automatically and held on the Profile review tab, so nothing is added to the search database until it is approved.</p>
+      <div class="mode-toggle">
+        <button class="mode-btn active" data-mode="new" onclick="setMode('new')">New professor</button>
+        <button class="mode-btn" data-mode="existing" onclick="setMode('existing')">Existing professor</button>
+      </div>
     </div>
-  </div>
 
-  <div class="wrap upload-layout">
+    <div class="upload-panels">
       <div class="mode-panel active" id="mode-new">
         <div class="dropzone" data-mode="new">
           <div class="dz-title">Drag and drop a CV here</div>
@@ -300,19 +319,22 @@
 
       <input type="file" id="cvFileInput" accept="application/pdf,.pdf" hidden />
       <div class="upload-status" id="uploadStatus" role="status" aria-live="polite"></div>
+    </div>
   </div>
 </section>
 
 <section class="view" id="view-profile">
-  <div class="wrap page-head">
-    <div class="eyebrow"><span class="num">[ 03 ]</span> Profile review</div>
-    <h2>Review uploaded <em>CVs</em></h2>
-    <p class="lede">Each uploaded CV is read automatically and held here. Check what it would add against the original CV, then approve it to add it to the search database, or reject it.</p>
-    <div class="upload-status" id="reviewBanner" role="status" aria-live="polite"></div>
-  </div>
   <div class="wrap profile-layout">
-    <div id="reviewDetail">
-      <p class="review-empty">Loading drafts…</p>
+    <div class="profile-main">
+      <div class="page-head-inner">
+        <div class="eyebrow"><span class="num">[ 03 ]</span> Profile review</div>
+        <h2>Review uploaded CVs</h2>
+        <p class="lede">Each uploaded CV is read automatically and held here. Check what it would add against the original CV, then approve it to add it to the search database, or reject it.</p>
+        <div class="upload-status" id="reviewBanner" role="status" aria-live="polite"></div>
+      </div>
+      <div id="reviewDetail">
+        <p class="review-empty">Loading drafts…</p>
+      </div>
     </div>
 
     <div class="sidebar-box">
@@ -385,6 +407,7 @@
     }
 
     renderResults(data);
+    document.getElementById('resultsBlock').scrollIntoView({behavior:'smooth',block:'start'});
   }
 
   // ---------- CV upload ----------
@@ -526,11 +549,21 @@
     showDraft(currentDraftId);
   }
 
-  function reviewList(title, items){
+  function reviewList(title, items, renderItem){
+    const render = renderItem || (i => escapeHtml(typeof i === 'object' ? (i.title || i.text || JSON.stringify(i)) : String(i)));
     const body = items && items.length
-      ? `<ul class="review-list">${items.map(i => `<li>${escapeHtml(String(i))}</li>`).join('')}</ul>`
+      ? `<ul class="review-list">${items.map(i => `<li>${render(i)}</li>`).join('')}</ul>`
       : '<p class="review-none">None</p>';
     return `<h4>${escapeHtml(title)} (${items ? items.length : 0})</h4>${body}`;
+  }
+
+  function renderLinkItem(l){
+    if(!l || typeof l !== 'object') return escapeHtml(String(l));
+    const label = escapeHtml(l.link_type || 'Link');
+    const url = l.url || '';
+    return url
+      ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" style="color:var(--accent)">${label} ↗</a> <span style="color:var(--faint);font-size:12px">${escapeHtml(url)}</span>`
+      : label;
   }
 
   async function showDraft(draftId){
@@ -581,7 +614,7 @@
         ${reviewList(isNew ? 'Publications' : 'New publications', d.added.publications)}
         ${reviewList(isNew ? 'Honors' : 'New honors', d.added.honors)}
         ${reviewList(isNew ? 'Patents' : 'New patents', d.added.patents)}
-        ${reviewList(isNew ? 'Links' : 'New links', d.added.links)}
+        ${reviewList(isNew ? 'Links' : 'New links', d.added.links, renderLinkItem)}
       </div>`;
   }
 
