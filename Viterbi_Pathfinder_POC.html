@@ -140,6 +140,8 @@
   .upload-status.error{border-color:var(--accent);color:var(--accent);}
   .upload-status ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14px;}
   .upload-status a{color:var(--accent);text-decoration:underline;}
+  .upload-status .status-actions{margin-top:14px;}
+  .upload-status a.btn{text-decoration:none;color:var(--hot-ink);}
   .dropzone .dz-title{font-family:var(--serif);font-size:clamp(28px,3vw,36px);line-height:1.1;margin-bottom:10px;}
   .dropzone .dz-sub{color:var(--muted);font-size:14px;}
   .dropzone .dz-btn{margin-top:22px;}
@@ -230,7 +232,7 @@
   <div class="band">
     <div class="hero wrap">
       <div class="eyebrow"><span class="num">[ 01 ]</span> Faculty search</div>
-      <h1>Find the right <em>Viterbi</em> faculty, fast.</h1>
+      <h1>Find the right <em>Viterbi</em> faculty.</h1>
       <div class="hero-foot">
         <p class="sub">Enter a topic, question, name, or email address. Pathfinder returns matching faculty along with a brief explanation of why each person is a fit, so you can quickly identify who to contact.</p>
         <div class="search-block">
@@ -432,8 +434,8 @@
       setUploadStatus(
         `${what} <strong>${escapeHtml(data.name)}</strong> is ready for review: ` +
         `${a.publications} publications, ${a.honors} honors, ${a.patents} patents, ${a.links} links. ` +
-        `Nothing has been added to the database yet. ` +
-        `<a href="#" onclick="openReview('${escapeHtml(data.draft_id)}');return false;">Review it</a>`
+        `Nothing has been added to the database yet.` +
+        `<div class="status-actions"><button type="button" class="btn primary" onclick="openReview('${escapeHtml(data.draft_id)}')">Review draft <span class="arrow">→</span></button></div>`
       );
     }catch(err){
       console.error(err);
@@ -575,8 +577,8 @@
       if(action === 'approve'){
         loadProfessors();
         setUploadStatus('');
-        banner.innerHTML = `Added <strong>${escapeHtml(data.name)}</strong> (${escapeHtml(data.faculty_id)}) to the database. ` +
-          `<a href="profile.html?id=${encodeURIComponent(data.faculty_id)}">View profile</a>`;
+        banner.innerHTML = `Added <strong>${escapeHtml(data.name)}</strong> (${escapeHtml(data.faculty_id)}) to the database.` +
+          `<div class="status-actions"><a class="btn primary" href="profile.html?id=${encodeURIComponent(data.faculty_id)}">View profile <span class="arrow">→</span></a></div>`;
       }else{
         banner.innerHTML = `Rejected the draft for <strong>${escapeHtml(data.name)}</strong>. Nothing was added.`;
       }
