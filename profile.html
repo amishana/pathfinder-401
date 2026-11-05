@@ -4,301 +4,170 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faculty Profile — Viterbi Pathfinder</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="theme.css">
 <style>
   :root{
-    --accent:#9E1B32;
-    --accent-hover:#7A1527;
-    --ink:#1c1c1c;
-    --muted:#5b5b5b;
-    --faint:#8a8a8a;
-    --line:#e3e2df;
-    --bg:#ffffff;
-    --bg-soft:#f7f7f5;
-    --active-dot:#2563EB;
-    --closeout-dot:#9E1B32;
-    --closed-dot:#8a8a8a;
+    --active-dot:var(--cardinal);
+    --closeout-dot:#B86E00;
+    --closed-dot:var(--faint);
   }
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --accent:#c2495f;
-      --accent-hover:#d97086;
-      --ink:#eae6e5;
-      --muted:#b3a8aa;
-      --faint:#8c8082;
-      --line:#3a3134;
-      --bg:#181416;
-      --bg-soft:#211b1d;
-      --active-dot:#60a5fa;
-      --closeout-dot:#c2495f;
-      --closed-dot:#8c8082;
-    }
+    :root:not([data-theme="light"]){--active-dot:var(--gold);--closeout-dot:#E8925A;}
   }
-  :root[data-theme="dark"]{
-    --accent:#c2495f;
-    --accent-hover:#d97086;
-    --ink:#eae6e5;
-    --muted:#b3a8aa;
-    --faint:#8c8082;
-    --line:#3a3134;
-    --bg:#181416;
-    --bg-soft:#211b1d;
-    --active-dot:#60a5fa;
-    --closeout-dot:#c2495f;
-    --closed-dot:#8c8082;
-  }
+  :root[data-theme="dark"]{--active-dot:var(--gold);--closeout-dot:#E8925A;}
+  .band{--active-dot:var(--gold);--closeout-dot:var(--sand);}
 
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:"Source Serif 4",Georgia,"Iowan Old Style","Palatino Linotype",serif;
-    font-weight:400;
-    color:var(--ink);
-    margin:0;
-    text-wrap:balance;
-  }
-  a{color:inherit;text-decoration:none;}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-  .wrap{max-width:980px;margin:0 auto;padding:0 28px;}
+  .back-link{display:inline-flex;align-items:center;gap:8px;}
+  .back-link:hover svg{transform:translateX(-3px);}
+  .back-link svg{transition:transform .15s;}
 
-  /* ── nav ── */
-  header.site-nav{border-bottom:1px solid var(--line);}
-  .nav-row{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px 28px;max-width:980px;margin:0 auto;
-    flex-wrap:wrap;gap:12px;
-  }
-  .brand{
-    font-family:"Source Serif 4",Georgia,"Iowan Old Style",serif;
-    font-size:20px;letter-spacing:0.2px;
-  }
-  .brand .mark{color:var(--accent);}
-  .brand a{color:inherit;}
-  .back-link{
-    font-size:13.5px;color:var(--muted);
-    display:flex;align-items:center;gap:6px;
-  }
-  .back-link:hover{color:var(--accent);}
-  .back-link svg{flex:none;}
-
-  /* ── breadcrumb strip ── */
-  .crumb-strip{
-    border-bottom:1px solid var(--line);
-    background:var(--bg-soft);
-    padding:9px 0;
-  }
-  .crumb{
-    font-size:12.5px;color:var(--muted);
-    display:flex;align-items:center;gap:6px;
-  }
-  .crumb a:hover{color:var(--accent);}
+  /* breadcrumb */
+  .crumb-strip{border-bottom:1px solid var(--line);padding:12px 0;}
+  .crumb{display:flex;align-items:center;gap:10px;color:var(--muted);}
+  .crumb a:hover{color:var(--ink);}
   .crumb .sep{color:var(--faint);}
+  .crumb #crumb-name{color:var(--ink);}
 
-  /* ── page layout ── */
-  .profile-page{padding:44px 0 80px;}
-  .profile-grid{
-    display:grid;
-    grid-template-columns:1fr 268px;
-    gap:56px;
-    align-items:start;
-  }
-
-  /* ── profile header ── */
-  .profile-head{
-    display:flex;gap:20px;align-items:flex-start;
-    padding-bottom:28px;border-bottom:1px solid var(--line);
-    margin-bottom:32px;
-  }
+  /* hero band with the name */
+  .profile-hero{padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(40px,6vw,72px);}
+  .profile-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:end;margin-top:28px;}
   .avatar{
-    width:64px;height:64px;flex:none;
-    background:var(--bg-soft);border:1px solid var(--line);
+    width:clamp(72px,9vw,112px);height:clamp(72px,9vw,112px);border-radius:50%;
+    background:var(--hot);color:var(--hot-ink);
     display:flex;align-items:center;justify-content:center;
-    font-family:"Source Serif 4",Georgia,serif;font-size:20px;color:var(--accent);
+    font-family:var(--mono);font-size:clamp(16px,2vw,22px);letter-spacing:.06em;
   }
-  .head-body{flex:1;}
-  .head-body h1{font-size:26px;line-height:1.15;}
-  .head-dept{
-    font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.4;
+  .head-body h1{font-size:clamp(48px,7.5vw,104px);}
+  .head-meta{
+    margin-top:clamp(28px,4vw,48px);padding-top:20px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 40px;
   }
-  .courtesy-list{
-    font-size:12px;color:var(--faint);margin-top:4px;
-  }
-  .head-email{
-    margin-top:8px;font-size:13px;color:var(--accent);
-  }
+  .head-meta .k{display:block;margin-bottom:6px;color:var(--faint);}
+  .head-dept{font-size:15px;line-height:1.45;}
+  .courtesy-list{font-size:14px;color:var(--muted);line-height:1.45;}
+  .head-email a{color:var(--accent);font-size:15px;}
   .head-email a:hover{text-decoration:underline;}
 
-  /* ── section layout ── */
-  .section{margin-bottom:36px;}
+  /* page layout */
+  .profile-page{padding:clamp(48px,7vw,88px) var(--gutter) clamp(72px,9vw,120px);}
+  .profile-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(32px,6vw,88px);align-items:start;}
+  #main-col{counter-reset:sec;}
+
+  /* sections get numbered mono eyebrows */
+  .section{margin-bottom:clamp(48px,6vw,72px);}
   .section-label{
-    font-size:11px;text-transform:uppercase;letter-spacing:.45px;
-    color:var(--muted);margin-bottom:12px;font-family:inherit;font-weight:normal;
+    counter-increment:sec;
+    display:flex;align-items:center;gap:10px;margin-bottom:20px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
   }
+  .section-label::before{content:"[ " counter(sec,decimal-leading-zero) " ]";color:var(--ink);}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--line);}
 
-  /* ── research summary ── */
+  /* research summary: big editorial lede */
   .summary-text{
-    font-size:14.5px;color:var(--ink);line-height:1.7;max-width:64ch;
-    margin:0 0 20px;
+    font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.25;letter-spacing:-.005em;
+    max-width:30ch;margin:0 0 36px;
   }
+  @media (min-width:1000px){.summary-text{max-width:36ch;}}
 
-  /* ── tag groups ── */
-  .tag-group{margin-bottom:16px;}
-  .tag-group-label{
-    font-size:11px;text-transform:uppercase;letter-spacing:.4px;
-    color:var(--faint);margin-bottom:7px;
-  }
+  .tag-group{display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line);}
+  .tag-group-label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding-top:5px;}
   .tags{display:flex;flex-wrap:wrap;gap:6px;}
   .tag{
-    font-size:12.5px;color:var(--muted);
-    border:1px solid var(--line);padding:3px 10px;
-    background:var(--bg-soft);
-    white-space:nowrap;
+    font-size:13px;border:1px solid var(--line-strong);border-radius:999px;padding:3px 12px;white-space:nowrap;
   }
 
-  /* ── publications ── */
-  .pub-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:18px;}
+  /* publications */
+  .pub-tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line-strong);border-radius:999px;margin-bottom:12px;}
   .pub-tab{
-    background:none;border:none;font-family:inherit;cursor:pointer;
-    padding:9px 16px;font-size:13px;color:var(--muted);
-    border-bottom:2px solid transparent;margin-bottom:-1px;
-    letter-spacing:.1px;
+    background:none;border:none;border-radius:999px;padding:7px 16px;color:var(--muted);
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
   }
-  .pub-tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600;}
+  .pub-tab.active{background:var(--ink);color:var(--bg);}
   .pub-tab:hover:not(.active){color:var(--ink);}
   .pub-list{display:none;}
   .pub-list.active{display:block;}
 
-  .pub-item{
-    padding:13px 0;border-bottom:1px solid var(--line);
-    display:flex;gap:14px;align-items:baseline;
-  }
-  .pub-year{
-    font-size:12px;color:var(--faint);flex:none;width:32px;
-    font-variant-numeric:tabular-nums;padding-top:1px;
-  }
-  .pub-body{flex:1;}
-  .pub-title{
-    font-size:14px;color:var(--ink);line-height:1.45;
-  }
-  .pub-title a:hover{color:var(--accent);text-decoration:underline;}
-  .pub-venue{font-size:12.5px;color:var(--muted);margin-top:2px;}
-  .pub-cite{font-size:12px;color:var(--faint);margin-top:2px;}
-  .pub-doi{
-    display:inline-block;margin-top:4px;font-size:11.5px;
-    color:var(--accent);letter-spacing:.1px;
-  }
+  .pub-item,.honor-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .pub-year,.honor-year{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);padding-top:3px;font-variant-numeric:tabular-nums;}
+  .pub-title{font-size:16px;line-height:1.4;}
+  .pub-title a:hover{color:var(--accent);}
+  .pub-venue{margin-top:4px;font-size:13.5px;color:var(--muted);font-style:italic;}
+  .pub-cite{margin-top:6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
+  .pub-doi{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--accent);}
   .pub-doi:hover{text-decoration:underline;}
+  .honor-text{font-size:16px;}
 
-  /* ── awards ── */
-  .award-item{
-    padding:14px 0;border-bottom:1px solid var(--line);
-    display:flex;gap:14px;
-  }
-  .award-status-dot{
-    flex:none;width:8px;height:8px;border-radius:50%;
-    margin-top:6px;
-  }
+  /* awards */
+  .award-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .award-status-dot{width:10px;height:10px;border-radius:50%;margin-top:7px;}
   .award-status-dot.active{background:var(--active-dot);}
   .award-status-dot.closeout{background:var(--closeout-dot);}
   .award-status-dot.closed{background:var(--closed-dot);}
-  .award-body{flex:1;}
-  .award-title{font-size:14px;color:var(--ink);line-height:1.4;}
-  .award-meta{font-size:12.5px;color:var(--muted);margin-top:3px;}
-  .award-amount{font-size:12px;color:var(--faint);margin-top:2px;font-variant-numeric:tabular-nums;}
+  .award-title{font-size:16px;line-height:1.4;}
+  .award-meta{margin-top:4px;font-size:13.5px;color:var(--muted);}
+  .award-amount{margin-top:6px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--faint);font-variant-numeric:tabular-nums;}
   .award-status-tag{
-    font-size:10.5px;letter-spacing:.3px;text-transform:uppercase;
-    padding:1px 7px;border-radius:2px;margin-left:8px;
-    vertical-align:middle;font-family:inherit;
+    display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;vertical-align:middle;
+    font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;
   }
-  .award-status-tag.active{background:#DBEAFE;color:#1D4ED8;}
-  .award-status-tag.closeout{background:#FEE2E2;color:#991B1B;}
-  .award-status-tag.closed{background:var(--bg-soft);color:var(--faint);}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .award-status-tag.active{background:#1e3a5f;color:#93c5fd;}
-    :root:not([data-theme="light"]) .award-status-tag.closeout{background:#4c1d1d;color:#fca5a5;}
-    :root:not([data-theme="light"]) .award-status-tag.closed{background:var(--bg-soft);color:var(--faint);}
-  }
-  :root[data-theme="dark"] .award-status-tag.active{background:#1e3a5f;color:#93c5fd;}
-  :root[data-theme="dark"] .award-status-tag.closeout{background:#4c1d1d;color:#fca5a5;}
-  :root[data-theme="dark"] .award-status-tag.closed{background:var(--bg-soft);color:var(--faint);}
+  .award-status-tag.active{color:var(--active-dot);}
+  .award-status-tag.closeout{color:var(--closeout-dot);}
+  .award-status-tag.closed{color:var(--faint);}
 
-  /* ── honors ── */
-  .honor-item{
-    padding:10px 0;border-bottom:1px solid var(--line);
-    display:flex;gap:14px;align-items:baseline;
-  }
-  .honor-year{
-    font-size:12px;color:var(--faint);flex:none;width:32px;
-    font-variant-numeric:tabular-nums;
-  }
-  .honor-text{font-size:14px;color:var(--ink);}
-
-  /* ── patents ── */
-  .patent-item{
-    padding:13px 0;border-bottom:1px solid var(--line);
-  }
-  .patent-title{font-size:14px;color:var(--ink);line-height:1.4;}
-  .patent-meta{font-size:12.5px;color:var(--muted);margin-top:3px;}
-  .patent-link{
-    display:inline-block;margin-top:4px;font-size:12px;color:var(--accent);
-  }
+  /* patents */
+  .patent-item{padding:18px 0;border-bottom:1px solid var(--line);}
+  .patent-title{font-size:16px;line-height:1.4;}
+  .patent-meta{margin-top:4px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);}
+  .patent-link{display:inline-block;margin-top:6px;font-size:13px;color:var(--accent);}
   .patent-link:hover{text-decoration:underline;}
 
-  /* ── sidebar ── */
-  .sidebar{position:sticky;top:32px;}
-  .sidebar-block{border-top:1px solid var(--line);padding-top:16px;margin-bottom:28px;}
+  /* sidebar */
+  .sidebar{position:sticky;top:96px;}
+  .sidebar-block{margin-bottom:36px;}
   .sidebar-block h4{
-    font-size:11px;text-transform:uppercase;letter-spacing:.45px;
-    color:var(--muted);margin:0 0 12px;font-family:inherit;font-weight:normal;
+    margin:0 0 4px;font-family:var(--mono);font-size:11.5px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
   }
   .link-item{
-    display:flex;align-items:flex-start;gap:10px;
-    padding:9px 0;border-bottom:1px solid var(--line);
-    font-size:13.5px;color:var(--ink);
+    display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;
   }
-  .link-item:last-child{border-bottom:none;}
+  .link-item:first-of-type{border-top:1px solid var(--line-strong);}
+  .link-item svg{flex:none;margin-top:4px;opacity:.55;}
   .link-item:hover{color:var(--accent);}
-  .link-item svg{flex:none;margin-top:2px;opacity:.4;}
-  .link-item:hover svg{opacity:.8;}
-  .link-item-body{}
+  .link-item:hover svg{opacity:1;}
   .link-label{display:block;line-height:1.3;}
-  .link-type{display:block;font-size:11.5px;color:var(--faint);margin-top:1px;}
+  .link-type{display:block;margin-top:3px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
 
-  /* ── data note ── */
-  .data-note{
-    margin-top:32px;padding:12px 14px;
-    border:1px solid var(--line);background:var(--bg-soft);
-    font-size:12px;color:var(--faint);line-height:1.5;
-  }
+  /* funding summary is a sand-on-night stat card */
+  .funding-card{padding:22px;border-radius:4px;border:1px solid var(--line);}
+  .funding-card h4{color:var(--muted);}
+  .funding-total{font-family:var(--serif);font-size:48px;line-height:1;margin:14px 0 6px;}
+  .funding-sub{font-size:13px;color:var(--muted);}
+  .funding-dots{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px;font-size:13px;}
+  .funding-dots .d{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
 
-  /* ── responsive ── */
-  @media (max-width:820px){
+  .error-box{padding-top:clamp(56px,8vw,104px);padding-bottom:clamp(56px,8vw,104px);}
+  .error-box h2{margin-top:24px;font-size:clamp(36px,5vw,64px);max-width:18ch;}
+  .error-box p{margin-top:16px;color:var(--muted);}
+
+  @media (max-width:860px){
     .profile-grid{grid-template-columns:1fr;}
     .sidebar{position:static;}
   }
-  @media (max-width:480px){
-    .wrap{padding:0 18px;}
-    .nav-row{padding:16px 18px;}
-    .profile-head{flex-direction:column;}
-    .pub-tab{padding:9px 10px;}
+  @media (max-width:560px){
+    .profile-head{grid-template-columns:1fr;}
+    .tag-group{grid-template-columns:1fr;gap:8px;}
+    .pub-item,.honor-item,.award-item{grid-template-columns:48px minmax(0,1fr);}
   }
-  @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
 </style>
 </head>
 <body>
 
 <header class="site-nav">
   <div class="nav-row">
-    <div class="brand"><a href="Viterbi_Pathfinder_POC.html"><span class="mark">Viterbi</span> Pathfinder</a></div>
-    <a href="Viterbi_Pathfinder_POC.html" class="back-link">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+    <div class="brand"><a href="Viterbi_Pathfinder_POC.html"><span class="mark">Viterbi</span> Pathfinder<span class="dot"></span></a></div>
+    <a href="Viterbi_Pathfinder_POC.html" class="btn back-link">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
         <path d="M9 11L5 7l4-4"/>
       </svg>
       Back to search
@@ -306,18 +175,23 @@
   </div>
 </header>
 
-<div class="crumb-strip">
-  <div class="wrap">
-    <div class="crumb">
-      <a href="Viterbi_Pathfinder_POC.html">Search</a>
-      <span class="sep">›</span>
-      <span id="crumb-name">Loading…</span>
+<div class="band">
+  <div class="crumb-strip">
+    <div class="wrap">
+      <div class="crumb mono">
+        <a href="Viterbi_Pathfinder_POC.html">Search</a>
+        <span class="sep">/</span>
+        <span id="crumb-name">Loading…</span>
+      </div>
     </div>
   </div>
+  <div class="wrap profile-hero" id="profile-hero" style="display:none;"></div>
 </div>
 
-<div id="profile-error" style="display:none;padding:56px 28px;max-width:640px;margin:0 auto;">
-  <div style="font-size:15px;color:var(--muted);">Could not load faculty profile. Make sure the API is running.</div>
+<div id="profile-error" class="wrap error-box" style="display:none;">
+  <div class="eyebrow"><span class="num">[ ! ]</span> Profile unavailable</div>
+  <h2>Could not load this <em>faculty profile</em>.</h2>
+  <p>Make sure the API is running.</p>
 </div>
 
 <div class="wrap profile-page" id="profile-page" style="display:none;">
@@ -378,10 +252,10 @@
 
     // fallback: if no views, show all as recent
     const recentPubs = recentIds.length
-      ? recentIds.map(id=>records.find(p=>p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
+      ? recentIds.map(id=>records.find(p=>p.publication_id===id||p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
       : records.slice(0,8);
     const citedPubs  = citedIds.length
-      ? citedIds.map(id=>records.find(p=>p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
+      ? citedIds.map(id=>records.find(p=>p.publication_id===id||p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
       : [];
 
     function pubItem(p){
@@ -443,14 +317,15 @@
     const total = records.reduce((s,a)=>s+(a.obligated_total_usd||0),0);
     const active = records.filter(a=>awardStatusClass(a.status)==='active').length;
     const closeout = records.filter(a=>awardStatusClass(a.status)==='closeout').length;
-    const dot = (cls,label)=>`<span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--${cls}-dot);margin-right:6px;vertical-align:middle;"></span>${label}</span>`;
-    return `<div class="sidebar-block"><h4>Funding summary</h4>
-      <div style="font-size:22px;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);margin-bottom:4px;">${formatUSD(total)}</div>
-      <div style="font-size:12.5px;color:var(--muted);">Total across ${records.length} award${records.length!==1?'s':''}</div>
-      <div style="margin-top:10px;font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:4px;">
-        ${active?dot('active',`${active} active award${active!==1?'s':''}`):''}
-        ${closeout?dot('closeout',`${closeout} in closeout`):''}
-      </div>
+    const dot = (cls,label)=>`<span><span class="d" style="background:var(--${cls}-dot);"></span>${label}</span>`;
+    const dots = [
+      active?dot('active',`${active} active award${active!==1?'s':''}`):'',
+      closeout?dot('closeout',`${closeout} in closeout`):'',
+    ].join('');
+    return `<div class="sidebar-block band funding-card"><h4>Funding summary</h4>
+      <div class="funding-total">${formatUSD(total)}</div>
+      <div class="funding-sub">Total across ${records.length} award${records.length!==1?'s':''}</div>
+      ${dots?`<div class="funding-dots">${dots}</div>`:''}
     </div>`;
   }
 
@@ -484,20 +359,26 @@
     const primary = appts.find(a=>a.appointment_type==='primary') || appts[0] || {};
     const courtesy = appts.filter(a=>a.appointment_type==='courtesy');
 
-    // header
+    // header, rendered into the dark hero band
     const research = pkg.research || {};
-    const mainCol = document.getElementById('main-col');
-    mainCol.innerHTML = `
+    const deptLines = [primary.title, primary.unit].filter(Boolean).map(esc).join('<br>');
+    const hero = document.getElementById('profile-hero');
+    hero.innerHTML = `
+      <div class="eyebrow"><span class="num">[ ${esc(facultyId)} ]</span> Faculty profile</div>
       <div class="profile-head">
         <div class="avatar">${esc(initials(name))}</div>
-        <div class="head-body">
-          <h1>${esc(name)}</h1>
-          <div class="head-dept">${esc([primary.title, primary.unit].filter(Boolean).join('<br>'))}</div>
-          ${courtesy.length?`<div class="courtesy-list">Courtesy appointment: ${courtesy.map(c=>esc(c.unit)).join(' · ')}</div>`:''}
-          ${identity.usc_email?`<div class="head-email"><a href="mailto:${esc(identity.usc_email)}">${esc(identity.usc_email)}</a></div>`:''}
-        </div>
+        <div class="head-body"><h1>${esc(name)}</h1></div>
       </div>
+      <div class="head-meta">
+        ${deptLines?`<div><span class="k mono">Appointment</span><div class="head-dept">${deptLines}</div></div>`:''}
+        ${courtesy.length?`<div><span class="k mono">Courtesy</span><div class="courtesy-list">${courtesy.map(c=>esc(c.unit)).join('<br>')}</div></div>`:''}
+        ${identity.usc_email?`<div><span class="k mono">Contact</span><div class="head-email"><a href="mailto:${esc(identity.usc_email)}">${esc(identity.usc_email)}</a></div></div>`:''}
+      </div>
+    `;
+    hero.style.display='block';
 
+    const mainCol = document.getElementById('main-col');
+    mainCol.innerHTML = `
       ${research.summary?`<div class="section"><div class="section-label">Research summary</div><p class="summary-text">${esc(research.summary)}</p>
         ${renderTags(research.domains,'Research domains')}
         ${renderTags(research.methods,'Methods')}
