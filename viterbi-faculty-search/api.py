@@ -91,21 +91,28 @@ def shutdown():
 
 @app.get("/search")
 def search_endpoint(q: str):
-    # rank_faculty returns [(score, faculty_id, name, [(fused, cosine, kw_rank, kind, text), ...]), ...]
-    results = run_search(_conn, model, q)
-    formatted = [
-        {
-            "faculty_id": fid,
-            "name": name,
-            "score": score,
-            "evidence": [
-                {"kind": kind, "text": text, "score": fused}
-                for fused, _cosine, _kw, kind, text in pieces
-            ],
-        }
-        for score, fid, name, pieces in results
-    ]
-    return {"query": q, "results": formatted}
+    try:
+        # rank_faculty returns [(score, faculty_id, name, [(fused, cosine, kw_rank, kind, text), ...]), ...]
+        results = run_search(_conn, model, q)
+        formatted = [
+            {
+                "faculty_id": fid,
+                "name": name,
+                "score": score,
+                "evidence": [
+                    {"kind": kind, "text": text, "score": fused}
+                    for fused, _cosine, _kw, kind, text in pieces
+                ],
+            }
+            for score, fid, name, pieces in results
+        ]
+        return {"query": q, "results": formatted}
+    except psycopg.OperationalError as e:
+        print(f"search: database connection error: {e!r}")
+        raise HTTPException(status_code=503, detail="Database unavailable, try again in a moment.")
+    except Exception as e:
+        print(f"search: unexpected error for query {q!r}: {e!r}")
+        raise HTTPException(status_code=500, detail=f"Search failed: {type(e).__name__}: {str(e)[:200]}")
 
 
 @app.get("/faculty")
@@ -117,9 +124,12 @@ def faculty_list():
 
 @app.get("/faculty/{faculty_id}")
 def faculty_endpoint(faculty_id: str):
-    # Supabase has the latest version, including CVs uploaded through /cv-upload.
-    with cv_upload.connect() as conn:
-        pkg = cv_upload.current_package(conn, faculty_id)
+    try:
+        with cv_upload.connect() as conn:
+            pkg = cv_upload.current_package(conn, faculty_id)
+    except psycopg.OperationalError as e:
+        print(f"faculty/{faculty_id}: database connection error: {e!r}")
+        pkg = None
     pkg = pkg or _PACKAGES.get(faculty_id)
     if not pkg:
         raise HTTPException(status_code=404, detail="faculty not found")

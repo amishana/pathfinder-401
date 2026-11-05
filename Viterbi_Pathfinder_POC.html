@@ -111,9 +111,11 @@
     padding:clamp(32px,4vw,56px) var(--gutter);
   }
   .upload-hero .page-head-inner{padding-top:0;}
-  .upload-hero .page-head-inner h2{margin-top:16px;font-size:clamp(32px,4vw,56px);white-space:normal;}
+  .upload-hero .page-head-inner h2{margin-top:16px;font-size:clamp(32px,4vw,56px);white-space:normal;color:var(--cardinal);}
   .upload-hero .page-head-inner p.lede{margin-top:16px;font-size:15px;max-width:44ch;}
   .upload-hero .page-head-inner .mode-toggle{margin-top:24px;}
+  .upload-hero .page-head-inner .num{color:var(--hot);}
+  .upload-hero .page-head-inner .mode-btn.active{background:var(--hot);color:var(--hot-ink);border-color:var(--hot);}
 
   .mode-toggle{
     margin-top:32px;display:inline-flex;padding:4px;gap:4px;
@@ -179,8 +181,9 @@
     align-items:start;
   }
   .profile-main .page-head-inner{margin-bottom:32px;}
-  .profile-main .page-head-inner h2{margin-top:16px;font-size:clamp(32px,4vw,56px);}
+  .profile-main .page-head-inner h2{margin-top:16px;font-size:clamp(32px,4vw,56px);color:var(--cardinal);}
   .profile-main .page-head-inner p.lede{margin-top:16px;font-size:15px;max-width:52ch;}
+  .profile-main .page-head-inner .num{color:var(--hot);}
   .profile-header{display:flex;gap:22px;align-items:flex-start;border-bottom:1px solid var(--line-strong);padding-bottom:28px;margin-bottom:28px;}
   .profile-avatar{
     flex:none;width:72px;height:72px;border-radius:50%;background:var(--hot);color:var(--hot-ink);
@@ -402,12 +405,16 @@
       data = await res.json();
     }catch(err){
       console.error(err);
-      resultsBlock.innerHTML = '<div class="results-label">Couldn\'t reach the search backend, make sure api.py is running.</div>';
+      const msg = err.message.includes('503') ? 'Database is temporarily unavailable, try again in a moment.'
+        : err.message.includes('500') ? `Search error: ${err.message}`
+        : 'Couldn\'t reach the search backend, make sure api.py is running.';
+      resultsBlock.innerHTML = `<div class="results-label">${escapeHtml(msg)}</div>`;
+      resultsBlock.scrollIntoView({behavior:'smooth',block:'start'});
       return;
     }
 
     renderResults(data);
-    document.getElementById('resultsBlock').scrollIntoView({behavior:'smooth',block:'start'});
+    resultsBlock.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
   // ---------- CV upload ----------
