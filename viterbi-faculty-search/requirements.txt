@@ -8,3 +8,4 @@ uvicorn
 openai
 python-dotenv
 pymupdf
+python-multipart

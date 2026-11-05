@@ -49,10 +49,16 @@ import openai
 from dotenv import load_dotenv
 
 SCHEMA_VERSION = "faculty-package-draft-v0.1"
-PACKAGE_GLOB = "faculty-json-outputs/VIT-FAC-*.json"
-OUT_DIR = Path("cv-structured-outputs")
+REPO_ROOT = Path(__file__).resolve().parent  # so paths work no matter where this is run from
+PACKAGE_GLOB = str(REPO_ROOT / "faculty-json-outputs" / "VIT-FAC-*.json")
+OUT_DIR = REPO_ROOT / "cv-structured-outputs"
 PROPOSED = "Proposed - Human Review Required"
 MAX_CV_CHARS = 250_000  # ~60k tokens; longer CVs are cut off (the end is usually talks/service)
+DEFAULT_MODEL = "openai/gpt-5.4-mini"  # used when neither --model nor USC_AI_GATEWAY_MODEL is set
+
+
+class CVError(Exception):
+    """A CV could not be turned into a package. The message is safe to show to the user."""
 
 
 # ---------------------------------------------------------------------------------------------
@@ -159,7 +165,7 @@ def read_cv_text(path):
         with pymupdf.open(path) as doc:
             pages = [page.get_text("text", sort=True) for page in doc]
         if sum(len(p.strip()) for p in pages) < 50 * len(pages):
-            sys.exit(f"{path.name} has almost no text layer. It is probably scanned and needs OCR first.")
+            raise CVError(f"{path.name} has almost no text layer. It is probably scanned and needs OCR first.")
         text = "\n\n".join(f"--- page {i} ---\n{p}" for i, p in enumerate(pages, 1))
     else:
         text = path.read_text(encoding="utf-8")
@@ -178,7 +184,7 @@ def gateway_client():
     load_dotenv()
     missing = [k for k in ("USC_AI_GATEWAY_BASE_URL", "USC_AI_GATEWAY_API_KEY") if not os.environ.get(k)]
     if missing:
-        sys.exit(f"Missing {', '.join(missing)} in .env. See .env.example.")
+        raise CVError(f"Missing {', '.join(missing)} in .env. See .env.example.")
     return openai.OpenAI(base_url=os.environ["USC_AI_GATEWAY_BASE_URL"],
                          api_key=os.environ["USC_AI_GATEWAY_API_KEY"])
 
@@ -235,7 +241,7 @@ def call_model(client, model, messages, max_tokens):
 
         choice = response.choices[0]
         if choice.finish_reason == "length":
-            sys.exit(f"The reply was cut off at {max_tokens} tokens. Raise --max-tokens or lower --max-pubs.")
+            raise CVError(f"The reply was cut off at {max_tokens} tokens. Raise --max-tokens or lower --max-pubs.")
         try:
             facts = parse_json(choice.message.content)
         except ValueError as error:
@@ -247,7 +253,7 @@ def call_model(client, model, messages, max_tokens):
             print(f"  {label} reply: {usage.prompt_tokens:,} prompt + {usage.completion_tokens:,} output tokens")
         return facts
 
-    sys.exit("The model never returned usable JSON. Try another model with --model.")
+    raise CVError("The model never returned usable JSON. Try another model with --model.")
 
 
 # ---------------------------------------------------------------------------------------------
@@ -267,13 +273,16 @@ def existing_packages():
     return found
 
 
-def choose_faculty_id(requested, name):
+def choose_faculty_id(requested, name, known=None):
     """Use --faculty-id if given; else reuse the ID of an existing package with the same name;
-    else the next unused VIT-FAC number."""
-    packages = existing_packages()
+    else the next unused VIT-FAC number.
+
+    known: extra faculty_id -> name pairs (e.g. from the database) to treat as taken, on top of
+    the package files in faculty-json-outputs/."""
+    packages = {**existing_packages(), **(known or {})}
     if requested:
         if not re.fullmatch(r"VIT-FAC-\d{4}", requested):
-            sys.exit("--faculty-id must look like VIT-FAC-0017")
+            raise CVError("--faculty-id must look like VIT-FAC-0017")
         return requested
     for fid, existing_name in packages.items():
         if slugify(existing_name) == slugify(name):
@@ -451,6 +460,39 @@ def build_package(facts, faculty_id, cv_path, model, max_pubs):
 
 # ---------------------------------------------------------------------------------------------
 
+def build_messages(cv_text, max_pubs):
+    return [
+        {"role": "system", "content": SYSTEM_PROMPT.replace("{max_pubs}", str(max_pubs))},
+        {"role": "user", "content": f"JSON schema for your reply:\n{json.dumps(EXTRACTION_SCHEMA)}\n\n"
+                                    f"CV text:\n<cv>\n{cv_text}\n</cv>"},
+    ]
+
+
+def extract_facts(cv_path, model=None, max_pubs=15, max_tokens=16000):
+    """Read the CV and have the model pull out its facts. Returns (facts, model_used).
+    Raises CVError if the CV or the model's reply can't be used."""
+    cv_text = read_cv_text(cv_path)
+    client = gateway_client()
+    model = model or os.environ.get("USC_AI_GATEWAY_MODEL") or DEFAULT_MODEL
+
+    print(f"Extracting {cv_path.name} with {model} ...")
+    facts = call_model(client, model, build_messages(cv_text, max_pubs), max_tokens)
+    missing = [key for key in EXTRACTION_SCHEMA["required"] if key not in facts]
+    if missing:
+        raise CVError(f"The model's reply is missing {', '.join(missing)}. Try again or try another model.")
+    return facts, model
+
+
+def write_outputs(package, facts, out_dir, stem):
+    """Save the package and the raw model output. Returns the package path."""
+    out_dir.mkdir(exist_ok=True)
+    out_path = out_dir / f"{stem}.json"
+    out_path.write_text(json.dumps(package, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (out_dir / f"{stem}.extraction.json").write_text(
+        json.dumps(facts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return out_path
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("cv", nargs="?", type=Path, help="CV as .pdf or extracted .txt")
@@ -471,39 +513,21 @@ def main():
     if not args.cv.exists():
         sys.exit(f"No such file: {args.cv}")
 
-    cv_text = read_cv_text(args.cv)
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT.replace("{max_pubs}", str(args.max_pubs))},
-        {"role": "user", "content": f"JSON schema for your reply:\n{json.dumps(EXTRACTION_SCHEMA)}\n\n"
-                                    f"CV text:\n<cv>\n{cv_text}\n</cv>"},
-    ]
+    try:
+        if args.dry_run:
+            for message in build_messages(read_cv_text(args.cv), args.max_pubs):
+                print(f"===== {message['role']} ({len(message['content']):,} chars) =====")
+                print(message["content"][:3000] + ("\n[...]" if len(message["content"]) > 3000 else ""))
+            return
 
-    if args.dry_run:
-        for message in messages:
-            print(f"===== {message['role']} ({len(message['content']):,} chars) =====")
-            print(message["content"][:3000] + ("\n[...]" if len(message["content"]) > 3000 else ""))
-        return
+        facts, model = extract_facts(args.cv, args.model, args.max_pubs, args.max_tokens)
+        faculty_id = choose_faculty_id(args.faculty_id, facts["canonical_name"])
+    except CVError as error:
+        sys.exit(str(error))
 
-    client = gateway_client()
-    model = args.model or os.environ.get("USC_AI_GATEWAY_MODEL")
-    if not model:
-        sys.exit("No model. Pass --model or set USC_AI_GATEWAY_MODEL in .env (see --list-models).")
-
-    print(f"Extracting {args.cv.name} with {model} ...")
-    facts = call_model(client, model, messages, args.max_tokens)
-    missing = [key for key in EXTRACTION_SCHEMA["required"] if key not in facts]
-    if missing:
-        sys.exit(f"The model's reply is missing {', '.join(missing)}. Try again or try another model.")
-
-    faculty_id = choose_faculty_id(args.faculty_id, facts["canonical_name"])
     package = build_package(facts, faculty_id, args.cv, model, args.max_pubs)
-
-    args.out_dir.mkdir(exist_ok=True)
     stem = f"{faculty_id}_{slugify(facts['canonical_name'])}_draft_v0.1"
-    out_path = args.out_dir / f"{stem}.json"
-    out_path.write_text(json.dumps(package, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (args.out_dir / f"{stem}.extraction.json").write_text(
-        json.dumps(facts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    out_path = write_outputs(package, facts, args.out_dir, stem)
 
     print(f"\nWrote {out_path}")
     print(f"  {len(package['identity']['appointments'])} appointments, "
