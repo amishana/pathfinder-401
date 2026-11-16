@@ -234,9 +234,81 @@
   .review-actions-note.error{color:var(--accent);}
   .btn:disabled{opacity:.5;pointer-events:none;}
 
+  /* ── manage tab ── */
+  .manage-layout{
+    min-height:calc(100dvh - 62px);
+    padding:clamp(32px,4vw,56px) var(--gutter);
+    max-width:760px;
+  }
+  .manage-left .page-head-inner{margin-bottom:24px;}
+  .manage-search-row{margin-bottom:16px;}
+  .manage-search-row input{
+    width:100%;padding:12px 0;font-family:var(--sans);font-size:16px;
+    border:none;border-bottom:2px solid var(--line-strong);background:transparent;color:var(--ink);
+    outline:none;
+  }
+  .manage-search-row input:focus{border-bottom-color:var(--cardinal);}
+  .faculty-list{display:flex;flex-direction:column;}
+  .faculty-row{
+    display:flex;align-items:center;gap:12px;
+    padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  .faculty-row:first-of-type{border-top:1px solid var(--line-strong);}
+  .faculty-row-name{flex:1;font-size:15px;line-height:1.3;}
+  .faculty-row-id{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--faint);}
+  .faculty-row-actions{display:flex;gap:8px;flex-shrink:0;}
+  .btn-sm{
+    padding:5px 12px;font-size:12px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;
+    border:1px solid var(--line-strong);background:none;color:var(--ink);cursor:pointer;
+  }
+  .btn-sm:hover{background:var(--bg-soft);}
+  .btn-sm.edit:hover{border-color:var(--cardinal);color:var(--cardinal);}
+  .btn-sm.danger{border-color:var(--cardinal);color:var(--cardinal);}
+  .btn-sm.danger:hover{background:var(--cardinal);color:#fff;}
+
+  .edit-panel{position:sticky;top:80px;}
+  .edit-panel-head{margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line-strong);}
+  .edit-panel-name{font-family:var(--serif);font-size:clamp(22px,2.5vw,30px);line-height:1.1;}
+  .edit-panel-id{margin-top:4px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--faint);}
+  .edit-field{margin-bottom:18px;}
+  .edit-field label{display:block;margin-bottom:6px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .edit-field textarea,.edit-field input[type=text]{
+    width:100%;padding:10px 0;font-family:var(--sans);font-size:14px;line-height:1.5;
+    border:none;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--ink);
+    outline:none;resize:vertical;
+  }
+  .edit-field textarea:focus,.edit-field input[type=text]:focus{border-bottom-color:var(--cardinal);}
+  .edit-field .hint{margin-top:4px;font-size:12px;color:var(--faint);}
+  .edit-actions{display:flex;gap:10px;margin-top:24px;}
+  .btn-save{
+    background:var(--cardinal);color:#fff;border:none;
+    padding:10px 22px;font-size:13px;font-family:inherit;cursor:pointer;letter-spacing:.2px;
+  }
+  .btn-save:hover{opacity:.88;}
+  .btn-save:disabled{opacity:.4;pointer-events:none;}
+  .edit-status{margin-top:12px;font-size:13px;}
+  .edit-status.ok{color:var(--cardinal);}
+  .edit-status.err{color:#c0392b;}
+
+  /* delete confirm modal */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.55);
+    display:flex;align-items:center;justify-content:center;z-index:300;
+  }
+  .modal-box{
+    background:var(--bg);border:1px solid var(--line-strong);
+    padding:32px;max-width:420px;width:90%;
+  }
+  .modal-title{margin:0 0 10px;font-family:var(--serif);font-size:22px;}
+  .modal-sub{margin:0 0 24px;font-size:14px;color:var(--muted);line-height:1.5;}
+  .modal-actions{display:flex;gap:10px;}
+  .btn.danger{background:var(--cardinal);color:#fff;border-color:var(--cardinal);}
+  .btn.danger:hover{opacity:.88;}
+
   @media (max-width:820px){
     .hero-foot{grid-template-columns:1fr;}
     .profile-layout{grid-template-columns:1fr;}
+    .manage-layout{grid-template-columns:1fr;}
     .result-card{grid-template-columns:40px minmax(0,1fr) 24px;}
     .result-card .avatar{display:none;}
     .result-body{grid-column:2;}
@@ -259,6 +331,7 @@
       <button class="tab-btn active" data-tab="search" onclick="goTab('search')"><span class="n">01</span>Search</button>
       <button class="tab-btn" data-tab="upload" onclick="goTab('upload')"><span class="n">02</span>Upload</button>
       <button class="tab-btn" data-tab="profile" onclick="goTab('profile')"><span class="n">03</span>Profile review</button>
+      <button class="tab-btn" data-tab="manage" onclick="goTab('manage')"><span class="n">04</span>Manage</button>
     </nav>
     <a href="#" class="login-link" onclick="return demoToast(event)">Login <span class="arrow">→</span></a>
   </div>
@@ -347,6 +420,33 @@
   </div>
 </section>
 
+<section class="view" id="view-manage">
+  <div class="wrap manage-layout">
+    <div class="manage-left">
+      <div class="page-head-inner">
+        <div class="eyebrow"><span class="num">[ 04 ]</span> Manage</div>
+        <h2 style="color:var(--cardinal);margin-top:16px;font-size:clamp(32px,4vw,56px);">Faculty database</h2>
+        <p class="lede" style="margin-top:16px;font-size:15px;max-width:44ch;">Search and manage all faculty in the database. Changes take effect immediately.</p>
+      </div>
+      <div class="manage-search-row">
+        <input id="manageSearch" type="text" placeholder="Search by name…" oninput="filterFaculty()" autocomplete="off" />
+      </div>
+      <div id="facultyList" class="faculty-list"></div>
+    </div>
+  </div>
+</section>
+
+<div id="deleteModal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <p class="modal-title">Delete <strong id="deleteModalName"></strong>?</p>
+    <p class="modal-sub">This permanently removes them and all their data from the database. This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeDeleteModal()">Cancel</button>
+      <button class="btn danger" id="deleteConfirmBtn">Delete permanently</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast">Preview only, not functional in this demo</div>
 
 <script>
@@ -355,6 +455,7 @@
     document.getElementById('view-'+name).classList.add('active');
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
     if(name === 'profile') loadReviews();
+    if(name === 'manage') loadManage();
   }
 
   function setMode(mode){
@@ -375,6 +476,11 @@
 
   // backend lives here while we're running things locally
   const API_BASE = 'http://127.0.0.1:8000';
+
+  // support linking back to a specific tab via #manage, #upload, etc.
+  const _tabs = ['search','upload','profile','manage'];
+  const _hash = location.hash.replace('#','');
+  if(_tabs.includes(_hash)) goTab(_hash);
 
   // grabs initials off a name for the little avatar square, same look as the
   // hardcoded example card used to have
@@ -683,6 +789,82 @@
     }
 
     resultsBlock.innerHTML = html;
+  }
+
+  // ── Manage tab ──────────────────────────────────────────────────────────
+
+  let _allFaculty = [];
+  let _deleteTarget = null;
+
+  async function loadManage(){
+    const list = document.getElementById('facultyList');
+    list.innerHTML = '<p class="review-empty">Loading…</p>';
+    try{
+      const res = await fetch(`${API_BASE}/faculty`);
+      if(!res.ok) throw new Error(`backend returned ${res.status}`);
+      const data = await res.json();
+      _allFaculty = data.faculty.sort((a,b) => a.name.localeCompare(b.name));
+      renderFacultyList(_allFaculty);
+    }catch(err){
+      list.innerHTML = `<p class="review-empty" style="color:var(--cardinal)">Couldn't load faculty: ${escapeHtml(err.message)}</p>`;
+    }
+  }
+
+  function filterFaculty(){
+    const q = document.getElementById('manageSearch').value.toLowerCase();
+    renderFacultyList(q ? _allFaculty.filter(f => f.name.toLowerCase().includes(q)) : _allFaculty);
+  }
+
+  function renderFacultyList(items){
+    const list = document.getElementById('facultyList');
+    if(!items.length){
+      list.innerHTML = '<p class="review-empty">No results.</p>';
+      return;
+    }
+    list.innerHTML = items.map(f => `
+      <div class="faculty-row">
+        <div class="faculty-row-name">
+          ${escapeHtml(f.name)}
+          <span class="faculty-row-id">${escapeHtml(f.faculty_id)}</span>
+        </div>
+        <div class="faculty-row-actions">
+          <a class="btn-sm edit" href="profile.html?id=${encodeURIComponent(f.faculty_id)}&amp;edit=1">Edit</a>
+          <button class="btn-sm danger" data-id="${escapeHtml(f.faculty_id)}" data-name="${escapeHtml(f.name)}" onclick="confirmDelete(this.dataset.id,this.dataset.name)">Delete</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function confirmDelete(facultyId, name){
+    _deleteTarget = facultyId;
+    document.getElementById('deleteModalName').textContent = name;
+    document.getElementById('deleteConfirmBtn').onclick = () => doDelete(facultyId, name);
+    document.getElementById('deleteModal').style.display = 'flex';
+  }
+
+  function closeDeleteModal(){
+    document.getElementById('deleteModal').style.display = 'none';
+    _deleteTarget = null;
+  }
+
+  async function doDelete(facultyId, name){
+    const btn = document.getElementById('deleteConfirmBtn');
+    btn.disabled = true;
+    btn.textContent = 'Deleting…';
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`, {method:'DELETE'});
+      if(!res.ok){
+        const d = await res.json().catch(()=>({}));
+        throw new Error(d.detail || `backend returned ${res.status}`);
+      }
+      closeDeleteModal();
+      _allFaculty = _allFaculty.filter(f => f.faculty_id !== facultyId);
+      renderFacultyList(_allFaculty);
+    }catch(err){
+      btn.textContent = `Error: ${err.message}`;
+    }finally{
+      btn.disabled = false;
+    }
   }
 </script>
 

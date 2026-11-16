@@ -158,6 +158,76 @@
     .tag-group{grid-template-columns:1fr;gap:8px;}
     .pub-item,.honor-item,.award-item{grid-template-columns:48px minmax(0,1fr);}
   }
+
+  /* edit mode bar */
+  .edit-bar{
+    border-bottom:2px solid var(--cardinal);
+    background:var(--bg-soft);
+    padding:clamp(20px,3vw,36px) var(--gutter);
+  }
+  .edit-bar-head{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+  .edit-bar-head h3{margin:0;font-family:var(--serif);font-size:22px;color:var(--cardinal);}
+  .edit-bar-head a{margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+  .edit-bar-head a:hover{color:var(--ink);}
+  .edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;}
+  @media(max-width:640px){.edit-grid{grid-template-columns:1fr;}}
+  .edit-grid .ef-full{grid-column:1/-1;}
+  .ef{display:flex;flex-direction:column;gap:6px;}
+  .ef label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .ef textarea,.ef input[type=text]{
+    width:100%;padding:8px 0;font-family:var(--sans);font-size:14px;line-height:1.5;
+    border:none;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--ink);
+    outline:none;resize:vertical;
+  }
+  .ef textarea:focus,.ef input[type=text]:focus{border-bottom-color:var(--cardinal);}
+  .ef .hint{font-size:11.5px;color:var(--faint);}
+  .edit-bar-actions{display:flex;align-items:center;gap:12px;margin-top:24px;}
+  .btn-save-profile{
+    background:var(--cardinal);color:#fff;border:none;
+    padding:10px 24px;font-size:13px;font-family:inherit;cursor:pointer;letter-spacing:.2px;
+  }
+  .btn-save-profile:hover{opacity:.88;}
+  .btn-save-profile:disabled{opacity:.4;pointer-events:none;}
+  .edit-save-status{font-size:13px;}
+  .edit-save-status.ok{color:var(--cardinal);}
+  .edit-save-status.err{color:#c0392b;}
+
+  /* links editor */
+  .links-editor{margin-top:4px;}
+  .link-edit-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);}
+  .link-edit-row:first-of-type{border-top:1px solid var(--line);}
+  .link-edit-type{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-width:120px;}
+  .link-edit-url{flex:1;font-size:13px;color:var(--ink);word-break:break-all;}
+  .btn-remove-link{background:none;border:none;cursor:pointer;color:var(--faint);font-size:16px;line-height:1;padding:2px 6px;}
+  .btn-remove-link:hover{color:var(--cardinal);}
+  .add-link-row{display:flex;gap:10px;margin-top:12px;align-items:flex-end;}
+  .add-link-row select,.add-link-row input{
+    padding:8px 0;font-family:var(--sans);font-size:13px;
+    border:none;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--ink);outline:none;
+  }
+  .add-link-row select{min-width:140px;}
+  .add-link-row input{flex:1;}
+  .add-link-row input:focus,.add-link-row select:focus{border-bottom-color:var(--cardinal);}
+  .btn-add-link{padding:8px 16px;font-size:12px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line-strong);background:none;color:var(--ink);cursor:pointer;white-space:nowrap;}
+  .btn-add-link:hover{background:var(--bg-soft);}
+
+  /* delete button in edit bar */
+  .btn-delete-profile{
+    margin-left:auto;padding:10px 20px;font-size:13px;font-family:inherit;cursor:pointer;letter-spacing:.2px;
+    background:none;border:1px solid var(--cardinal);color:var(--cardinal);
+  }
+  .btn-delete-profile:hover{background:var(--cardinal);color:#fff;}
+
+  /* modal (same as POC page) */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:300;}
+  .modal-box{background:var(--bg);border:1px solid var(--line-strong);padding:32px;max-width:420px;width:90%;}
+  .modal-title{margin:0 0 10px;font-family:var(--serif);font-size:22px;}
+  .modal-sub{margin:0 0 24px;font-size:14px;color:var(--muted);line-height:1.5;}
+  .modal-actions{display:flex;gap:10px;}
+  .btn{display:inline-block;padding:9px 20px;border:1px solid var(--line-strong);background:none;color:var(--ink);cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;}
+  .btn:hover{background:var(--bg-soft);}
+  .btn.danger{background:var(--cardinal);color:#fff;border-color:var(--cardinal);}
+  .btn.danger:hover{opacity:.88;}
 </style>
 </head>
 <body>
@@ -165,12 +235,21 @@
 <header class="site-nav">
   <div class="nav-row">
     <div class="brand"><a href="Viterbi_Pathfinder_POC.html"><span class="mark">Viterbi</span> Pathfinder<span class="dot"></span></a></div>
-    <a href="Viterbi_Pathfinder_POC.html" class="btn back-link">
+    <a id="backLink" href="Viterbi_Pathfinder_POC.html" class="btn back-link">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
         <path d="M9 11L5 7l4-4"/>
       </svg>
-      Back to search
+      <span id="backLinkLabel">Back to search</span>
     </a>
+    <script>
+      (function(){
+        const p = new URLSearchParams(location.search);
+        if(p.get('edit')==='1'){
+          document.getElementById('backLink').href='Viterbi_Pathfinder_POC.html#manage';
+          document.getElementById('backLinkLabel').textContent='Back to manage';
+        }
+      })();
+    </script>
   </div>
 </header>
 
@@ -191,6 +270,19 @@
   <div class="eyebrow"><span class="num">[ ! ]</span> Profile unavailable</div>
   <h2>Could not load this <em>faculty profile</em>.</h2>
   <p>Make sure the API is running.</p>
+</div>
+
+<div id="edit-bar" style="display:none;"></div>
+
+<div id="profileDeleteModal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <p class="modal-title">Delete <strong id="profileDeleteName"></strong>?</p>
+    <p class="modal-sub">This permanently removes them and all their data from the database. This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn" onclick="document.getElementById('profileDeleteModal').style.display='none'">Cancel</button>
+      <button class="btn danger" id="profileDeleteConfirmBtn">Delete permanently</button>
+    </div>
+  </div>
 </div>
 
 <div class="wrap profile-page" id="profile-page" style="display:none;">
@@ -406,6 +498,7 @@
     `;
 
     document.getElementById('profile-page').style.display='block';
+    renderEditBar(pkg, facultyId);
   }
 
   function setPubTab(tab, btn){
@@ -414,6 +507,168 @@
     const el = document.getElementById('pub-'+tab);
     if(el) el.classList.add('active');
     btn.classList.add('active');
+  }
+
+  // ── edit mode ────────────────────────────────────────────────────────────
+
+  const params = new URLSearchParams(location.search);
+  const EDIT_MODE = params.get('edit') === '1';
+
+  // links managed in memory while editing
+  let _editLinks = [];
+
+  function renderEditBar(pkg, facultyId){
+    if(!EDIT_MODE) return;
+    const r = pkg.research || {};
+    const id = pkg.identity || {};
+    _editLinks = JSON.parse(JSON.stringify(pkg.links || []));
+    const bar = document.getElementById('edit-bar');
+    bar.className = 'edit-bar';
+    bar.innerHTML = `
+      <div class="wrap">
+        <div class="edit-bar-head">
+          <h3>Editing profile</h3>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <a href="Viterbi_Pathfinder_POC.html#manage" style="font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);">← Back to Manage</a>
+            <a href="profile.html?id=${encodeURIComponent(facultyId)}">Exit edit mode ×</a>
+          </div>
+        </div>
+        <div class="edit-grid">
+          <div class="ef ef-full">
+            <label>Research summary</label>
+            <textarea id="ef-summary" rows="4">${esc(r.summary||'')}</textarea>
+          </div>
+          <div class="ef">
+            <label>Domains</label>
+            <input type="text" id="ef-domains" value="${esc((r.domains||[]).join(', '))}" />
+            <span class="hint">Comma-separated</span>
+          </div>
+          <div class="ef">
+            <label>Methods</label>
+            <input type="text" id="ef-methods" value="${esc((r.methods||[]).join(', '))}" />
+            <span class="hint">Comma-separated</span>
+          </div>
+          <div class="ef">
+            <label>Applications</label>
+            <input type="text" id="ef-applications" value="${esc((r.applications||[]).join(', '))}" />
+            <span class="hint">Comma-separated</span>
+          </div>
+          <div class="ef">
+            <label>USC Email</label>
+            <input type="text" id="ef-email" value="${esc(id.usc_email||'')}" />
+          </div>
+          <div class="ef ef-full">
+            <label>Links</label>
+            <div class="links-editor" id="linksEditor"></div>
+            <div class="add-link-row">
+              <select id="newLinkType">
+                <option value="official_profile">USC Profile</option>
+                <option value="lab">Lab website</option>
+                <option value="google_scholar">Google Scholar</option>
+                <option value="github">GitHub</option>
+                <option value="personal">Personal website</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="recent_publications">Publications list</option>
+              </select>
+              <input type="text" id="newLinkUrl" placeholder="https://…" />
+              <button class="btn-add-link" onclick="addEditLink()">Add link</button>
+            </div>
+          </div>
+        </div>
+        <div class="edit-bar-actions">
+          <button class="btn-save-profile" id="saveProfileBtn" onclick="saveProfile(${JSON.stringify(facultyId)})">Save changes</button>
+          <span class="edit-save-status" id="saveStatus"></span>
+          <button class="btn-delete-profile" onclick="confirmProfileDelete(${JSON.stringify(facultyId)}, ${JSON.stringify(pkg.identity?.preferred_display_name || facultyId)})">Delete professor</button>
+        </div>
+      </div>
+    `;
+    bar.style.display = 'block';
+    renderLinksEditor();
+  }
+
+  function renderLinksEditor(){
+    const el = document.getElementById('linksEditor');
+    if(!el) return;
+    if(!_editLinks.length){ el.innerHTML = '<p style="font-size:13px;color:var(--faint);margin:8px 0;">No links yet.</p>'; return; }
+    el.innerHTML = _editLinks.map((l,i) => `
+      <div class="link-edit-row">
+        <span class="link-edit-type">${esc(l.link_type)}</span>
+        <span class="link-edit-url">${esc(l.url)}</span>
+        <button class="btn-remove-link" onclick="removeEditLink(${i})" title="Remove">×</button>
+      </div>`).join('');
+  }
+
+  function addEditLink(){
+    const type = document.getElementById('newLinkType').value;
+    const url  = document.getElementById('newLinkUrl').value.trim();
+    if(!url) return;
+    _editLinks.push({link_type: type, url});
+    document.getElementById('newLinkUrl').value = '';
+    renderLinksEditor();
+  }
+
+  function removeEditLink(i){
+    _editLinks.splice(i, 1);
+    renderLinksEditor();
+  }
+
+  function confirmProfileDelete(facultyId, name){
+    document.getElementById('profileDeleteName').textContent = name;
+    document.getElementById('profileDeleteConfirmBtn').onclick = () => doProfileDelete(facultyId);
+    document.getElementById('profileDeleteModal').style.display = 'flex';
+  }
+
+  async function doProfileDelete(facultyId){
+    const btn = document.getElementById('profileDeleteConfirmBtn');
+    btn.disabled = true;
+    btn.textContent = 'Deleting…';
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`, {method:'DELETE'});
+      if(!res.ok){
+        const d = await res.json().catch(()=>({}));
+        throw new Error(d.detail || `backend returned ${res.status}`);
+      }
+      // redirect back to manage tab after deletion
+      window.location.href = 'Viterbi_Pathfinder_POC.html#manage';
+    }catch(err){
+      btn.textContent = `Error: ${err.message}`;
+      btn.disabled = false;
+    }
+  }
+
+  async function saveProfile(facultyId){
+    const btn = document.getElementById('saveProfileBtn');
+    const status = document.getElementById('saveStatus');
+    btn.disabled = true;
+    status.textContent = 'Saving…';
+    status.className = 'edit-save-status';
+
+    const splitTags = s => s.split(',').map(t=>t.trim()).filter(Boolean);
+    const body = {
+      summary: document.getElementById('ef-summary').value,
+      domains: splitTags(document.getElementById('ef-domains').value),
+      methods: splitTags(document.getElementById('ef-methods').value),
+      applications: splitTags(document.getElementById('ef-applications').value),
+      email: document.getElementById('ef-email').value.trim(),
+      links: _editLinks,
+    };
+
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`, {
+        method: 'PATCH',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if(!res.ok) throw new Error(data.detail || `backend returned ${res.status}`);
+      status.textContent = 'Saved successfully.';
+      status.className = 'edit-save-status ok';
+    }catch(err){
+      status.textContent = `Error: ${err.message}`;
+      status.className = 'edit-save-status err';
+    }finally{
+      btn.disabled = false;
+    }
   }
 
   loadProfile();

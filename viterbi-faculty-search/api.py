@@ -34,6 +34,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 import cv_upload  # noqa: E402
+from load_db import load_one  # noqa: E402
 from search_db import search as run_search  # noqa: E402
 from structure_cv import CVError  # noqa: E402
 
@@ -134,6 +135,71 @@ def faculty_endpoint(faculty_id: str):
     if not pkg:
         raise HTTPException(status_code=404, detail="faculty not found")
     return pkg
+
+
+@app.patch("/faculty/{faculty_id}")
+def faculty_update(faculty_id: str, body: dict):
+    """Edit a faculty member's research fields and contact info."""
+    with cv_upload.connect() as conn:
+        pkg = cv_upload.current_package(conn, faculty_id)
+    if not pkg:
+        raise HTTPException(status_code=404, detail="faculty not found")
+
+    import copy
+    pkg = copy.deepcopy(pkg)
+
+    if "summary" in body:
+        pkg.setdefault("research", {})["summary"] = body["summary"]
+    if "domains" in body:
+        pkg.setdefault("research", {})["domains"] = body["domains"]
+    if "methods" in body:
+        pkg.setdefault("research", {})["methods"] = body["methods"]
+    if "applications" in body:
+        pkg.setdefault("research", {})["applications"] = body["applications"]
+    if "email" in body:
+        pkg.setdefault("identity", {})["usc_email"] = body["email"]
+    if "links" in body:
+        pkg["links"] = body["links"]
+
+    pkg.setdefault("review_history", []).append({
+        "review_date": __import__("datetime").date.today().isoformat(),
+        "reviewer": "Admin panel",
+        "decision": "Edited via manage tab",
+        "notes": f"Fields updated: {', '.join(body.keys())}",
+    })
+
+    try:
+        with cv_upload.connect() as conn:
+            status = load_one(conn, pkg, model)
+        print(f"faculty_update {faculty_id}: {status}")
+        return {"faculty_id": faculty_id, "status": status}
+    except Exception as e:
+        print(f"faculty_update {faculty_id} failed: {e!r}")
+        raise HTTPException(status_code=502, detail=f"Save failed: {str(e)[:300]}")
+
+
+@app.delete("/faculty/{faculty_id}")
+def faculty_delete(faculty_id: str):
+    """Permanently remove a faculty member and all their data from Supabase."""
+    try:
+        with cv_upload.connect() as conn:
+            row = conn.execute(
+                "select canonical_name from faculty where faculty_id = %s", (faculty_id,)
+            ).fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="faculty not found")
+            name = row[0]
+            # explicit deletes in case cascade isn't configured in Supabase
+            for table in ("evidence", "publications", "awards", "patents", "package_versions"):
+                conn.execute(f"delete from {table} where faculty_id = %s", (faculty_id,))
+            conn.execute("delete from faculty where faculty_id = %s", (faculty_id,))
+        print(f"faculty_delete: removed {faculty_id} ({name})")
+        return {"deleted": faculty_id, "name": name}
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"faculty_delete {faculty_id} failed: {e!r}")
+        raise HTTPException(status_code=502, detail=f"Delete failed: {str(e)[:300]}")
 
 
 @app.post("/cv-upload")
