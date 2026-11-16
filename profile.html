@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty Profile — Viterbi Pathfinder</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  :root{
+    --active-dot:var(--cardinal);
+    --closeout-dot:#B86E00;
+    --closed-dot:var(--faint);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){--active-dot:var(--gold);--closeout-dot:#E8925A;}
+  }
+  :root[data-theme="dark"]{--active-dot:var(--gold);--closeout-dot:#E8925A;}
+  .band{--active-dot:var(--gold);--closeout-dot:var(--sand);}
+
+  .back-link{display:inline-flex;align-items:center;gap:8px;}
+  .back-link:hover svg{transform:translateX(-3px);}
+  .back-link svg{transition:transform .15s;}
+
+  /* breadcrumb */
+  .crumb-strip{border-bottom:1px solid var(--line);padding:12px 0;}
+  .crumb{display:flex;align-items:center;gap:10px;color:var(--muted);}
+  .crumb a:hover{color:var(--ink);}
+  .crumb .sep{color:var(--faint);}
+  .crumb #crumb-name{color:var(--ink);}
+
+  /* hero band with the name */
+  .profile-hero{padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(40px,6vw,72px);}
+  .profile-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:end;margin-top:28px;}
+  .avatar{
+    width:clamp(72px,9vw,112px);height:clamp(72px,9vw,112px);border-radius:50%;
+    background:var(--hot);color:var(--hot-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:clamp(16px,2vw,22px);letter-spacing:.06em;
+  }
+  .head-body h1{font-size:clamp(48px,7.5vw,104px);}
+  .head-meta{
+    margin-top:clamp(28px,4vw,48px);padding-top:20px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 40px;
+  }
+  .head-meta .k{display:block;margin-bottom:6px;color:var(--faint);}
+  .head-dept{font-size:15px;line-height:1.45;}
+  .courtesy-list{font-size:14px;color:var(--muted);line-height:1.45;}
+  .head-email a{color:var(--accent);font-size:15px;}
+  .head-email a:hover{text-decoration:underline;}
+
+  /* page layout */
+  .profile-page{padding:clamp(48px,7vw,88px) var(--gutter) clamp(72px,9vw,120px);}
+  .profile-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(32px,6vw,88px);align-items:start;}
+  #main-col{counter-reset:sec;}
+
+  /* sections get numbered mono eyebrows */
+  .section{margin-bottom:clamp(48px,6vw,72px);}
+  .section-label{
+    counter-increment:sec;
+    display:flex;align-items:center;gap:10px;margin-bottom:20px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+  .section-label::before{content:"[ " counter(sec,decimal-leading-zero) " ]";color:var(--ink);}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--line);}
+
+  /* research summary */
+  .summary-text{
+    font-family:var(--sans);font-size:16px;line-height:1.65;letter-spacing:0;
+    max-width:72ch;margin:0 0 36px;
+  }
+
+  .tag-group{display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line);}
+  .tag-group-label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding-top:5px;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    font-size:13px;border:1px solid var(--line-strong);border-radius:999px;padding:3px 12px;white-space:nowrap;
+  }
+
+  /* publications */
+  .pub-tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line-strong);border-radius:999px;margin-bottom:12px;}
+  .pub-tab{
+    background:none;border:none;border-radius:999px;padding:7px 16px;color:var(--muted);
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .pub-tab.active{background:var(--ink);color:var(--bg);}
+  .pub-tab:hover:not(.active){color:var(--ink);}
+  .pub-list{display:none;}
+  .pub-list.active{display:block;}
+
+  .pub-item,.honor-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .pub-year,.honor-year{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);padding-top:3px;font-variant-numeric:tabular-nums;}
+  .pub-title{font-size:16px;line-height:1.4;}
+  .pub-title a:hover{color:var(--accent);}
+  .pub-venue{margin-top:4px;font-size:13.5px;color:var(--muted);font-style:italic;}
+  .pub-cite{margin-top:6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
+  .pub-doi{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--accent);}
+  .pub-doi:hover{text-decoration:underline;}
+  .honor-text{font-size:16px;}
+
+  /* awards */
+  .award-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .award-status-dot{width:10px;height:10px;border-radius:50%;margin-top:7px;}
+  .award-status-dot.active{background:var(--active-dot);}
+  .award-status-dot.closeout{background:var(--closeout-dot);}
+  .award-status-dot.closed{background:var(--closed-dot);}
+  .award-title{font-size:16px;line-height:1.4;}
+  .award-meta{margin-top:4px;font-size:13.5px;color:var(--muted);}
+  .award-amount{margin-top:6px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--faint);font-variant-numeric:tabular-nums;}
+  .award-status-tag{
+    display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;vertical-align:middle;
+    font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;
+  }
+  .award-status-tag.active{color:var(--active-dot);}
+  .award-status-tag.closeout{color:var(--closeout-dot);}
+  .award-status-tag.closed{color:var(--faint);}
+
+  /* patents */
+  .patent-item{padding:18px 0;border-bottom:1px solid var(--line);}
+  .patent-title{font-size:16px;line-height:1.4;}
+  .patent-meta{margin-top:4px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);}
+  .patent-link{display:inline-block;margin-top:6px;font-size:13px;color:var(--accent);}
+  .patent-link:hover{text-decoration:underline;}
+
+  /* sidebar */
+  .sidebar{position:sticky;top:96px;}
+  .sidebar-block{margin-bottom:36px;}
+  .sidebar-block h4{
+    margin:0 0 4px;font-family:var(--mono);font-size:11.5px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+  .link-item{
+    display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;
+  }
+  .link-item:first-of-type{border-top:1px solid var(--line-strong);}
+  .link-item svg{flex:none;margin-top:4px;opacity:.55;}
+  .link-item:hover{color:var(--accent);}
+  .link-item:hover svg{opacity:1;}
+  .link-label{display:block;line-height:1.3;}
+  .link-type{display:block;margin-top:3px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+
+  /* funding summary is a sand-on-night stat card */
+  .funding-card{padding:22px;border-radius:4px;border:1px solid var(--line);}
+  .funding-card h4{color:var(--muted);}
+  .funding-total{font-family:var(--serif);font-size:48px;line-height:1;margin:14px 0 6px;}
+  .funding-sub{font-size:13px;color:var(--muted);}
+  .funding-dots{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px;font-size:13px;}
+  .funding-dots .d{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;}
+
+  .error-box{padding-top:clamp(56px,8vw,104px);padding-bottom:clamp(56px,8vw,104px);}
+  .error-box h2{margin-top:24px;font-size:clamp(36px,5vw,64px);max-width:18ch;}
+  .error-box p{margin-top:16px;color:var(--muted);}
+
+  @media (max-width:860px){
+    .profile-grid{grid-template-columns:1fr;}
+    .sidebar{position:static;}
+  }
+  @media (max-width:560px){
+    .profile-head{grid-template-columns:1fr;}
+    .tag-group{grid-template-columns:1fr;gap:8px;}
+    .pub-item,.honor-item,.award-item{grid-template-columns:48px minmax(0,1fr);}
+  }
+
+  /* edit mode bar */
+  .edit-bar{
+    border-bottom:2px solid var(--cardinal);
+    background:var(--bg-soft);
+    padding:clamp(20px,3vw,36px) var(--gutter);
+  }
+  .edit-bar-head{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+  .edit-bar-head h3{margin:0;font-family:var(--serif);font-size:22px;color:var(--cardinal);}
+  .edit-bar-head a{margin-left:auto;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+  .edit-bar-head a:hover{color:var(--ink);}
+  .edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;}
+  @media(max-width:640px){.edit-grid{grid-template-columns:1fr;}}
+  .edit-grid .ef-full{grid-column:1/-1;}
+  .ef{display:flex;flex-direction:column;gap:6px;}
+  .ef label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .ef textarea,.ef input[type=text]{
+    width:100%;padding:8px 0;font-family:var(--sans);font-size:14px;line-height:1.5;
+    border:none;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--ink);
+    outline:none;resize:vertical;
+  }
+  .ef textarea:focus,.ef input[type=text]:focus{border-bottom-color:var(--cardinal);}
+  .ef .hint{font-size:11.5px;color:var(--faint);}
+  .edit-bar-actions{display:flex;align-items:center;gap:12px;margin-top:24px;}
+  .btn-save-profile{
+    background:var(--cardinal);color:#fff;border:none;
+    padding:10px 24px;font-size:13px;font-family:inherit;cursor:pointer;letter-spacing:.2px;
+  }
+  .btn-save-profile:hover{opacity:.88;}
+  .btn-save-profile:disabled{opacity:.4;pointer-events:none;}
+  .edit-save-status{font-size:13px;}
+  .edit-save-status.ok{color:var(--cardinal);}
+  .edit-save-status.err{color:#c0392b;}
+
+  /* links editor */
+  .links-editor{margin-top:4px;}
+  .link-edit-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);}
+  .link-edit-row:first-of-type{border-top:1px solid var(--line);}
+  .link-edit-type{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-width:120px;}
+  .link-edit-url{flex:1;font-size:13px;color:var(--ink);word-break:break-all;}
+  .btn-remove-link{background:none;border:none;cursor:pointer;color:var(--faint);font-size:16px;line-height:1;padding:2px 6px;}
+  .btn-remove-link:hover{color:var(--cardinal);}
+  .add-link-row{display:flex;gap:10px;margin-top:12px;align-items:flex-end;}
+  .add-link-row select,.add-link-row input{
+    padding:8px 0;font-family:var(--sans);font-size:13px;
+    border:none;border-bottom:1px solid var(--line-strong);background:transparent;color:var(--ink);outline:none;
+  }
+  .add-link-row select{min-width:140px;}
+  .add-link-row input{flex:1;}
+  .add-link-row input:focus,.add-link-row select:focus{border-bottom-color:var(--cardinal);}
+  .btn-add-link{padding:8px 16px;font-size:12px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line-strong);background:none;color:var(--ink);cursor:pointer;white-space:nowrap;}
+  .btn-add-link:hover{background:var(--bg-soft);}
+
+  /* delete button in edit bar */
+  .btn-delete-profile{
+    margin-left:auto;padding:10px 20px;font-size:13px;font-family:inherit;cursor:pointer;letter-spacing:.2px;
+    background:none;border:1px solid var(--cardinal);color:var(--cardinal);
+  }
+  .btn-delete-profile:hover{background:var(--cardinal);color:#fff;}
+
+  /* modal (same as POC page) */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:300;}
+  .modal-box{background:var(--bg);border:1px solid var(--line-strong);padding:32px;max-width:420px;width:90%;}
+  .modal-title{margin:0 0 10px;font-family:var(--serif);font-size:22px;}
+  .modal-sub{margin:0 0 24px;font-size:14px;color:var(--muted);line-height:1.5;}
+  .modal-actions{display:flex;gap:10px;}
+  .btn{display:inline-block;padding:9px 20px;border:1px solid var(--line-strong);background:none;color:var(--ink);cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;}
+  .btn:hover{background:var(--bg-soft);}
+  .btn.danger{background:var(--cardinal);color:#fff;border-color:var(--cardinal);}
+  .btn.danger:hover{opacity:.88;}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <div class="brand"><a href="Viterbi_Pathfinder_POC.html"><span class="mark">Viterbi</span> Pathfinder<span class="dot"></span></a></div>
+    <a id="backLink" href="Viterbi_Pathfinder_POC.html" class="btn back-link">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M9 11L5 7l4-4"/>
+      </svg>
+      <span id="backLinkLabel">Back to search</span>
+    </a>
+    <script>
+      (function(){
+        const p = new URLSearchParams(location.search);
+        if(p.get('edit')==='1'){
+          document.getElementById('backLink').href='Viterbi_Pathfinder_POC.html#manage';
+          document.getElementById('backLinkLabel').textContent='Back to manage';
+        }
+      })();
+    </script>
+  </div>
+</header>
+
+<div class="band">
+  <div class="crumb-strip">
+    <div class="wrap">
+      <div class="crumb mono">
+        <a href="Viterbi_Pathfinder_POC.html">Search</a>
+        <span class="sep">/</span>
+        <span id="crumb-name">Loading…</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap profile-hero" id="profile-hero" style="display:none;"></div>
+</div>
+
+<div id="profile-error" class="wrap error-box" style="display:none;">
+  <div class="eyebrow"><span class="num">[ ! ]</span> Profile unavailable</div>
+  <h2>Could not load this <em>faculty profile</em>.</h2>
+  <p>Make sure the API is running.</p>
+</div>
+
+<div id="edit-bar" style="display:none;"></div>
+
+<div id="profileDeleteModal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <p class="modal-title">Delete <strong id="profileDeleteName"></strong>?</p>
+    <p class="modal-sub">This permanently removes them and all their data from the database. This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn" onclick="document.getElementById('profileDeleteModal').style.display='none'">Cancel</button>
+      <button class="btn danger" id="profileDeleteConfirmBtn">Delete permanently</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap profile-page" id="profile-page" style="display:none;">
+  <div class="profile-grid">
+
+    <div id="main-col"></div>
+    <aside class="sidebar" id="sidebar-col"></aside>
+  </div>
+</div>
+
+<script>
+  const API_BASE = 'http://127.0.0.1:8000';
+
+  function esc(str){ const d=document.createElement('div'); d.textContent=str||''; return d.innerHTML; }
+  function initials(name){ return (name||'').split(' ').map(w=>w.replace(/[^A-Za-z]/g,'')).filter(Boolean).map(w=>w[0]).join('').slice(0,2).toUpperCase(); }
+
+  function linkIcon(type){
+    if(type==='official_profile') return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="12" height="12" rx="1"/><path d="M4 4h6M4 7h6M4 10h3"/></svg>';
+    if(type==='lab') return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="6"/><path d="M7 1c-1.5 2-2.5 3.5-2.5 6s1 4 2.5 6M7 1c1.5 2 2.5 3.5 2.5 6s-1 4-2.5 6M1 7h12"/></svg>';
+    if(type==='google_scholar') return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 1L1 5l6 4 6-4-6-4z"/><path d="M1 5v4M11 6v4a4 4 0 01-8 0V6"/></svg>';
+    return '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2h8M3 5h8M3 8h5"/></svg>';
+  }
+
+  function linkLabel(type){
+    return {official_profile:'USC Viterbi faculty page',lab:'Lab website',google_scholar:'Google Scholar',recent_publications:'Recent publications'}[type] || type;
+  }
+  function linkSubtitle(type){
+    return {official_profile:'Official profile',lab:'Lab website',google_scholar:'Publication record',recent_publications:'Sorted by date'}[type] || '';
+  }
+
+  function awardStatusClass(status){
+    if(!status) return 'closed';
+    const s = status.toLowerCase();
+    if(s.includes('active')) return 'active';
+    if(s.includes('closeout')) return 'closeout';
+    return 'closed';
+  }
+  function awardStatusLabel(status){
+    const cls = awardStatusClass(status);
+    return {active:'Active',closeout:'In closeout',closed:'Closed'}[cls];
+  }
+
+  function formatUSD(n){ if(!n) return ''; return '$'+Number(n).toLocaleString(); }
+  function formatDate(d){ if(!d) return ''; return d.slice(0,7).replace('-','/'); }
+
+  function renderTags(items, label){
+    if(!items||!items.length) return '';
+    return `<div class="tag-group"><div class="tag-group-label">${esc(label)}</div><div class="tags">${items.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div>`;
+  }
+
+  function renderPubs(records, views){
+    if(!records||!records.length) return '';
+    const byId = {};
+    records.forEach(p=>{ if(p.title) byId[p.title]=p; });
+
+    const recentIds = (views||{}).recent_publication_ids || [];
+    const citedIds  = (views||{}).most_cited_publication_ids || [];
+
+    // fallback: if no views, show all as recent
+    const recentPubs = recentIds.length
+      ? recentIds.map(id=>records.find(p=>p.publication_id===id||p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
+      : records.slice(0,8);
+    const citedPubs  = citedIds.length
+      ? citedIds.map(id=>records.find(p=>p.publication_id===id||p.title===id||p.publication_link===id||p.doi===id)).filter(Boolean)
+      : [];
+
+    function pubItem(p){
+      const link = p.publication_link || (p.doi ? `https://doi.org/${p.doi}` : null);
+      const title = link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
+      const cite = (p.citation_snapshot||{}).count ? `<div class="pub-cite">${esc(String(p.citation_snapshot.count))} citations</div>` : '';
+      const doi  = p.doi ? `<a class="pub-doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)} ↗</a>` : '';
+      return `<div class="pub-item"><div class="pub-year">${esc(String(p.publication_year||''))}</div><div class="pub-body"><div class="pub-title">${title}</div>${p.venue?`<div class="pub-venue">${esc(p.venue)}</div>`:''}${cite}${doi}</div></div>`;
+    }
+
+    const hasCited = citedPubs.length > 0;
+    return `<div class="section"><div class="section-label">Publications</div>
+      <div class="pub-tabs">
+        <button class="pub-tab active" onclick="setPubTab('recent',this)">Recent</button>
+        ${hasCited?'<button class="pub-tab" onclick="setPubTab(\'cited\',this)">Most cited</button>':''}
+      </div>
+      <div class="pub-list active" id="pub-recent">${recentPubs.map(pubItem).join('')}</div>
+      ${hasCited?`<div class="pub-list" id="pub-cited">${citedPubs.map(pubItem).join('')}</div>`:''}
+    </div>`;
+  }
+
+  function renderAwards(awards){
+    const records = (awards||{}).records || [];
+    if(!records.length) return '';
+    return `<div class="section"><div class="section-label">Research funding</div>${records.map(a=>{
+      const cls = awardStatusClass(a.status);
+      const lbl = awardStatusLabel(a.status);
+      const meta = [a.sponsor, a.grant_number].filter(Boolean).join(' · ');
+      const dates = [formatDate(a.start_date), formatDate(a.end_date)].filter(Boolean).join(' – ');
+      const amount = a.obligated_total_usd ? formatUSD(a.obligated_total_usd) : '';
+      const amountLine = [amount, dates].filter(Boolean).join(' · ');
+      return `<div class="award-item"><div class="award-status-dot ${cls}"></div><div class="award-body">
+        <div class="award-title">${esc(a.title)} <span class="award-status-tag ${cls}">${lbl}</span></div>
+        ${meta?`<div class="award-meta">${esc(meta)}</div>`:''}
+        ${amountLine?`<div class="award-amount">${esc(amountLine)}</div>`:''}
+      </div></div>`;
+    }).join('')}</div>`;
+  }
+
+  function renderHonors(honors){
+    if(!honors||!honors.length) return '';
+    return `<div class="section"><div class="section-label">Honors &amp; awards</div>${honors.map(h=>`
+      <div class="honor-item"><div class="honor-year">${esc(String(h.year||''))}</div><div class="honor-text">${esc(h.honor)}</div></div>
+    `).join('')}</div>`;
+  }
+
+  function renderPatents(patents){
+    if(!patents||!patents.length) return '';
+    return `<div class="section"><div class="section-label">Patents &amp; inventions</div>${patents.map(p=>{
+      const meta = [p.jurisdiction_identifier, p.status, p.event_date ? p.event_date.slice(0,7) : null].filter(Boolean).join(' · ');
+      const link = p.public_link ? `<a class="patent-link" href="${esc(p.public_link)}" target="_blank" rel="noopener">View patent ↗</a>` : '';
+      return `<div class="patent-item"><div class="patent-title">${esc(p.title)}</div>${meta?`<div class="patent-meta">${esc(meta)}</div>`:''}${link}</div>`;
+    }).join('')}</div>`;
+  }
+
+  function renderFundingSummary(awards){
+    const records = (awards||{}).records || [];
+    if(!records.length) return '';
+    const total = records.reduce((s,a)=>s+(a.obligated_total_usd||0),0);
+    const active = records.filter(a=>awardStatusClass(a.status)==='active').length;
+    const closeout = records.filter(a=>awardStatusClass(a.status)==='closeout').length;
+    const dot = (cls,label)=>`<span><span class="d" style="background:var(--${cls}-dot);"></span>${label}</span>`;
+    const dots = [
+      active?dot('active',`${active} active award${active!==1?'s':''}`):'',
+      closeout?dot('closeout',`${closeout} in closeout`):'',
+    ].join('');
+    return `<div class="sidebar-block band funding-card"><h4>Funding summary</h4>
+      <div class="funding-total">${formatUSD(total)}</div>
+      <div class="funding-sub">Total across ${records.length} award${records.length!==1?'s':''}</div>
+      ${dots?`<div class="funding-dots">${dots}</div>`:''}
+    </div>`;
+  }
+
+  async function loadProfile(){
+    const params = new URLSearchParams(location.search);
+    const facultyId = params.get('id');
+    if(!facultyId){
+      document.getElementById('crumb-name').textContent = 'Profile not found';
+      document.getElementById('profile-error').style.display='block';
+      return;
+    }
+
+    let pkg;
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`);
+      if(!res.ok) throw new Error(res.status);
+      pkg = await res.json();
+    }catch(e){
+      document.getElementById('crumb-name').textContent = facultyId;
+      document.getElementById('profile-error').style.display='block';
+      return;
+    }
+
+    const identity = pkg.identity || {};
+    const name = identity.canonical_name || facultyId;
+    document.title = `${name} — Viterbi Pathfinder`;
+    document.getElementById('crumb-name').textContent = name;
+
+    // primary appointment
+    const appts = identity.appointments || [];
+    const primary = appts.find(a=>a.appointment_type==='primary') || appts[0] || {};
+    const courtesy = appts.filter(a=>a.appointment_type==='courtesy');
+
+    // header, rendered into the dark hero band
+    const research = pkg.research || {};
+    const deptLines = [primary.title, primary.unit].filter(Boolean).map(esc).join('<br>');
+    const hero = document.getElementById('profile-hero');
+    hero.innerHTML = `
+      <div class="eyebrow"><span class="num">[ ${esc(facultyId)} ]</span> Faculty profile</div>
+      <div class="profile-head">
+        <div class="avatar">${esc(initials(name))}</div>
+        <div class="head-body"><h1>${esc(name)}</h1></div>
+      </div>
+      <div class="head-meta">
+        ${deptLines?`<div><span class="k mono">Appointment</span><div class="head-dept">${deptLines}</div></div>`:''}
+        ${courtesy.length?`<div><span class="k mono">Courtesy</span><div class="courtesy-list">${courtesy.map(c=>esc(c.unit)).join('<br>')}</div></div>`:''}
+        ${identity.usc_email?`<div><span class="k mono">Contact</span><div class="head-email"><a href="mailto:${esc(identity.usc_email)}">${esc(identity.usc_email)}</a></div></div>`:''}
+      </div>
+    `;
+    hero.style.display='block';
+
+    const mainCol = document.getElementById('main-col');
+    mainCol.innerHTML = `
+      ${research.summary?`<div class="section"><div class="section-label">Research summary</div><p class="summary-text">${esc(research.summary)}</p>
+        ${renderTags(research.domains,'Research domains')}
+        ${renderTags(research.methods,'Methods')}
+        ${renderTags(research.applications,'Applications')}
+      </div>`:''}
+
+      ${renderPubs(pkg.publications?.records, pkg.publications?.views)}
+      ${renderAwards(pkg.awards)}
+      ${renderHonors(pkg.honors)}
+      ${renderPatents(pkg.patents_and_inventions)}
+    `;
+
+    // sidebar
+    const links = pkg.links || [];
+    const sidebar = document.getElementById('sidebar-col');
+    sidebar.innerHTML = `
+      ${links.length?`<div class="sidebar-block"><h4>Links</h4>${links.map(l=>`
+        <a href="${esc(l.url)}" class="link-item" target="_blank" rel="noopener">
+          ${linkIcon(l.link_type)}
+          <div class="link-item-body">
+            <span class="link-label">${esc(linkLabel(l.link_type))}</span>
+            <span class="link-type">${esc(linkSubtitle(l.link_type))}</span>
+          </div>
+        </a>`).join('')}</div>`:''}
+      ${renderFundingSummary(pkg.awards)}
+    `;
+
+    document.getElementById('profile-page').style.display='block';
+    renderEditBar(pkg, facultyId);
+  }
+
+  function setPubTab(tab, btn){
+    document.querySelectorAll('.pub-list').forEach(l=>l.classList.remove('active'));
+    document.querySelectorAll('.pub-tab').forEach(b=>b.classList.remove('active'));
+    const el = document.getElementById('pub-'+tab);
+    if(el) el.classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // ── edit mode ────────────────────────────────────────────────────────────
+
+  const params = new URLSearchParams(location.search);
+  const EDIT_MODE = params.get('edit') === '1';
+
+  // links managed in memory while editing
+  let _editLinks = [];
+
+  function renderEditBar(pkg, facultyId){
+    if(!EDIT_MODE) return;
+    const r = pkg.research || {};
+    const id = pkg.identity || {};
+    _editLinks = JSON.parse(JSON.stringify(pkg.links || []));
+    const bar = document.getElementById('edit-bar');
+    bar.className = 'edit-bar';
+    bar.innerHTML = `
+      <div class="wrap">
+        <div class="edit-bar-head">
+          <h3>Editing profile</h3>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <a href="Viterbi_Pathfinder_POC.html#manage" style="font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);">← Back to Manage</a>
+            <a href="profile.html?id=${encodeURIComponent(facultyId)}">Exit edit mode ×</a>
+          </div>
+        </div>
+        <div class="edit-grid">
+          <div class="ef ef-full">
+            <label>Research summary</label>
+            <textarea id="ef-summary" rows="4">${esc(r.summary||'')}</textarea>
+          </div>
+          <div class="ef">
+            <label>Domains</label>
+            <input type="text" id="ef-domains" value="${esc((r.domains||[]).join(', '))}" />
+            <span class="hint">Comma-separated</span>
+          </div>
+          <div class="ef">
+            <label>Methods</label>
+            <input type="text" id="ef-methods" value="${esc((r.methods||[]).join(', '))}" />
+            <span class="hint">Comma-separated</span>
+          </div>
+          <div class="ef">
+            <label>Applications</label>
+            <input type="text" id="ef-applications" value="${esc((r.applications||[]).join(', '))}" />
+            <span class="hint">Comma-separated</span>
+          </div>
+          <div class="ef">
+            <label>USC Email</label>
+            <input type="text" id="ef-email" value="${esc(id.usc_email||'')}" />
+          </div>
+          <div class="ef ef-full">
+            <label>Links</label>
+            <div class="links-editor" id="linksEditor"></div>
+            <div class="add-link-row">
+              <select id="newLinkType">
+                <option value="official_profile">USC Profile</option>
+                <option value="lab">Lab website</option>
+                <option value="google_scholar">Google Scholar</option>
+                <option value="github">GitHub</option>
+                <option value="personal">Personal website</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="recent_publications">Publications list</option>
+              </select>
+              <input type="text" id="newLinkUrl" placeholder="https://…" />
+              <button class="btn-add-link" onclick="addEditLink()">Add link</button>
+            </div>
+          </div>
+        </div>
+        <div class="edit-bar-actions">
+          <button class="btn-save-profile" id="saveProfileBtn" onclick="saveProfile(${JSON.stringify(facultyId)})">Save changes</button>
+          <span class="edit-save-status" id="saveStatus"></span>
+          <button class="btn-delete-profile" onclick="confirmProfileDelete(${JSON.stringify(facultyId)}, ${JSON.stringify(pkg.identity?.preferred_display_name || facultyId)})">Delete professor</button>
+        </div>
+      </div>
+    `;
+    bar.style.display = 'block';
+    renderLinksEditor();
+  }
+
+  function renderLinksEditor(){
+    const el = document.getElementById('linksEditor');
+    if(!el) return;
+    if(!_editLinks.length){ el.innerHTML = '<p style="font-size:13px;color:var(--faint);margin:8px 0;">No links yet.</p>'; return; }
+    el.innerHTML = _editLinks.map((l,i) => `
+      <div class="link-edit-row">
+        <span class="link-edit-type">${esc(l.link_type)}</span>
+        <span class="link-edit-url">${esc(l.url)}</span>
+        <button class="btn-remove-link" onclick="removeEditLink(${i})" title="Remove">×</button>
+      </div>`).join('');
+  }
+
+  function addEditLink(){
+    const type = document.getElementById('newLinkType').value;
+    const url  = document.getElementById('newLinkUrl').value.trim();
+    if(!url) return;
+    _editLinks.push({link_type: type, url});
+    document.getElementById('newLinkUrl').value = '';
+    renderLinksEditor();
+  }
+
+  function removeEditLink(i){
+    _editLinks.splice(i, 1);
+    renderLinksEditor();
+  }
+
+  function confirmProfileDelete(facultyId, name){
+    document.getElementById('profileDeleteName').textContent = name;
+    document.getElementById('profileDeleteConfirmBtn').onclick = () => doProfileDelete(facultyId);
+    document.getElementById('profileDeleteModal').style.display = 'flex';
+  }
+
+  async function doProfileDelete(facultyId){
+    const btn = document.getElementById('profileDeleteConfirmBtn');
+    btn.disabled = true;
+    btn.textContent = 'Deleting…';
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`, {method:'DELETE'});
+      if(!res.ok){
+        const d = await res.json().catch(()=>({}));
+        throw new Error(d.detail || `backend returned ${res.status}`);
+      }
+      // redirect back to manage tab after deletion
+      window.location.href = 'Viterbi_Pathfinder_POC.html#manage';
+    }catch(err){
+      btn.textContent = `Error: ${err.message}`;
+      btn.disabled = false;
+    }
+  }
+
+  async function saveProfile(facultyId){
+    const btn = document.getElementById('saveProfileBtn');
+    const status = document.getElementById('saveStatus');
+    btn.disabled = true;
+    status.textContent = 'Saving…';
+    status.className = 'edit-save-status';
+
+    const splitTags = s => s.split(',').map(t=>t.trim()).filter(Boolean);
+    const body = {
+      summary: document.getElementById('ef-summary').value,
+      domains: splitTags(document.getElementById('ef-domains').value),
+      methods: splitTags(document.getElementById('ef-methods').value),
+      applications: splitTags(document.getElementById('ef-applications').value),
+      email: document.getElementById('ef-email').value.trim(),
+      links: _editLinks,
+    };
+
+    try{
+      const res = await fetch(`${API_BASE}/faculty/${encodeURIComponent(facultyId)}`, {
+        method: 'PATCH',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if(!res.ok) throw new Error(data.detail || `backend returned ${res.status}`);
+      status.textContent = 'Saved successfully.';
+      status.className = 'edit-save-status ok';
+    }catch(err){
+      status.textContent = `Error: ${err.message}`;
+      status.className = 'edit-save-status err';
+    }finally{
+      btn.disabled = false;
+    }
+  }
+
+  loadProfile();
+</script>
+
+</body>
+</html>

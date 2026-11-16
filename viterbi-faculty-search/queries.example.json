@@ -1,0 +1,10 @@
+[
+  {
+    "query": "TODO: put a real research topic or funding opportunity here",
+    "expected_faculty_ids": ["VIT-FAC-0000"]
+  },
+  {
+    "query": "TODO: another query",
+    "expected_faculty_ids": ["VIT-FAC-0000"]
+  }
+]

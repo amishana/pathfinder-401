@@ -1,0 +1,10 @@
+.venv/
+viterbi-faculty-search/activate/
+.env
+.claude/
+__pycache__/
+*.pyc
+
+# CVs uploaded through the app (may be private)
+cv-uploads/
+cv-structured-outputs/drafts/
