@@ -140,7 +140,7 @@ def parse_education(soup):
     for heading in soup.find_all(HEADING_TAGS):
         if not EDUCATION_HEADING.match(heading.get_text(" ")):
             continue
-        lines = []
+        lines = [] 
         for sibling in heading.find_all_next():
             if sibling is heading:
                 continue
