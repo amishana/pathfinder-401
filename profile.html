@@ -90,11 +90,10 @@
   .pub-item,.honor-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
   .pub-year,.honor-year{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);padding-top:3px;font-variant-numeric:tabular-nums;}
   .pub-title{font-size:16px;line-height:1.4;}
-  .pub-title a:hover{color:var(--accent);}
+  .pub-title a{text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px;}
+  .pub-title a:hover{color:var(--accent);text-decoration-color:var(--accent);}
   .pub-venue{margin-top:4px;font-size:13.5px;color:var(--muted);font-style:italic;}
   .pub-cite{margin-top:6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
-  .pub-doi{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--accent);}
-  .pub-doi:hover{text-decoration:underline;}
   .honor-text{font-size:16px;}
 
   /* awards */
@@ -350,11 +349,12 @@
       : [];
 
     function pubItem(p){
-      const link = p.publication_link || (p.doi ? `https://doi.org/${p.doi}` : null);
-      const title = link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title);
+      // doi goes straight to the paper, so it wins. no doi or link -> scholar search so every title is clickable
+      const link = (p.doi ? `https://doi.org/${p.doi}` : null) || p.publication_link
+        || `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`;
+      const title = `<a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title)}</a>`;
       const cite = (p.citation_snapshot||{}).count ? `<div class="pub-cite">${esc(String(p.citation_snapshot.count))} citations</div>` : '';
-      const doi  = p.doi ? `<a class="pub-doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)} ↗</a>` : '';
-      return `<div class="pub-item"><div class="pub-year">${esc(String(p.publication_year||''))}</div><div class="pub-body"><div class="pub-title">${title}</div>${p.venue?`<div class="pub-venue">${esc(p.venue)}</div>`:''}${cite}${doi}</div></div>`;
+      return `<div class="pub-item"><div class="pub-year">${esc(String(p.publication_year||''))}</div><div class="pub-body"><div class="pub-title">${title}</div>${p.venue?`<div class="pub-venue">${esc(p.venue)}</div>`:''}${cite}</div></div>`;
     }
 
     const hasCited = citedPubs.length > 0;
